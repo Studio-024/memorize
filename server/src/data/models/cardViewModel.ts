@@ -1,3 +1,3 @@
 import {ICard} from '@/domain/entities/card'
 
-export type ICardViewModel = ICard
+export interface ICardViewModel extends ICard{}
