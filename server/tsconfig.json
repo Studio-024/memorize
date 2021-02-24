@@ -76,5 +76,5 @@
       "@types/**/*.d.ts",
       "test/**/*.ts"
     ],
-    "exclude": ["./node_modules/*", ".vscode", "dist"]
+    "exclude": ["./node_modules/*", ".vscode", "./dist"]
   }
