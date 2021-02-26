@@ -6,7 +6,7 @@ import { ICardPresetationViewModel } from "../view-models/CardPresetationViewMod
 export class ListCardController implements IController {
     constructor(private readonly listCard: IListCard){}
     
-    async handle(): Promise<HttpResponse<ICardPresetationViewModel>>{
+    async handle(): Promise<HttpResponse<ICardPresetationViewModel[]>>{
         try {
             const cards = await this.listCard.listAll()
             return ok(cards)
