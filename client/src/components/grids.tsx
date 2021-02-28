@@ -30,7 +30,7 @@ export default function grids(){
             </div>
         </div>
         <div className="new">
-            <div className="three">c</div>
+            <div className="three"></div>
         </div>
 
     </div>
