@@ -1,15 +1,20 @@
-import React from 'react';
-export default function grids(){
+import React, { ReactNode } from 'react';
+
+interface Props {
+    quest: string;
+    request: string;
+}
+export default function grids({ quest, request }: Props): React.ReactNode{
     return(
     <div className="conteiner">
 
         <div className="status">
         
-            <div className="direita">
+            <div className="left">
                 <div>Revisado: </div>
             </div>
         
-            <div className="esquerda">
+            <div className="right">
                 <div>Falta: </div>  
                 <div>Total: </div>
             </div>
@@ -18,10 +23,10 @@ export default function grids(){
         
         <div className="cards">
             <div className="quests"> 
-                <p className="text">Por que a visão da idade média do renascimento, não é igual do iluminismo, que não é igual ao da era industrial. mesmo sendo sobre o mesmo assunto?</p>
+                <p className="text">{quest}</p>
             </div>
             <div className="quests">
-                <p className="text">pois esses períodos são mais antigos portanto menos informados e "ignorantes".</p>
+                <p className="text">{request}</p>
             </div>
             
             <div className="acertos">

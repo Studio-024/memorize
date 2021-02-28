@@ -20,7 +20,7 @@ body{
     border-width: 2px;
 
   }
-    .esquerda > div{
+    .right > div{
       float: left;
       margin-right: 50px;
     }
