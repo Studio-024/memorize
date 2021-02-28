@@ -1,3 +1,77 @@
-.App{
-  background-color: blue;
+body{
+  background-color: rgb(221, 220, 220)
+}
+.conteiner{
+  display: flex;
+  flex-direction: column;
+  margin-right: 200px;
+  margin-left: 200px;
+  padding-top: 50px;
+  background-color: rgb(221, 220, 220)
+
+}
+.status {
+  background-color: lightgray;
+
+  display: flex;
+  justify-content: space-between;
+  border: gray solid;
+  margin-block: 10px;
+  border-width: 2px;
+
+}
+  .esquerda > div{
+    float: left;
+    margin-right: 50px;
+  }
+.cards {
+  display: flex;
+  flex-direction: column;
+  
+  height: 400px;
+}
+  .quests{
+    height: 150px;
+    background-color: lightgray;
+    border: gray solid;
+    border-block: none;
+    border-top: gray solid;
+    border-width: 2px;
+
+  }
+    .text{
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+  
+  .acertos{
+    display: flex;
+    justify-content: center;
+    border-top: gray solid;
+    border-width: 2px;
+    height: 100px;
+
+  }
+  .acertos > div{
+    margin: 0px;
+  }
+  #acerto{
+    background-color: green;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
+  #erro{
+    background-color: rgb(146, 5, 5);
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    
+  }
+.new{
+  background-color: lightgray;
+  border: gray solid;
+  height: 150px;
+  border-width: 2px;
+
 }
