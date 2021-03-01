@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react';
 
 interface Props {
     quest: string;
-    request: string;
+    response: string;
 }
-export default function grids({ quest, request }: Props): React.ReactNode{
+export default function grids({quest, response}: Props){
     return(
     <div className="conteiner">
 
@@ -26,7 +26,7 @@ export default function grids({ quest, request }: Props): React.ReactNode{
                 <p className="text">{quest}</p>
             </div>
             <div className="quests">
-                <p className="text">{request}</p>
+                <p className="text">{response}</p>
             </div>
             
             <div className="acertos">

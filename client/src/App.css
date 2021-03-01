@@ -53,7 +53,7 @@ body{
 
     }
     .acertos > div{
-      margin: none;
+      margin: 5px;
 
     }
       #acerto{
@@ -63,6 +63,7 @@ body{
         border: rgb(0, 85, 0) solid;
         border-width: 2px;
         text-align: center;
+
       }
       #erro{
         background-color: rgb(189, 78, 78);

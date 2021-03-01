@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Grids from './components/grids'
+import Grids from './components/grids';
 
 function App() {
   return (
 	<>
 	<div className="App">
     </div>
-		<Grids />
+		<Grids quest="oi" response="oi"/>
 	</>
   );
 }
