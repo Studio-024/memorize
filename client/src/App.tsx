@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
-import Grids from './components/grids'
-//import Quest from './components/quest.tsx';
+import Grids from './components/grids';
 
 function App() {
   return (
 	<>
 	<div className="App">
-		<h1>React</h1>
     </div>
-		<Grids/>
-		
+		<Grids quest="oi" response="oi"/>
 	</>
-	
   );
 }
 
