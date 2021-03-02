@@ -62,7 +62,9 @@ body{
         height: 50px;
         border: rgb(0, 85, 0) solid;
         border-width: 2px;
-        text-align: center;
+        margin-top: 5px;
+        line-height: 50px;
+        text-align: center;        
 
       }
       #erro{
@@ -71,6 +73,8 @@ body{
         height: 50px;
         border: rgb(106, 0, 0) solid;
         border-width: 2px;
+        margin-top: 5px;
+        line-height: 50px;
         text-align: center;
         
       }
