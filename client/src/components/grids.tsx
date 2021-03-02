@@ -39,5 +39,6 @@ export default function grids({quest, response}: Props){
         </div>
 
     </div>
+
     );
 }
