@@ -17,24 +17,12 @@ export const noContent = (): HttpResponse => ({
   data: null
 })
 
-export const genericError = (error: {message: string, status: number, name: string}) => ({
-  statusCode: error.status,
-  data: `${error.name}: ${error.message}` 
+export const errorHandler = (error: {status: number, message: string,  stack: string}): HttpResponse => ({
+  statusCode: error.status || 500,
+  data: {
+    status: error.status || 500,
+    message: error.message || 'ops',
+    stack: error.stack.split('\n').slice(0)[0] ||'undefined'
+  }
 })
   
-  export const serverError = (error: Error): HttpResponse => ({
-    statusCode: 500,
-    data: error.message
-  })
-  
- 
-
-  export const badRequest = (error: any): HttpResponse => ({
-    statusCode: 400,
-    data: error
-  })
-
-  export const notFound = (data: string): HttpResponse => ({
-    statusCode: 404,
-    data: ''
-  })
