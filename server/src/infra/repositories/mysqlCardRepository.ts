@@ -15,7 +15,10 @@ export class MysqlcardRepository implements IListCardRepository, IAddCardReposit
     }
 
     async addCard(card: ICardViewModel): Promise<void>{
+        try {
         await pool.query(`INSERT INTO flashcard SET ?`, card);
-            
+    } catch (error) {
+            throw new Error(error.stack)
+        }
     }
 }

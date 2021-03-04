@@ -1,5 +1,5 @@
 import { ErrorREST  } from "@/domain/err/errorRest"
-import { badRequest } from '@/domain/err/helper'
+import { badRequest, serverError } from '@/domain/err/helper'
 import { ICreateCard } from "@/domain/usecases/createCard";
 import { IAddCardRepository } from "../contracts/addCardRepository";
 import { ICardViewModel } from "../models/cardViewModel";
@@ -14,6 +14,10 @@ export class AddCardService implements ICreateCard {
             throw new ErrorREST(badRequest("the 'timeEnd' cannot be bigger than 'timeNext'", "error"))
         }
 
-        await this.addCardRepository.addCard(card)
+        try {
+            await this.addCardRepository.addCard(card)
+        } catch (error) {
+            throw new ErrorREST(serverError(error.stack));
+        }
     }
 }
