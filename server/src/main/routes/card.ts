@@ -7,6 +7,6 @@ const routes = Router()
 
 routes.get('/card', adaptRoute(makeListCardController()))
 
-routes.put('/card', adaptRoute(makeAddCardController()))
+routes.post('/card', adaptRoute(makeAddCardController()))
 
 export default routes
