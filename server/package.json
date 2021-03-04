@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "dev:server": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules -r dotenv/config -r tsconfig-paths/register src/main/server.ts",
+    "dev:server": "ts-node-dev --trace-warnings --transpile-only --respawn --ignore-watch node_modules -r dotenv/config -r tsconfig-paths/register src/main/server.ts",
 
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "start": "ts-node -r tsconfig-paths/register -r dotenv/config dist/main/server.js"
