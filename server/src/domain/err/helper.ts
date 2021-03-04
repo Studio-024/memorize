@@ -12,11 +12,8 @@ export const badRequest = (messageError: string, nameError?: string) => ({
     stack: stack || 'undefined'
   })
 
-  export const missingParamError = ( param: string, stack: string) => ({
+  export const missingParamError = ( param: string) => ({
     status: 400,
-    message: `missing Param: ${param}`,
-    stack: stack || 'undefined'
+    message: `missing Parameter: ${param}`,
+    stack: 'undefined'
   })
-
-  
-  

@@ -2,6 +2,7 @@ import { ICreateCard } from "@/domain/usecases/createCard";
 import { IController } from "../contracts/controller";
 import { HttpRequest, HttpResponse, noContent, errorHandler} from "../contracts/http";
 import { ErrorREST } from "@/domain/err/errorRest";
+import { missingParamError } from "@/domain/err/helper";
 
 export class addCardController implements IController{
     constructor(
@@ -13,7 +14,7 @@ export class addCardController implements IController{
 
         for(const param of requiredParans){
             if(!request.body[param]){
-                const error = new ErrorREST({status: 400, message: `require parameter: '${param}'`, stack: 'undefined'})
+                const error = new ErrorREST(missingParamError(param))
                 return errorHandler(error.response)
             }
         }
