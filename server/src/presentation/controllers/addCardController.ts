@@ -1,7 +1,7 @@
 import { ICreateCard } from "@/domain/usecases/createCard";
 import { IController } from "../contracts/controller";
-import { badRequest, HttpRequest, HttpResponse, noContent, genericError} from "../contracts/http";
-import { MissingParamError } from "../../domain/err/missingParamError";
+import { HttpRequest, HttpResponse, noContent, errorHandler} from "../contracts/http";
+import { ErrorREST } from "@/domain/err/errorRest";
 
 export class addCardController implements IController{
     constructor(
@@ -13,7 +13,8 @@ export class addCardController implements IController{
 
         for(const param of requiredParans){
             if(!request.body[param]){
-                return badRequest(new MissingParamError(param))
+                const error = new ErrorREST({status: 400, message: `require parameter: '${param}'`, stack: 'undefined'})
+                return errorHandler(error.response)
             }
         }
         
@@ -21,8 +22,7 @@ export class addCardController implements IController{
             await this.createCard.save(request.body)
             return noContent()
         } catch (error) {
-           return genericError(error.response)
+            return errorHandler(error.response)
         }
-        
     }
 }
