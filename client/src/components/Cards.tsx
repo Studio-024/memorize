@@ -6,16 +6,23 @@ interface Props {
 export default function Cards({quest, response}: Props){
     return(
         <div className="cards">
-            <div className="quests"> 
+            <div className="quests" id="quest"> 
                 <p className="text">{quest}</p>
             </div>
-            <div className="quests">
-                <p className="text">{response}</p>
+            
+            <div className="quests" id="response">
+                <div className="buttons">
+                    <div id="SeeResponse">Resposta</div>    
+                </div>                
             </div>
             
-            <div className="acertos">
+            <div className="buttons">
                 <div id="acerto">Acertei</div>
                 <div id="erro">Errei</div>
+            </div>
+
+            <div className="buttons">
+                <div id="addCard">Adicionar Card</div>
             </div>
         </div>
     )
