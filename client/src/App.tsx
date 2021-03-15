@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Grids from './components/grids';
-import getCard from './service/api-data';
+import {getCard} from './service/api-data';
 
 function App() {
   return (
