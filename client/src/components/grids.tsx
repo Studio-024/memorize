@@ -23,10 +23,10 @@ export default function grids({quest, response}: Props){
         
         <div className="cards">
             <div className="quests"> 
-                <p className="text">{quest}</p>
+                <p className="text" id="print_question">{quest}</p>
             </div>
             <div className="quests">
-                <p className="text">{response}</p>
+                <p className="text" id="print_response">{response}</p>
             </div>
             
             <div className="acertos">
@@ -35,7 +35,8 @@ export default function grids({quest, response}: Props){
             </div>
         </div>
         <div className="new">
-            <div className="three"></div>
+            {/*Printa o cod*/}
+            <div className="three" id="print_cod"></div>
         </div>
 
     </div>

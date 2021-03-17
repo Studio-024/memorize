@@ -9,7 +9,7 @@ function App() {
 	<div className="App">
     </div>
 		<Grids quest="oi" response="oi"/>
-		<button onClick={getCard}>fdgdf</button>
+		<button onClick={getCard}>Button</button>			
 	</>
   );
 }
