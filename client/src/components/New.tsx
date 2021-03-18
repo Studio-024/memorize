@@ -1,9 +1,15 @@
 import React, { ReactNode } from 'react';
+//import ReturnCards from './ReturnCards';
+//import ReturnC from './ReturnCards';
 
 export default function New(){
+    
+    
     return(
     <div className="new">
-            <div id="NewCard">Criar Flashcard</div>
+            <button id="NewCard">Criar Flashcard</button>
     </div>
+
+
     )
 }

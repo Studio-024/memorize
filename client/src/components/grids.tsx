@@ -17,5 +17,6 @@ export default function grids({quest, response}: Props){
         <New/>
     </div>
 
+
     );
 }

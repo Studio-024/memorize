@@ -11,18 +11,14 @@ export default function Cards({quest, response}: Props){
             </div>
             
             <div className="quests" id="response">
-                <div className="buttons">
-                    <div id="SeeResponse">Resposta</div>    
-                </div>                
+                <div  className="next" >
+                    <button className="buttons" id="SeeResponse" >Resposta</button>    
+                </div>     
             </div>
             
-            <div className="buttons">
-                <div id="acerto">Acertei</div>
-                <div id="erro">Errei</div>
-            </div>
-
-            <div className="buttons">
-                <div id="addCard">Adicionar Card</div>
+            <div className="next">
+                <button className="buttons" id="erro">Errei</button>
+                <button className="buttons" id="acerto">Acertei</button>
             </div>
         </div>
     )

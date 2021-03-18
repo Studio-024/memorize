@@ -1,130 +1,116 @@
 /* CSS pagina generica */
 
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(221, 220, 220);
+}
 body{
-  background-color: rgb(221, 220, 220)
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*CSS Independentes*/
 
 .buttons{
-  display: flex;
-  justify-content: center;
-}
-.buttons > div{
+  border: none;
+  padding: 10px 25px 10px 25px;
   border-radius: 5px;
   color: white;
-  text-align: center;
-  font-size: 16px;
-  width: 100px;
-  line-height: 300%;
-  
-  height: 40px;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* CSS conteiner com SubCamadas */
+/* CSS flex-conteiner */
+
 .conteiner{
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
-  margin-right: 15%;
-  padding-top: 3%;
-  background-color: rgb(221, 220, 220);
+  padding: 3% 20% 10% 20%;
+  background-color: rgb(220, 221, 221);
   flex-wrap: row nowrap;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
-  .status {
-    background-color: lightgray;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    border: gray solid;
-    margin-block: 1%;
-    border-width: 2px;
-    order: 0;
-  }
-    .left{
-      margin-left: 0.5%;
-    }
-    .right > div{
-      float: left;
-      margin-right: 25px;
-    }
-  .cards {
-    display: flex;
-    flex-basis: 380px;
-    flex-direction: column;
-    order:1;
-  }
-    .quests{
-      display: flex;
-      flex-basis: 50%;
-      background-color: lightgray;
-      border: gray solid;   
-      border-width: 2px;
-      flex-wrap: nowrap;
+.status {
+  display: flex;
+  justify-content: space-between;
+  background-color:  rgb(216, 223, 223);
+  border: 2px rgb(108, 142, 157) solid;
+  margin: 0px 0px 5px 0px;
+  padding: 5px 5px 5px 5px;
+  font-size: 16px;
+  order: 0;
+}
 
-    }
-      #quest{
-        border-bottom: none;
-      }
-      #response{
-          display: flex;
-          justify-content: center;
-          background-color: lightgray;
-          border: gray solid;
-          height: 100px;
-          border-width: 2px;
+.right > div{
+  float: left;
+  margin-right: 25px;
+}
+.cards {
+  display: flex;
+  flex-basis: 380px;
+  flex-direction: column;
+  order:1;
+}
+.quests{
+  flex-basis: 100%;
+  background-color: rgb(216, 223, 223);
+  border: 2px rgb(108, 142, 157) solid;   
+  border-bottom: none;
+}
 
-      }
-      #SeeResponse{
-        width: 150px;
-        height: 25%;
-        margin-top: 40%;
-        margin-block: 40%;
-        font-size: 15px;
-        background-color: rgb(113, 119, 208);
-      }
-      .text{
-        flex-basis: 100%;
-        margin-block: 1%;
-        margin-top: 1%;
-        margin-left: 1%;
-        font-size: 15px;
-      }
-      #acerto{
-        background-color: rgb(48, 146, 97);
-        margin-top: 4px;
-        font-size: 15px;
-        display: none;
-        margin-right: 2px;
-      }
-      #erro{
-        
-        background-color: rgb(240, 70, 70);
-        font-size: 15px;
-        margin-top: 4px;
-        margin-left: 2px;
-        display: none;
-      }
-      #addCard{
-        background-color: rgb(81, 156, 181);
-        font-size: 15px;
-        margin-top: 4px;
-        margin-left: 2px;
-      }
-  .new{
-    display: flex;
-    background-color: lightgray;
-    border: gray solid;
-    height: 100px;
-    border-width: 2px;
-    margin-top: 3%;
-    order:3;
-    
-  }
-    #NewCard{   
-      line-height: 500%;
-      text-align: center;
-      flex-basis: 100%;
-      color: black;      
-      font-size: 15pt;
-    }
+#response{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(216, 223, 223);
+  border: 2px rgb(108, 142, 157) solid;
+}
+#SeeResponse{
+  font-weight: bolder;
+  color: white;
+  font-size: 15px;
+  background-color: rgb(113, 119, 208);
+}
+.text{
+  flex-basis: 100%;
+  padding: 10px 10px 10px 10px;
+  margin: 0px;
+  font-size: 15px;
+}
+.next{
+  margin-top: 5px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+#acerto{
+  background-color: rgb(48, 146, 97);
+  font-size: 15px;
+  padding: 10px 25px 10px 25px;
+  min-width: 100px;
+}
+#erro{
+  background-color: rgb(240, 70, 70);
+  font-size: 15px;
+  padding: 10px 25px 10px 25px;
+  min-width: 100px;
+  margin-right: 10px;
+}
+
+.new{
+  display: flex;
+  background-color: rgb(216, 223, 223);
+  border: 2px rgb(108, 142, 157) solid;
+  height: 100px;
+  order:3;
+}
+#NewCard{   
+  text-align: center;
+  flex-basis: 100%;
+  background-color:  rgb(216, 223, 223);
+  color: black;      
+  font-size: 20px;
+  border: none;
+}
