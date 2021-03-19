@@ -1,4 +1,8 @@
 import React, { ReactNode } from 'react';
+import Status from './Status';
+import Cards from './Cards';
+import New from './New';
+
 
 interface Props {
     quest: string;
@@ -7,7 +11,6 @@ interface Props {
 export default function grids({quest, response}: Props){
     return(
     <div className="conteiner">
-
         <div className="status">
         
             <div className="left">
@@ -38,7 +41,6 @@ export default function grids({quest, response}: Props){
             {/*Printa o cod*/}
             <div className="three" id="print_cod"></div>
         </div>
-
     </div>
 
     );
