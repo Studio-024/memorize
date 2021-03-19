@@ -4,11 +4,12 @@ import Cards from './Cards';
 import New from './New';
 
 
+
 interface Props {
     quest: string;
     response: string;
 }
-export default function grids({quest, response}: Props){
+export default function grids({quest, response}: Props){ 
     return(
     <div className="conteiner">
         <div className="status">
@@ -42,6 +43,7 @@ export default function grids({quest, response}: Props){
             <div className="three" id="print_cod"></div>
         </div>
     </div>
+
 
     );
 }
