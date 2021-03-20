@@ -1,6 +1,7 @@
 /* CSS pagina generica */
 
 html, body{
+  
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -138,8 +139,9 @@ body{
 }
 #dashboard__footer__NewCard:hover{   
   transition: 0.6s;
-  background-color: rgb(191, 197, 197);
-  border: 1px rgb(155, 163, 163) solid ;
+  background-color: rgb(200, 214, 214);
+  
+  border: 1px rgb(171, 192, 192) solid ;
 }
 @media screen and (max-width: 800px){
   .conteiner{
