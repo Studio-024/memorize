@@ -9,14 +9,12 @@ interface Props {
     quest: string;
     response: string;
 }
-export default function grids({quest, response}: Props){ 
+export default function Dashboard({quest, response}: Props){ 
     return(
     <div className="conteiner">
         <Status/>
         <Cards quest={quest} response={response}/>
         <New/>
     </div>
-
-
     );
 }
