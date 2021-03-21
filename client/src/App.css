@@ -177,8 +177,6 @@ body{
   border-bottom: 3px rgb(149, 166, 174) double;
 
 }
-
-
 @media screen and (max-width: 800px){
   .conteiner{
     padding: 3% 10% 10% 10%;
