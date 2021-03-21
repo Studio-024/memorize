@@ -6,7 +6,7 @@ html, body{
   height: 100%;
   margin: 0px;
   padding: 0px;
-  background-color: rgb(221, 220, 220);
+  background-color: rgb(235, 235, 235);
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -30,15 +30,18 @@ body{
   display: flex;
   flex-direction: column;
   padding: 3% 20% 10% 20%;
-  background-color: rgb(220, 221, 221);
+  background-color: rgb(232, 232, 232);
   flex-wrap: row nowrap;
   font-family: Arial, Helvetica, sans-serif;
 
 }
+
+/* Dashboard Header */
+
 .dashboard__header__status {
   display: flex;
   justify-content: space-between;
-  background-color:  rgb(216, 223, 223);
+  background-color:  rgb(223, 237, 237);
   border: 2px rgb(108, 142, 157) solid;
   margin: 0px 0px 5px 0px;
   padding: 5px 5px 5px 5px;
@@ -50,6 +53,9 @@ body{
   float: left;
   margin-right: 25px;
 }
+
+/* Dashboard Contend */
+
 .dashboard__content__cards {
   display: flex;
   flex-basis: 380px;
@@ -58,7 +64,7 @@ body{
 }
 .dashboard__content__questFlex{
   flex-basis: 50%;
-  background-color: rgb(216, 223, 223);
+  background-color: rgb(229, 238, 238);
   border: 2px rgb(108, 142, 157) solid;   
   border-bottom: none;
 }
@@ -67,7 +73,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(216, 223, 223);
+  background-color:rgb(229, 238, 238);
   border: 2px rgb(108, 142, 157) solid;
 }
 #dashboard__content__SeeResponse{
@@ -80,6 +86,10 @@ body{
 #dashboard__content__SeeResponse:hover{
   transition: 0.5s;
   background-color: rgb(85, 91, 172);
+}
+#dashboard__content__SeeResponse:active{
+  transition: 0s;
+  background-color: rgb(57, 63, 138);
 }
 
 .dashboard__content__text{
@@ -101,39 +111,55 @@ body{
   font-size: 15px;
   padding: 10px 25px 10px 25px;
   min-width: 100px;
+  max-width: 120px;
+
   margin-left: 5px;
   transition: 0.3s;
 }
 #dashboard__content__acerto:hover{
-  transition: 0.5s;
+  transition: 0.3s;
   background-color: rgb(42, 121, 86);
 }
+#dashboard__content__acerto:active{ 
+  transition: 0s;
+  background-color: rgb(30, 95, 66);
 
+}
 #dashboard__content__erro{
   background-color: rgb(240, 70, 70);
   font-size: 15px;
   padding: 10px 25px 10px 25px;
   min-width: 100px;
+  max-width: 120px;
+
   margin-right: 5px;
   transition: 0.3s;
 }
 #dashboard__content__erro:hover{
-  transition: 0.5s;
+  transition: 0.3s;
   background-color: rgb(209, 53, 60);
 }
+#dashboard__content__erro:active{ 
+  transition: 0s;
+  background-color: rgb(177, 36, 43);
+  
+}
+
+/* Dashboard Footer */
+
 .dashboard__footer__new{
   display: flex;
-  background-color: rgb(216, 223, 223);
+  background-color: rgb(229, 238, 238);
   border: 2px rgb(108, 142, 157) solid;
   height: 100px;
   order:1;
 }
 #dashboard__footer__NewCard{   
-  transition: 0.5s;
+  transition: 0.2s;
 
   text-align: center;
   flex-basis: 100%;
-  background-color:  rgb(216, 223, 223);
+  background-color:  rgb(229, 238, 238);
   color: black;      
   font-size: 20px;
   border: none;
@@ -141,10 +167,18 @@ body{
 #dashboard__footer__NewCard:hover{   
   transition: 0.6s;
   background-color: rgb(200, 214, 214);
-  cursor:pointer;
-  
+  cursor:pointer;  
   border: 1px rgb(171, 192, 192) solid ;
 }
+#dashboard__footer__NewCard:active{ 
+  transition: 0s;
+  font-size: 19px;  
+  background-color: rgb(175, 187, 187);
+  border-bottom: 3px rgb(149, 166, 174) double;
+
+}
+
+
 @media screen and (max-width: 800px){
   .conteiner{
     padding: 3% 10% 10% 10%;
