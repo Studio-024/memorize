@@ -1,15 +1,14 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Status from './Status';
 import Cards from './Cards';
 import New from './New';
-
-
 
 interface Props {
     quest: string;
     response: string;
 }
-export default function Dashboard({quest, response}: Props){ 
+
+const Dashboard = ({quest, response}: Props) => { 
     return(
     <div className="conteiner">
         <Status/>
@@ -22,3 +21,5 @@ export default function Dashboard({quest, response}: Props){
     </div>
     );
 }
+
+export default Dashboard
