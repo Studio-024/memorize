@@ -1,30 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { ICard } from '../domain/entities/Card';
+import { ICardOrdered } from '../domain/useCase/orderCard';
+import { getCard } from '../service/api-data';
+import { OrderCardService } from '../service/OrderCardService';
 
 
-interface Props {
-    quest: string;
-    response: string;
-}
-export default function Cards({quest, response}: Props){
-    const [count, setCount] = useState(0)
+export default function Cards(){
+    const [question, setQuestion] = useState('')
+    const [response, setResponse] = useState('')
+    const [index, setIndex] = useState(0)
 
+    useEffect(()=>{
+        async function cardsHandler() {
+            const orderObj = new OrderCardService()
+            const data = await orderObj.order(getCard())
+
+           setQuestion(data[index].question)
+           setResponse(data[index].response)
+        }
+
+       cardsHandler()
+    }, [index])
+    
     return(
         <div className="dashboard__content__cards">
             <div className="dashboard__content__questFlex" id="dashboard__content__quest"> 
-                <p className="dashboard__content__text">{count}</p>
+                <p className="dashboard__content__text">{question}</p>
             </div>
             
             <div className="dashboard__content__questFlex" id="dashboard__content__response">
                 <div  className="dashboard__content__see" >
-                    <button className="buttons" id="dashboard__content__SeeResponse" >Resposta</button>    
+                    {response}
+                    <button className="buttons" id="dashboard__content__SeeResponse" >resposta</button>    
                 </div>     
             </div>
-            
+             
             <div className="dashboard__content__next">
                 <button className="buttons" id="dashboard__content__erro" onClick={()=>{
-                    setCount(count + 1)
+                    setIndex(index + 1)
                 }}>Errei</button>
-                <button className="buttons" id="dashboard__content__acerto">Acertei</button>
+                <button className="buttons" id="dashboard__content__acerto" onClick={()=>{
+                    setIndex(index + 1)
+                }}>Acertei</button>
             </div>
         </div>
     )
