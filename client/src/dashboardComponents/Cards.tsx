@@ -1,26 +1,27 @@
 import { useState, useEffect } from 'react';
+import { getCard } from '../service/api-data';
 import { ICard } from '../domain/entities/Card';
 import { ICardOrdered } from '../domain/useCase/orderCard';
-import { getCard } from '../service/api-data';
 import { OrderCardService } from '../service/OrderCardService';
 
+export default function Cards() {
 
-export default function Cards(){
-    const [question, setQuestion] = useState('')
-    const [response, setResponse] = useState('')
-    const [index, setIndex] = useState(0)
+    const [question, setQuestion] = useState('');
+    const [response, setResponse] = useState('');
+    const [index, setIndex] = useState(0);
 
-    useEffect(()=>{
+    useEffect(() => {
+        
         async function cardsHandler() {
-            const orderObj = new OrderCardService()
-            const data = await orderObj.order(getCard())
+            const orderObj = new OrderCardService();
+            const data = await orderObj.order(getCard());
 
-           setQuestion(data[index].question)
-           setResponse(data[index].response)
+            setQuestion(data[index].question);
+            setResponse(data[index].response);
         }
 
-       cardsHandler()
-    }, [index])
+        cardsHandler();
+    }, [index]);
     
     return(
         <div className="dashboard__content__cards">
@@ -44,5 +45,5 @@ export default function Cards(){
                 }}>Acertei</button>
             </div>
         </div>
-    )
+    );
 }
