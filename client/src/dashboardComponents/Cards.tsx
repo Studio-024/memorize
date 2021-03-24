@@ -22,6 +22,7 @@ export default function Cards() {
     }, [index]);
     
     return(
+        <>
         <section className="dashboard__content__cards">
             
             <section className="dashboard__content__questFlex" id="dashboard__content__quest"> 
@@ -37,5 +38,11 @@ export default function Cards() {
             </section>
             
         </section>
+
+        <section className="dashboard__content__next">
+            <button className="buttons" id="dashboard__content__erro" >Errei</button>
+            <button className="buttons" id="dashboard__content__acerto">Acertei</button>
+        </section>
+        </>
     )
 }

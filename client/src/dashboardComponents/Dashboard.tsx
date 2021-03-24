@@ -1,7 +1,6 @@
 import Status from './Status';
 import Cards from './Cards';
 import New from './New';
-import Hit from './Hit';
 
 
 const Dashboard = () => { 
@@ -16,7 +15,6 @@ const Dashboard = () => {
         {/* Main */}
         <main>
             <Cards/>
-            <Hit/>
         </main>
         
         {/* Footer */}

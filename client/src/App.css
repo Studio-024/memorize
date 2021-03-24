@@ -1,6 +1,5 @@
 /* CSS pagina generica */
-
-html, body{
+html, body, #root{
   
   width: 100%;
   height: 100%;
@@ -12,8 +11,17 @@ html, body{
 body{
   font-family: Arial, Helvetica, sans-serif;
 }
-
+#root{
+  width: 100%;
+}
 /*CSS Independentes*/
+
+.hide{
+  display: none;
+}
+.visible{
+  display: initial;
+}
 
 .buttons{
   border: none;
@@ -25,12 +33,16 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   cursor:pointer;
 }
-
+.buttons:focus{
+  border: 1px aqua solid;
+}
 /* CSS flex-conteiner */
 
 .conteiner{
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  flex-basis: 100%;
   background-color: rgb(232, 232, 232);
   max-width: 800px;
   margin: 50px auto 0 auto;
@@ -176,14 +188,16 @@ header.dashboard__header__status > section{
 }
 #dashboard__footer__NewCard:hover{   
   transition: 0.6s;
-  background-color: rgb(200, 214, 214);
+  background-color:  rgb(217, 240, 240);
+
   cursor:pointer;  
   border: 1px rgb(171, 192, 192) solid ;
 }
 #dashboard__footer__NewCard:active{ 
   transition: 0s;
   font-size: 19px;  
-  background-color: rgb(175, 187, 187);
+  background-color:  rgb(202, 223, 223);
+
   border-bottom: 3px rgb(149, 166, 174) double;
 }
 @media screen and (max-width: 800px){
