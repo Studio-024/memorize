@@ -4,9 +4,10 @@ html, body{
   
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   background-color: rgb(235, 235, 235);
+  
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -30,38 +31,44 @@ body{
 .conteiner{
   display: flex;
   flex-direction: column;
-  padding: 3% 20% 10% 20%;
+  background-color: rgb(232, 232, 232);
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+}
+main{
+  display: flex;
+  flex-direction: column;
   background-color: rgb(232, 232, 232);
   flex-wrap: row nowrap;
   font-family: Arial, Helvetica, sans-serif;
-
 }
-
+footer{
+  
+}
 /* Dashboard Header */
 
-.dashboard__header__status {
-  display: flex;
-  justify-content: space-between;
-  background-color:  rgb(223, 237, 237);
+header.dashboard__header__status {
+  background-color: rgb(229, 238, 238);
   border: 2px rgb(108, 142, 157) solid;
   margin: 0px 0px 5px 0px;
   padding: 5px 5px 5px 5px;
   font-size: 16px;
-  order: 0;
 }
-
-.dashboard__header__right > div{
+header.dashboard__header__status > section{
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard__header__right > span{
   float: left;
   margin-right: 25px;
 }
 
-/* Dashboard Contend */
+/* Dashboard Content */
 
 .dashboard__content__cards {
   display: flex;
   flex-basis: 380px;
   flex-direction: column;
-  order:1;
 }
 .dashboard__content__questFlex{
   flex-basis: 50%;
@@ -72,8 +79,6 @@ body{
 
 #dashboard__content__response{
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color:rgb(229, 238, 238);
   border: 2px rgb(108, 142, 157) solid;
 }
@@ -92,20 +97,25 @@ body{
   transition: 0s;
   background-color: rgb(57, 63, 138);
 }
-
-.dashboard__content__text{
+.dashboard__content__flexText{
+  display: inline-flex;
   flex-basis: 100%;
   padding: 10px 10px 10px 10px;
   margin: 0px;
   font-size: 15px;
 }
+.dashboard__content__see{
+  display: inline-flex;
+  width: 100%;
+  place-content: center;
+  place-items: center;
+  transition: 2s;
+}
 .dashboard__content__next{
+  display: inline-flex;
+  place-content: center;  
   margin-top: 5px;
-  align-items: center;
-  
-  text-align: center;
   margin-bottom: 15px;
-  height: 70px;
 }
 #dashboard__content__acerto{
   background-color: rgb(48, 146, 97);
@@ -132,7 +142,6 @@ body{
   padding: 10px 25px 10px 25px;
   min-width: 100px;
   max-width: 120px;
-
   margin-right: 5px;
   transition: 0.3s;
 }
@@ -153,7 +162,7 @@ body{
   background-color: rgb(229, 238, 238);
   border: 2px rgb(108, 142, 157) solid;
   height: 100px;
-  order:1;
+  order:3;
 }
 #dashboard__footer__NewCard{   
   transition: 0.2s;
@@ -176,7 +185,6 @@ body{
   font-size: 19px;  
   background-color: rgb(175, 187, 187);
   border-bottom: 3px rgb(149, 166, 174) double;
-
 }
 @media screen and (max-width: 800px){
   .conteiner{
