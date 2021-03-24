@@ -1,5 +1,3 @@
-import React, { ReactNode } from 'react';
-
 export default function Status() {
     return(
         <section>

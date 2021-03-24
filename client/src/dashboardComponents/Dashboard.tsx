@@ -1,13 +1,9 @@
-import React from 'react';
 import Status from './Status';
 import Cards from './Cards';
 import New from './New';
 import Hit from './Hit';
 
-interface Props {
-    quest: string;
-    response: string;
-}
+
 const Dashboard = () => { 
 	return(
 		<div className="conteiner">
@@ -19,7 +15,7 @@ const Dashboard = () => {
 
         {/* Main */}
         <main>
-            <Cards quest={quest} response={response}/>
+            <Cards/>
             <Hit/>
         </main>
         
