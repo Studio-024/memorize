@@ -1,17 +1,16 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Status from './Status';
 import Cards from './Cards';
 import New from './New';
 import Hit from './Hit';
 
-
 interface Props {
     quest: string;
     response: string;
 }
-export default function Dashboard({quest, response}: Props){ 
-    return(
-    <div className="conteiner">
+const Dashboard = () => { 
+	return(
+		<div className="conteiner">
         
         {/* Header */}
         <header className="dashboard__header__status">
@@ -31,5 +30,7 @@ export default function Dashboard({quest, response}: Props){
             {/*Printa o cod*/}
             <div className="three" id="print_cod"></div>
     </div>
-    );
+	);
 }
+
+export default Dashboard;
