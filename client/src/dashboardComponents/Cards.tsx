@@ -40,8 +40,12 @@ export default function Cards() {
         </section>
 
         <section className="dashboard__content__next">
-            <button className="buttons" id="dashboard__content__erro" >Errei</button>
-            <button className="buttons" id="dashboard__content__acerto">Acertei</button>
+            <button className="buttons" id="dashboard__content__erro" onClick={() => {
+                setIndex(index + 1)
+            }}>Errei</button>
+            <button className="buttons" id="dashboard__content__acerto" onClick={() => {
+                setIndex(index + 1)
+            }}>Acertei</button>
         </section>
         </>
     )

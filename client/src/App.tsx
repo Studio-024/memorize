@@ -6,9 +6,7 @@ export default function App() {
 
 	return(
 		<>
-			<Dashboard/>
-
-			<button onClick={getCard}>Button</button>			
+			<Dashboard/>		
 		</>
 	);
 }
