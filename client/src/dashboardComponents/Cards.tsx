@@ -9,13 +9,20 @@ export default function Cards() {
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        
+
         async function cardsHandler() {
             const orderObj = new OrderCardService();
             const data = await orderObj.order(getCard());
 
-            setQuestion(data[index].question);
-            setResponse(data[index].response);
+            // Criar função do back-end para evitar request atoa
+            if (index < data.length) {
+                setQuestion(data[index].question);
+                setResponse(data[index].response);
+            }
+            else {
+                setQuestion("Não há mais cards.");
+                setResponse("Não há mais cards.");
+            }
         }
 
         cardsHandler();
