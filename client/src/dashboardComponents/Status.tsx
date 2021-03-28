@@ -1,15 +1,15 @@
-import React, { ReactNode } from 'react';
-
-export default function Status(){
+export default function Status() {
     return(
-        <div className="dashboard__header__status">
+        <section>
+            {/* Left */}
             <div className="dashboard__header__left">
-                <div>Revisado: </div>
+                <span>Revisado: </span>
             </div>
+            {/* Right */}
             <div className="dashboard__header__right">
-                <div>Falta: </div>  
-                <div>Total: </div>
+                <span>Falta: </span>  
+                <span>Total: </span>
             </div>
-        </div>
+        </section>
     )
 }

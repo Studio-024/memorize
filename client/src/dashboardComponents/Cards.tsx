@@ -1,31 +1,63 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getCard } from '../service/apiData';
+import { ICardOrdered } from '../domain/useCase/orderCard';
+import { OrderCardService } from '../service/OrderCardService';
 
+export default function Cards() {
+    const [index, setIndex] = useState(0);
+    const [question, setQuestion] = useState('');
+    const [response, setResponse] = useState('');
+    const [card, setCard] = useState<ICardOrdered[]>([]);
 
-interface Props {
-    quest: string;
-    response: string;
-}
-export default function Cards({quest, response}: Props){
-    const [count, setCount] = useState(0)
+    useEffect(() => {
+        async function downloadCards() {
+            const orderObj = new OrderCardService();
+            const data = await orderObj.order(getCard());
+            
+            setCard(data);
+            console.log("Getting cards");
+        }
+
+        downloadCards()
+    }, [])
+
+    useEffect(() => {
+        if (card.length && index <= card.length) {
+            setQuestion(card[index - 1].question);
+            setResponse(card[index - 1].response);
+        }
+        else {
+            setQuestion("Não há mais cards.");
+            setResponse("Não há mais cards.");
+        }
+    }, [index]);
+
 
     return(
-        <div className="dashboard__content__cards">
-            <div className="dashboard__content__questFlex" id="dashboard__content__quest"> 
-                <p className="dashboard__content__text">{count}</p>
-            </div>
+        <>
+        <section className="dashboard__content__cards">
             
-            <div className="dashboard__content__questFlex" id="dashboard__content__response">
-                <div  className="dashboard__content__see" >
-                    <button className="buttons" id="dashboard__content__SeeResponse" >Resposta</button>    
+            <section className="dashboard__content__questFlex" id="dashboard__content__quest"> 
+                <p className="dashboard__content__flexText">{question}</p>
+            </section>
+            
+            <section className="dashboard__content__questFlex" id="dashboard__content__response">
+                <div  className="dashboard__content__see" >                    
+                    <button className="buttons" id="dashboard__content__SeeResponse" >resposta</button>    
                 </div>     
-            </div>
+                <p className="dashboard__content__flexText">{response}</p>
+            </section>
             
-            <div className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__erro" onClick={()=>{
-                    setCount(count + 1)
-                }}>Errei</button>
-                <button className="buttons" id="dashboard__content__acerto">Acertei</button>
-            </div>
-        </div>
-    )
+        </section>
+
+        <section className="dashboard__content__next">
+            <button className="buttons" id="dashboard__content__erro" onClick={() => {
+                setIndex(index + 1)
+            }}>Errei</button>
+            <button className="buttons" id="dashboard__content__acerto" onClick={() => {
+                setIndex(index + 1)
+            }}>Acertei</button>
+        </section>
+        </>
+    );
 }

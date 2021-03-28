@@ -1,25 +1,30 @@
-import React from 'react';
 import Status from './Status';
 import Cards from './Cards';
 import New from './New';
 
-interface Props {
-    quest: string;
-    response: string;
-}
 
-const Dashboard = ({quest, response}: Props) => { 
-    return(
-    <div className="conteiner">
-        <Status/>
+const Dashboard = () => { 
+	return(
+		<div className="conteiner">
         
-        <Cards quest={quest} response={response} />
-            
-        <New/>
+        {/* Header */}
+        <header className="dashboard__header__status">
+            <Status/>
+        </header>
+
+        {/* Main */}
+        <main>
+            <Cards/>
+        </main>
+        
+        {/* Footer */}
+        <footer>
+            <New/>
+        </footer>
             {/*Printa o cod*/}
             <div className="three" id="print_cod"></div>
     </div>
-    );
+	);
 }
 
-export default Dashboard
+export default Dashboard;
