@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getCard } from '../service/api-data';
+import { getCard } from '../service/apiData';
 import { ICardOrdered } from '../domain/useCase/orderCard';
 import { OrderCardService } from '../service/OrderCardService';
 
@@ -10,8 +10,7 @@ export default function Cards() {
     const [card, setCard] = useState<ICardOrdered[]>([]);
 
     useEffect(() => {
-        // Get the cards from db in first render
-        async function execute() {
+        async function downloadCards() {
             const orderObj = new OrderCardService();
             const data = await orderObj.order(getCard());
             
@@ -19,13 +18,11 @@ export default function Cards() {
             console.log("Getting cards");
         }
 
-        execute()
+        downloadCards()
     }, [])
 
-    useEffect(() => {     //Criar função do back-end para evitar request atoa
-        // Whenever 'index' has a modification, this content will be rendered
+    useEffect(() => {
         if (card.length && index <= card.length) {
-            // Check if 'card' exists and 'index' is smaller than 'card.length'
             setQuestion(card[index - 1].question);
             setResponse(card[index - 1].response);
         }
