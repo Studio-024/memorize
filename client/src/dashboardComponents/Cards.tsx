@@ -15,7 +15,7 @@ export default function Cards() {
             const data = await orderObj.order(getCard());
             
             setCard(data);
-            console.log("Getting cards", data);
+            console.log("Getting cards");
         }
 
         downloadCards()
