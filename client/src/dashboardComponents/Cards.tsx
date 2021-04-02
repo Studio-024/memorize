@@ -1,25 +1,19 @@
 import { useState, useEffect } from 'react';
-import { getCard } from '../service/apiData';
 import { ICardOrdered } from '../domain/useCase/orderCard';
-import { OrderCardService } from '../service/OrderCardService';
 
-export default function Cards() {
+interface Props{
+    dataCards: ICardOrdered[]
+}
+
+export default function Cards({dataCards}: Props) {
     const [index, setIndex] = useState(0);
     const [question, setQuestion] = useState('');
     const [response, setResponse] = useState('');
     const [card, setCard] = useState<ICardOrdered[]>([]);
 
-    useEffect(() => {
-        async function downloadCards() {
-            const orderObj = new OrderCardService();
-            const data = await orderObj.order(getCard());
-            
-            setCard(data);
-            console.log("Getting cards");
-        }
-
-        downloadCards()
-    }, [])
+    useEffect(()=>{ 
+        setCard(dataCards)
+    }, [dataCards])
 
     useEffect(() => {
         if (card.length && index <= card.length) {
