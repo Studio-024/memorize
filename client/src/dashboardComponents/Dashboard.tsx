@@ -9,6 +9,7 @@ import { ICardOrdered } from '../domain/useCase/orderCard';
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
+    const [index, setIndex] = useState(0)
     
     useEffect(() => {
         async function downloadCards() {
@@ -16,7 +17,7 @@ const Dashboard = () => {
             const data = await orderObj.order(getCard());
             setOrderCards(data)
         }
-        
+
         downloadCards()
 
     }, [])
@@ -26,12 +27,21 @@ const Dashboard = () => {
         
         {/* Header */}
         <header className="dashboard__header__status">
-            <Status />
+            <Status dataCards={orderCards} buttonIndex={index}/>
         </header>
 
         {/* Main */}
         <main>
-            <Cards dataCards={orderCards} />
+            <Cards dataCards={orderCards} buttonIndex={index} />
+
+            <section className="dashboard__content__next">
+                <button className="buttons" id="dashboard__content__erro" onClick={() => {
+                setIndex(index + 1)
+                }}>Errei</button>
+                <button className="buttons" id="dashboard__content__acerto" onClick={() => {
+                setIndex(index + 1)
+                }}>Acertei</button>
+            </section>
         </main>
         
         {/* Footer */}

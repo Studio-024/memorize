@@ -3,10 +3,10 @@ import { ICardOrdered } from '../domain/useCase/orderCard';
 
 interface Props{
     dataCards: ICardOrdered[]
+    buttonIndex: number
 }
 
-export default function Cards({dataCards}: Props) {
-    const [index, setIndex] = useState(0);
+export default function Cards({dataCards, buttonIndex}: Props) {
     const [question, setQuestion] = useState('');
     const [response, setResponse] = useState('');
     const [card, setCard] = useState<ICardOrdered[]>([]);
@@ -16,15 +16,15 @@ export default function Cards({dataCards}: Props) {
     }, [dataCards])
 
     useEffect(() => {
-        if (card.length && index <= card.length) {
-            setQuestion(card[index - 1].question);
-            setResponse(card[index - 1].response);
+        if (card.length && buttonIndex <= card.length) {
+            setQuestion(card[buttonIndex - 1].question);
+            setResponse(card[buttonIndex - 1].response);
         }
         else {
             setQuestion("Não há mais cards.");
             setResponse("Não há mais cards.");
         }
-    }, [index]);
+    }, [buttonIndex]);
 
 
     return(
@@ -42,15 +42,6 @@ export default function Cards({dataCards}: Props) {
                 <p className="dashboard__content__flexText">{response}</p>
             </section>
             
-        </section>
-
-        <section className="dashboard__content__next">
-            <button className="buttons" id="dashboard__content__erro" onClick={() => {
-                setIndex(index + 1)
-            }}>Errei</button>
-            <button className="buttons" id="dashboard__content__acerto" onClick={() => {
-                setIndex(index + 1)
-            }}>Acertei</button>
         </section>
         </>
     );
