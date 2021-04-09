@@ -8,8 +8,13 @@ html, body, #root{
   background-color: rgb(235, 235, 235);
   
 }
+:root{
+  --dashboard-border-primary: 3px rgb(108, 142, 157) solid;
+  --dashboard-background-color-primary: rgb(229, 238, 238);
+  --font-family-primary: Arial, Helvetica, sans-serif;
+}
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
 }
 #root{
   width: 100%;
@@ -30,7 +35,7 @@ body{
   color: white;
   background-color: gray;
   font-weight: bolder;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
   cursor:pointer;
 }
 .buttons:focus{
@@ -47,21 +52,12 @@ body{
   max-width: 800px;
   margin: 50px auto 0 auto;
 }
-main{
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(232, 232, 232);
-  flex-wrap: row nowrap;
-  font-family: Arial, Helvetica, sans-serif;
-}
-footer{
-  
-}
+
 /* Dashboard Header */
 
-header.dashboard__header__status {
-  background-color: rgb(229, 238, 238);
-  border: 2px rgb(108, 142, 157) solid;
+header{
+  background-color: var(--dashboard-background-color-primary);
+  border: var(--dashboard-border-primary);
   margin: 0px 0px 5px 0px;
   padding: 5px 5px 5px 5px;
   font-size: 16px;
@@ -77,22 +73,28 @@ header.dashboard__header__status > section{
 
 /* Dashboard Content */
 
+main{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: row nowrap;
+  font-family: var(--font-family-primary);
+}
 .dashboard__content__cards {
   display: flex;
   flex-basis: 380px;
   flex-direction: column;
 }
 .dashboard__content__questFlex{
-  flex-basis: 50%;
-  background-color: rgb(229, 238, 238);
-  border: 2px rgb(108, 142, 157) solid;   
+  flex-basis:180px;
+  background-color:var(--dashboard-background-color-primary);
+  border:var(--dashboard-border-primary);   
   border-bottom: none;
 }
 
 #dashboard__content__response{
   display: flex;
-  background-color:rgb(229, 238, 238);
-  border: 2px rgb(108, 142, 157) solid;
+  background-color:var(--dashboard-background-color-primary);
+  border:var(--dashboard-border-primary);
 }
 #dashboard__content__SeeResponse{
   font-weight: bolder;
@@ -171,8 +173,8 @@ header.dashboard__header__status > section{
 
 .dashboard__footer__new{
   display: flex;
-  background-color: rgb(229, 238, 238);
-  border: 2px rgb(108, 142, 157) solid;
+  background-color:var(--dashboard-background-color-primary);
+  border: var(--dashboard-border-primary);
   height: 100px;
   order:3;
 }
@@ -181,7 +183,7 @@ header.dashboard__header__status > section{
 
   text-align: center;
   flex-basis: 100%;
-  background-color:  rgb(229, 238, 238);
+  background-color: var(--dashboard-background-color-primary);
   color: black;      
   font-size: 20px;
   border: none;
@@ -197,7 +199,6 @@ header.dashboard__header__status > section{
   transition: 0s;
   font-size: 19px;  
   background-color:  rgb(202, 223, 223);
-
   border-bottom: 3px rgb(149, 166, 174) double;
 }
 @media screen and (max-width: 800px){
