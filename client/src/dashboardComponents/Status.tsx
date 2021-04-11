@@ -27,11 +27,11 @@ export default function Status({dataCards, buttonIndex}: Props) {
         <section>
             {/* Left */}
             <div className="dashboard__header__left">
-                <span>Revisado: {reviewed}</span>
+                <span>Revisado: <a className="dashboard__header__reviewed">{reviewed}</a></span>
             </div>
             {/* Right */}
             <div className="dashboard__header__right">
-                <span>Falta: {missing}</span>  
+                <span>Falta: <a className="dashboard__header__missing">{missing}</a></span>  
                 <span>Total: {total}</span>
             </div>
         </section>

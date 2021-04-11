@@ -74,6 +74,12 @@ header.dashboard__header__status > section{
   float: left;
   margin-right: 25px;
 }
+.dashboard__header__missing {
+  color: rgb(255, 0, 0);
+}
+.dashboard__header__reviewed {
+  color: rgb(0, 124, 0);
+}
 
 /* Dashboard Content */
 
