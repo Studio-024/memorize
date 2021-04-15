@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ICardOrdered } from '../domain/useCase/orderCard'
-
-interface Props {
-    dataCards: ICardOrdered[]
-    buttonIndex: number
-}
+import { Props } from './Cards'
 
 export default function Status({dataCards, buttonIndex}: Props) {
     const [reviewed, setReviewed] = useState(0)

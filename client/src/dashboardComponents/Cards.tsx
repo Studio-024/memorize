@@ -1,30 +1,30 @@
-import { useState, useEffect } from 'react';
-import { ICardOrdered } from '../domain/useCase/orderCard';
+import { useState, useEffect } from 'react'
+import { ICardOrdered } from '../domain/useCase/orderCard'
 
-interface Props{
+export interface Props {
     dataCards: ICardOrdered[]
     buttonIndex: number
 }
 
 export default function Cards({dataCards, buttonIndex}: Props) {
-    const [question, setQuestion] = useState('');
-    const [response, setResponse] = useState('');
-    const [card, setCard] = useState<ICardOrdered[]>([]);
+    const [question, setQuestion] = useState('')
+    const [response, setResponse] = useState('')
+    const [card, setCard] = useState<ICardOrdered[]>([])
 
-    useEffect(()=>{ 
+    useEffect(() => {
         setCard(dataCards)
     }, [dataCards])
 
     useEffect(() => {
         if (card.length && buttonIndex <= card.length) {
-            setQuestion(card[buttonIndex - 1].question);
-            setResponse(card[buttonIndex - 1].response);
+            setQuestion(card[buttonIndex - 1].question)
+            setResponse(card[buttonIndex - 1].response)
         }
         else {
-            setQuestion("Não há mais cards.");
-            setResponse("Não há mais cards.");
+            setQuestion("Não há mais cards.")
+            setResponse("Não há mais cards.")
         }
-    }, [buttonIndex]);
+    }, [buttonIndex])
 
 
     return(
