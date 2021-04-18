@@ -40,7 +40,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
             </section>
             
             <section className="dashboard__content__questFlex" id="dashboard__content__response">
-                <p className="dashboard__content__flexText" id="resposta" style={{display: "none"}}>{response} aa a a a a a a a a  a a a aa  a a a a a a a a a a a a a a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a a a a a a a </p>
+                <p className="dashboard__content__flexText" id="resposta" style={{display: "none"}}>{response}</p>
                 <div  className="dashboard__content__see" >                    
                     <button className="buttons" id="dashboard__content__SeeResponse" onClick={handleClick}>resposta</button>    
                 </div>     
