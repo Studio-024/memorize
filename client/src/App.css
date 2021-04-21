@@ -98,6 +98,8 @@ main{
 }
 
 #dashboard__content__response{
+  position: relative;
+
   display: flex;
   background-color:var(--dashboard-background-color-primary);
   border:var(--dashboard-border-primary);
@@ -125,6 +127,9 @@ main{
   font-size: 15px;
 }
 .dashboard__content__see{
+  position:absolute;
+  top: 40%;
+  
   display: inline-flex;
   width: 100%;
   place-content: center;

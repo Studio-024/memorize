@@ -21,7 +21,12 @@ const Dashboard = () => {
         downloadCards()
 
     }, [])
-
+    function reset(){
+        setIndex(index + 1);
+        document.getElementById("resposta")!.style.display = "none";
+        document.getElementById("dashboard__content__SeeResponse")!.style.display = "initial";
+        
+    }
 	return(
 		<div className="conteiner">
         
@@ -35,12 +40,8 @@ const Dashboard = () => {
             <Cards dataCards={orderCards} buttonIndex={index} />
 
             <section className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__erro" onClick={() => {
-                setIndex(index + 1)
-                }}>Errei</button>
-                <button className="buttons" id="dashboard__content__acerto" onClick={() => {
-                setIndex(index + 1)
-                }}>Acertei</button>
+                <button className="buttons" id="dashboard__content__erro" onClick={reset}>Errei</button>
+                <button className="buttons" id="dashboard__content__acerto" onClick={reset}>Acertei</button>
             </section>
         </main>
         
