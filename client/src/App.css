@@ -95,13 +95,14 @@ main{
   height: 100%;
   border: none;
   background-color: var(--dashboard-background-color-primary);
-
+  padding: 10px;
 }
 #dashborad__New_content__response_textArea{
   resize: none;
   height: 100%;
   border: none;
   background-color: var(--dashboard-background-color-primary);
+  padding: 10px;
 }
 #dashborad__New_content__quest_textArea:focus{
   box-shadow: 0 0 0 0;
