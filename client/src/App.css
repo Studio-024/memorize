@@ -87,25 +87,41 @@ main{
 }
 .dashboard__content__cards {
   display: flex;
-  flex-basis: 380px;
+  flex-basis: 50%;
   flex-direction: column;
 }
-.dashborad__New_content__textArea{
+#dashborad__New_content__quest_textArea{
   resize: none;
-  height: 90%;
+  border: none;
 
+}
+#dashborad__New_content__response_textArea{
+  resize: none;
+  height: 100%;
+  border: none;
+
+}
+#dashborad__New_content__quest_textArea:focus{
+  box-shadow: 0 0 0 0;
+  border: none;
+  outline: 0;
+}
+#dashborad__New_content__response_textArea:focus{
+  box-shadow: 0 0 0 0;
+  border: none;
+  outline: 0;
 }
 /* Quest */
 
 .dashboard__content__questFlex{
-  flex-basis:180px;
+  flex-basis: 180px;
   background-color:var(--dashboard-background-color-primary);
   border:var(--dashboard-border-primary);   
   border-bottom: none;
 }
 #dashbord__content__quest_input{
   display: none;
-  flex-basis: 100%;
+  flex-basis: 50%;
   height: 180px;
   flex-direction: column;
 }

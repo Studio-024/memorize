@@ -50,7 +50,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
                     <p className="dashboard__content__flexText">{question}</p>
                 </div>
                 <div id="dashbord__content__quest_input">
-                    <textarea className="dashborad__New_content__quest_textArea" value="Digite a pergunta do seu novo card aqui!"> </textarea>
+                    <textarea id="dashborad__New_content__quest_textArea" value="Digite a pergunta do seu novo card aqui!"> </textarea>
                 </div>
             </section> 
             
