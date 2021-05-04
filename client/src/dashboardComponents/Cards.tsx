@@ -30,17 +30,6 @@ export default function Cards({dataCards, buttonIndex}: Props) {
         document.getElementById("resposta")!.style.display = "inline";
      
     }
-    function a(){
-        var a = document.getElementById("dashbord__content__quest_input")!.textContent;
-        var b = document.getElementById("dashbord__content__response_input")!.textContent;
-        if(a == "Digite a pergunta do seu novo card aqui!"){
-            document.getElementById("dashbord__content__quest_input")!.nodeValue = "oi";
-        }
-        console.log(a);
-        console.log(b);
-
-    }
-    
     return(
         <>
         <section className="dashboard__content__cards">
@@ -50,7 +39,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
                     <p className="dashboard__content__flexText">{question}</p>
                 </div>
                 <div id="dashbord__content__quest_input">
-                    <textarea id="dashborad__New_content__quest_textArea" > Digite a pergunta do seu novo card aqui! </textarea>
+                    <textarea id="dashborad__New_content__quest_textArea" placeholder="Digite a pergunda do seu novo card aqui!"></textarea>
                 </div>
             </section> 
             
@@ -62,7 +51,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
                     </div>    
                 </div> 
                 <div id="dashbord__content__response_input" >
-                    <textarea id="dashborad__New_content__response_textArea" onClick={a}>Digite a resposta do seu novo card aqui! </textarea>
+                    <textarea id="dashborad__New_content__response_textArea" placeholder="Digite a resposta do seu novo card aqui!" ></textarea>
                 </div>
             </section>
             
