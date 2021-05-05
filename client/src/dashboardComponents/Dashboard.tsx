@@ -21,11 +21,15 @@ const Dashboard = () => {
         downloadCards()
 
     }, [])
-    function reset(){
+    function resetCard(){
         setIndex(index + 1);
-        document.getElementById("resposta")!.style.display = "none";
+        document.getElementById("dashboard__content__response")!.style.display = "none";
         document.getElementById("dashboard__content__SeeResponse")!.style.display = "initial";
         
+    }
+    function resetNewCard(){
+        console.log("Oi");
+
     }
 	return(
 		<div className="conteiner">
@@ -40,8 +44,10 @@ const Dashboard = () => {
             <Cards dataCards={orderCards} buttonIndex={index} />
 
             <section className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__erro" onClick={reset}>Errei</button>
-                <button className="buttons" id="dashboard__content__acerto" onClick={reset}>Acertei</button>
+                <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
+                <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
+
+                <button  className="buttons" id="dashboard__content__saveCard" onClick={resetNewCard} style={{display: "none"}}>Salvar Card</button>
             </section>
         </main>
         

@@ -27,8 +27,12 @@ export default function Cards({dataCards, buttonIndex}: Props) {
     
     function handleClick(){
         document.getElementById("dashboard__content__SeeResponse")!.style.display = "none";
-        document.getElementById("resposta")!.style.display = "inline";
+        document.getElementById("dashboard__content__response")!.style.display = "inline";
      
+    }
+    function resetNewCard(){
+        console.log("Oi");
+
     }
     return(
         <>
@@ -38,21 +42,21 @@ export default function Cards({dataCards, buttonIndex}: Props) {
                 <div id="dashbord__content__quest_output">
                     <p className="dashboard__content__flexText">{question}</p>
                 </div>
-                <div id="dashbord__content__quest_input">
-                    <textarea id="dashborad__New_content__quest_textArea" placeholder="Digite a pergunda do seu novo card aqui!"></textarea>
-                </div>
+                <form id="dashbord__content__quest_input">
+                    <textarea id="dashborad__New_content__quest_textArea" onClick={resetNewCard} placeholder="Digite a pergunda do seu novo card aqui!"></textarea>
+                </form>
             </section> 
             
-            <section className="dashboard__content__questFlex" id="dashboard__content__response">
+            <section className="dashboard__content__questFlex" id="dashboard__content__section_response">
                 <div id="dashbord__content__response_output">
-                    <p className="dashboard__content__flexText" id="resposta" style={{display: "none"}}>{response}</p>
+                    <p id="dashboard__content__response" style={{display: "none"}}>{response}</p>
                     <div  className="dashboard__content__see" >                    
-                        <button className="buttons" id="dashboard__content__SeeResponse" onClick={handleClick}>resposta</button>    
-                    </div>    
+                        <button className="buttons" id="dashboard__content__SeeResponse" onClick={handleClick}>Resposta</button>    
+                    </div>   
                 </div> 
-                <div id="dashbord__content__response_input" >
+                <form id="dashbord__content__response_input" onReset={resetNewCard} >
                     <textarea id="dashborad__New_content__response_textArea" placeholder="Digite a resposta do seu novo card aqui!" ></textarea>
-                </div>
+                </form>
             </section>
             
         </section>

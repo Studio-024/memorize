@@ -131,7 +131,7 @@ main{
 
 /* Response */
 
-#dashboard__content__response{
+#dashboard__content__section_response{
   position: relative;
   display: flex;
   background-color:var(--dashboard-background-color-primary);
@@ -158,6 +158,14 @@ main{
   padding: 10px 10px 10px 10px;
   margin: 0px;
   font-size: 15px;
+}
+#dashbord__content__response_output{
+  padding: 10px;
+  width: 100%;
+}
+#dashboard__content__response{
+  font-size: 15px;
+  width: 100%;
 }
 .dashboard__content__see{
   position:absolute;
@@ -222,7 +230,13 @@ main{
   background-color: rgb(177, 36, 43);
   
 }
+#dashboard__content__saveCard{
+  background-color: rgb(48, 109, 146);
+  font-size: 15px;
+  padding: 10px 25px 10px 25px;
 
+  transition: 0.3s;
+}
 /* flex-conteiner Dashboard Footer */
 
 .dashboard__footer__new{
@@ -256,6 +270,7 @@ main{
   border-bottom: 3px rgb(149, 166, 174) double;
 }
 #dashboard__footer__Cards{   
+  transition: 10s;
   width: 100%;
   transition: 0.2s;
   text-align: center;
