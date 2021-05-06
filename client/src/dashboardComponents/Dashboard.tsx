@@ -28,7 +28,14 @@ const Dashboard = () => {
         
     }
     function resetNewCard(){
-        console.log("Oi");
+        const app = document.getElementsByClassName("conteiner")[0];
+        const p = document.createElement("div");
+        p.classList.add("dashboard__alert")
+        p.textContent = "Card Adicionado!";
+        app?.appendChild(p);
+        setTimeout(() => {
+            p.parentNode?.removeChild(p);
+        }, 10000);
 
     }
 	return(

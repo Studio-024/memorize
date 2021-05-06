@@ -31,6 +31,8 @@ export default function Cards({dataCards, buttonIndex}: Props) {
      
     }
     function resetNewCard(){
+        document.getElementById("dashboard__content__response");
+        
         console.log("Oi");
 
     }

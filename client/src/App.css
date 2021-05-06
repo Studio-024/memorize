@@ -44,6 +44,7 @@ body{
 /* CSS flex-conteiner */
 
 .conteiner{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -136,6 +137,29 @@ main{
   display: flex;
   background-color:var(--dashboard-background-color-primary);
   border:var(--dashboard-border-primary);
+}
+.dashboard__alert{
+  transition: 2s;
+  position: fixed;
+  place-self: center;
+  display: flex;
+  top: -150px;
+  transition: 2s;
+  animation: alert 6s 1;
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: var(--dashboard-background-color-primary);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: var(--dashboard-border-primary);
+}
+@keyframes alert{
+  0% {top: -100px;}
+  50% {top: -25px;}
+  100% {top: -150px;}
+
 }
 #dashboard__content__SeeResponse{
   font-weight: bolder;
