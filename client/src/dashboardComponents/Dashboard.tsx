@@ -29,11 +29,12 @@ const Dashboard = () => {
     }
     function confirmCard(){
         
-        const app = document.getElementsByClassName("conteiner")[0];
+        //Card confirmation alert 
+        const container = document.getElementsByClassName("conteiner")[0];
         const div = document.createElement("div");
         div.classList.add("dashboard__alert")
         div.textContent = "Card Adicionado!";
-        app?.appendChild(div);
+        container?.appendChild(div);
         setTimeout(() => {
             div.parentNode?.removeChild(div);
         }, 10000);
@@ -61,12 +62,10 @@ const Dashboard = () => {
 	return(
 		<div className="conteiner">
         
-        {/* Header */}
         <header className="dashboard__header__status">
             <Status dataCards={orderCards} buttonIndex={index}/>
         </header>
 
-        {/* Main */}
         <main>
             <Cards dataCards={orderCards} buttonIndex={index} />
 
@@ -78,7 +77,6 @@ const Dashboard = () => {
             </section>
         </main>
         
-        {/* Footer */}
         <footer>
             <New/>
         </footer>
