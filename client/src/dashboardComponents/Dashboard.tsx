@@ -27,15 +27,35 @@ const Dashboard = () => {
         document.getElementById("dashboard__content__SeeResponse")!.style.display = "initial";
         
     }
-    function resetNewCard(){
+    function confirmCard(){
+        
         const app = document.getElementsByClassName("conteiner")[0];
-        const p = document.createElement("div");
-        p.classList.add("dashboard__alert")
-        p.textContent = "Card Adicionado!";
-        app?.appendChild(p);
+        const div = document.createElement("div");
+        div.classList.add("dashboard__alert")
+        div.textContent = "Card Adicionado!";
+        app?.appendChild(div);
         setTimeout(() => {
-            p.parentNode?.removeChild(p);
+            div.parentNode?.removeChild(div);
         }, 10000);
+
+        //Reset input Quest cards
+        const dashboard__New_content__quest_textArea_Remove = document.getElementById("dashboard__New_content__quest_textArea");
+        dashboard__New_content__quest_textArea_Remove?.parentNode?.removeChild(dashboard__New_content__quest_textArea_Remove);
+        const dashboard__content__quest_input = document.getElementById("dashboard__content__quest_input");
+        const dashboard__New_content__quest_textArea = document.createElement("textarea");
+        dashboard__content__quest_input?.appendChild(dashboard__New_content__quest_textArea);
+        dashboard__New_content__quest_textArea.setAttribute("id", "dashboard__New_content__quest_textArea")
+        dashboard__New_content__quest_textArea.setAttribute("placeholder", "Digite a pergunda do seu novo card aqui!")
+
+        //Reset input Response Card
+        const dashboard__New_content__response_textArea_Remove = document.getElementById("dashboard__New_content__response_textArea")
+        dashboard__New_content__response_textArea_Remove?.parentNode?.removeChild(dashboard__New_content__response_textArea_Remove);
+        const dashbord__content__response_input = document.getElementById("dashboard__content__response_input");
+        const dashboard__New_content__response_textArea = document.createElement("textarea");
+        dashbord__content__response_input?.appendChild(dashboard__New_content__response_textArea);
+        dashboard__New_content__response_textArea.setAttribute("id", "dashboard__New_content__response_textArea")
+        dashboard__New_content__response_textArea.setAttribute("placeholder", "Digite a resposta do seu novo card aqui!")
+
 
     }
 	return(
@@ -54,7 +74,7 @@ const Dashboard = () => {
                 <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
                 <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
 
-                <button  className="buttons" id="dashboard__content__saveCard" onClick={resetNewCard} style={{display: "none"}}>Salvar Card</button>
+                <button  className="buttons" id="dashboard__content__saveCard" onClick={confirmCard} style={{display: "none"}}>Salvar Card</button>
             </section>
         </main>
         

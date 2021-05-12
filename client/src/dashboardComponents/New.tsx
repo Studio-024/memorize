@@ -5,24 +5,24 @@ export default function New(){
     
     function NewCards(){
 
-        document.getElementById("dashbord__content__quest_output")!.style.display = "none";
-        document.getElementById("dashbord__content__response_output")!.style.display = "none";
+        document.getElementById("dashboard__content__quest_output")!.style.display = "none";
+        document.getElementById("dashboard__content__response_output")!.style.display = "none";
         document.getElementById("dashboard__footer__NewCard")!.style.display = "none";
         document.getElementById("dashboard__content__acerto")!.style.display = "none";
         document.getElementById("dashboard__content__erro")!.style.display = "none";
         
     
         document.getElementById("dashboard__content__saveCard")!.style.display = "initial";
-        document.getElementById("dashbord__content__quest_input")!.style.display = "flex";
-        document.getElementById("dashbord__content__response_input")!.style.display = "flex";
+        document.getElementById("dashboard__content__quest_input")!.style.display = "flex";
+        document.getElementById("dashboard__content__response_input")!.style.display = "flex";
         document.getElementById("dashboard__footer__Cards")!.style.display = "initial";
         // document.getElementById(" dashborad__New_content__quest_textArea")!.style.display = "initial";
         // document.getElementById("dashborad__New_content__response_textArea")!.style.display = "initial";
         
     }
     function Cards(){
-        document.getElementById("dashbord__content__quest_input")!.style.display = "none";
-        document.getElementById("dashbord__content__response_input")!.style.display = "none";
+        document.getElementById("dashboard__content__quest_input")!.style.display = "none";
+        document.getElementById("dashboard__content__response_input")!.style.display = "none";
         document.getElementById("dashboard__footer__Cards")!.style.display = "none";
         document.getElementById("dashboard__content__saveCard")!.style.display = "none";
 
@@ -31,8 +31,8 @@ export default function New(){
         
         document.getElementById("dashboard__content__acerto")!.style.display = "initial";
         document.getElementById("dashboard__content__erro")!.style.display = "initial";
-        document.getElementById("dashbord__content__quest_output")!.style.display = "initial";
-        document.getElementById("dashbord__content__response_output")!.style.display = "initial";
+        document.getElementById("dashboard__content__quest_output")!.style.display = "initial";
+        document.getElementById("dashboard__content__response_output")!.style.display = "initial";
         document.getElementById("dashboard__footer__NewCard")!.style.display = "initial";
 
     }
