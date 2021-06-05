@@ -39,8 +39,8 @@ const Dashboard = () => {
             <Cards dataCards={orderCards} buttonIndex={index} />
 
             <section className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
-                <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
+                <button className="buttons" id="dashboard__content__saveCard">Salvar Card</button>
+
             </section>
         </main>
         

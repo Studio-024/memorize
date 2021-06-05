@@ -6,7 +6,7 @@ export default function New(){
     
     return(
     <section className="dashboard__footer__new">
-            <button id="dashboard__footer__NewCard" >Criar Flashcard</button>
+            <button id="dashboard__footer__Cards">Voltar aos Flashcard</button>
     </section>
 
 
