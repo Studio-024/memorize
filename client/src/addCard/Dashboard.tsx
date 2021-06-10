@@ -29,7 +29,7 @@ const Dashboard = () => {
     }
 
 	return(
-        <div className="conteiner">
+        <div className="conteiner" id="containerNewCard" style={{display: "none"}}>
         
         <header className="dashboard__header__status">
             <Status dataCards={orderCards} buttonIndex={index}/>

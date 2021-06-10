@@ -6,6 +6,9 @@ import { OrderCardService } from '../service/OrderCardService';
 import { getCard } from '../service/apiData';
 import { ICardOrdered } from '../domain/useCase/orderCard';
 
+interface pro{
+    state: React.Dispatch<React.SetStateAction<number>>
+}
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
@@ -29,7 +32,7 @@ const Dashboard = () => {
     }
 
 	return(
-        <div className="conteiner">
+        <div className="conteiner" id="containerCard">
         
         <header className="dashboard__header__status">
             <Status dataCards={orderCards} buttonIndex={index}/>

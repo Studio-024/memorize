@@ -190,12 +190,10 @@ main{
 .dashboard__content__flexText{
   display: inline-flex;
   flex-basis: 100%;
-  padding: 10px 10px 10px 10px;
   margin: 0px;
   font-size: 15px;
 }
 #dashboard__content__response_output{
-  padding: 10px;
   width: 100%;
 }
 #dashboard__content__response{
