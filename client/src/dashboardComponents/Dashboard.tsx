@@ -6,10 +6,6 @@ import { OrderCardService } from '../service/OrderCardService';
 import { getCard } from '../service/apiData';
 import { ICardOrdered } from '../domain/useCase/orderCard';
 
-interface pro{
-    state: React.Dispatch<React.SetStateAction<number>>
-}
-
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
