@@ -1,14 +1,10 @@
 import Status from './Status';
 import Cards from './Cards';
 import New from './New';
-import {useEffect, useState } from 'react';
-import { OrderCardService } from '../service/OrderCardService';
+import { useEffect, useState } from 'react';
 import { getCard } from '../service/apiData';
 import { ICardOrdered } from '../domain/useCase/orderCard';
-
-interface pro{
-    state: React.Dispatch<React.SetStateAction<number>>
-}
+import { OrderCardService } from '../service/OrderCardService';
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
@@ -34,25 +30,26 @@ const Dashboard = () => {
 	return(
         <div className="conteiner" id="containerCard">
         
-        <header className="dashboard__header__status">
-            <Status dataCards={orderCards} buttonIndex={index}/>
-        </header>
+            <header className="dashboard__header__status">
+                <Status dataCards={orderCards} buttonIndex={index}/>
+            </header>
 
-        <main>
-            <Cards dataCards={orderCards} buttonIndex={index} />
+            <main>
+                <Cards dataCards={orderCards} buttonIndex={index} />
 
-            <section className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
-                <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
-            </section>
-        </main>
-        
-        <footer>
-            <New/>
-        </footer>
-            {/*Printa o cod*/}
+                <section className="dashboard__content__next">
+                    <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
+                    <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
+                </section>
+            </main>
+            
+            <footer>
+                <New/>
+            </footer>
+                {/*Printa o cod*/}
             <div className="three" id="print_cod"></div>
-    </div>
+            
+        </div>
 	);
 }
 
