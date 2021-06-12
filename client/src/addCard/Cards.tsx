@@ -36,7 +36,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
         <section className="dashboard__content__cards">
             
                 <div className="dashboard__content__questFlex"  id="dashboard__content__quest_input">
-                    <textarea id="dashboard__New_content__quest_textArea" onClick={resetNewCard} placeholder="Digite a pergunda do seu novo card aqui!"></textarea>
+                    <textarea id="dashboard__New_content__quest_textArea" onClick={resetNewCard} placeholder="Digite a pergunda do seu novo card aqui!" ></textarea>
                 </div>
             
                 <div className="dashboard__content__questFlex" id="dashboard__content__response_input" onReset={resetNewCard} >
