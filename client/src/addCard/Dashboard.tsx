@@ -20,7 +20,12 @@ const Dashboard = () => {
         downloadCards()
 
     }, [])
-    
+    function resetCard(){
+        setIndex(index + 1);
+        document.getElementById("dashboard__content__response")!.style.display = "none";
+        document.getElementById("dashboard__content__SeeResponse")!.style.display = "initial";
+        
+    }
     function saveCard(){
            
         //Reset input Quest cards

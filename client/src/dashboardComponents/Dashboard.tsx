@@ -4,10 +4,8 @@ import New from './New';
 import { useEffect, useState } from 'react';
 import { getCard } from '../service/apiData';
 import { ICardOrdered } from '../domain/useCase/orderCard';
-<<<<<<< HEAD
 import { OrderCardService } from '../service/OrderCardService';
-=======
->>>>>>> b3c2541fa6d7d094bf2c1b76274364b46b86d354
+
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
