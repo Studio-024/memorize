@@ -25,11 +25,6 @@ export default function Cards({dataCards, buttonIndex}: Props) {
         }
     }, [buttonIndex]);
     
-    function handleClick(){
-        document.getElementById("dashboard__content__SeeResponse")!.style.display = "none";
-        document.getElementById("dashboard__content__response")!.style.display = "inline";
-     
-    }
     function resetNewCard(){
         document.getElementById("dashboard__content__response");
         

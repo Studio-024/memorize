@@ -4,9 +4,8 @@
 export default function New(){
     
     function backCard(){
-        const NewCard = document.getElementById('containerCard')!.style.display = "flex";
-        const flashCards = document.getElementById('containerNewCard')!.style.display = "none";
-        
+        document.getElementById('containerCard')!.style.display = "flex";
+        document.getElementById('containerNewCard')!.style.display = "none";
         
     }
 
