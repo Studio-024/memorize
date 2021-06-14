@@ -28,10 +28,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
     }, [buttonIndex]);
     
    
-    function colect(e: any){
-        setAreaQuest(e.target.value)
-        
-    }
+    
     function reset(){
         setAreaQuest('')
         setAreaResponse('')
