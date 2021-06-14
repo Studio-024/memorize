@@ -112,6 +112,7 @@ main{
   border: none;
   background-color: var(--dashboard-background-color-primary);
   padding: 0px;
+
 }
 #dashboard__New_content__quest_textArea:focus{
   box-shadow: 0 0 0 0;
@@ -128,6 +129,7 @@ main{
 /* Quest */
 
 .dashboard__content__questFlex{
+
   flex-basis: 180px;
   padding: 0.5rem;
   background-color:var(--dashboard-background-color-primary);

@@ -27,7 +27,7 @@ const Dashboard = () => {
         
     }
     function saveCard(){
-           
+        
         //Reset input Quest cards
         const dashboard__New_content__quest_textArea_Remove = document.getElementById("dashboard__New_content__quest_textArea");
         dashboard__New_content__quest_textArea_Remove?.parentNode?.removeChild(dashboard__New_content__quest_textArea_Remove);
@@ -57,10 +57,7 @@ const Dashboard = () => {
         <main>
             <Cards dataCards={orderCards} buttonIndex={index} />
 
-            <section className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__saveCard" onClick={saveCard}>Salvar Card</button>
-
-            </section>
+            
         </main>
         
         <footer>
