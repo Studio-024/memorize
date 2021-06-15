@@ -27,11 +27,18 @@ export default function Cards({dataCards, buttonIndex}: Props) {
         }
     }, [buttonIndex]);
     
-   
-    
-    function reset(){
-        setAreaQuest('')
-        setAreaResponse('')
+    function saveCards(){
+        //Esse comentario é para ajudar o Pedro:
+        //Quando for mandar para o back-end, faça nessa function aqui
+        // Antes dos comandos abaixo.
+
+        if(areaQuest == '' || areaResponse == ''){
+            console.error('404 Bad Request');
+        }
+        else{
+            setAreaQuest('');
+            setAreaResponse('');
+        }
     }
     return(
         <>
@@ -46,7 +53,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
             
         </section>
         <section className="dashboard__content__next">
-                <button className="buttons" id="dashboard__content__saveCard" onClick={reset}>Salvar Card</button>
+                <button className="buttons" id="dashboard__content__saveCard" onClick={saveCards}>Salvar Card</button>
 
             </section>
         </>
