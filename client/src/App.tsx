@@ -1,7 +1,7 @@
 import './App.css';
-import Dashboard from './dashboardComponents/Dashboard';
+import Dashboard from './components/Dashboard';
 import AddCard from './addCard/Dashboard';
-import {getCard} from './service/apiData';
+import {getCard} from './service/api';
 
 
 

@@ -2,7 +2,7 @@ import Status from './Status';
 import Cards from './Cards';
 import New from './New';
 import { useEffect, useState } from 'react';
-import { getCard } from '../service/apiData';
+import { getCard } from '../service/api';
 import { ICardOrdered } from '../domain/useCase/orderCard';
 import { OrderCardService } from '../service/OrderCardService';
 

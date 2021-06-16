@@ -4,7 +4,7 @@ export default function Cards() {
     const [areaQuest, setAreaQuest] = useState('');
     const [areaResponse, setAreaResponse] = useState('');
     
-    function saveCards(){
+    function saveCards() {
         setAreaQuest('');
         setAreaResponse('');
     }
@@ -22,7 +22,8 @@ export default function Cards() {
         </section>
         <section className="dashboard__content__next">
                 <button className="buttons" id="dashboard__content__saveCard" onClick={saveCards}>Salvar Card</button>
-        </section>
+
+            </section>
         </>
     );
 }

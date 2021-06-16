@@ -81,7 +81,7 @@ header.dashboard__header__status > section{
 
 /* flex-container Dashboard Content */
 
-/* DashboardComponents */
+/* components */
 main{
   display: flex;
   flex-direction: column;

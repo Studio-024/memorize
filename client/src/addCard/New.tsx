@@ -1,9 +1,9 @@
 // import ReturnCards from './ReturnCards';
 // import ReturnC from './ReturnCards';
 
-export default function New(){
+export default function New() {
     
-    function backCard(){
+    function backCard() {
         document.getElementById('containerCard')!.style.display = "flex";
         document.getElementById('containerNewCard')!.style.display = "none";
     }
