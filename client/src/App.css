@@ -42,9 +42,9 @@ body{
 .buttons:focus{
   border: 1px aqua solid;
 }
-/* CSS flex-conteiner */
+/* CSS flex-container */
 
-.conteiner{
+.container{
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -55,7 +55,7 @@ body{
   margin: 50px auto 0 auto;
 }
 
-/* flex-conteiner Dashboard Header */
+/* flex-container Dashboard Header */
 
 header{
   background-color: var(--dashboard-background-color-primary);
@@ -79,7 +79,7 @@ header.dashboard__header__status > section{
   color: rgb(0, 124, 0);
 }
 
-/* flex-conteiner Dashboard Content */
+/* flex-container Dashboard Content */
 
 /* DashboardComponents */
 main{
@@ -271,7 +271,7 @@ main{
 
   transition: 0.3s;
 }
-/* flex-conteiner Dashboard Footer */
+/* flex-container Dashboard Footer */
 
 .dashboard__footer__new{
   display: flex;
@@ -328,7 +328,7 @@ main{
   border-bottom: 3px rgb(149, 166, 174) double;
 }
 @media screen and (max-width: 800px){
-  .conteiner{
+  .container{
     padding: 3% 10% 10% 10%;
   }
 }

@@ -1,44 +1,12 @@
-import { useState, useEffect, FocusEventHandler } from 'react';
-import { ICardOrdered } from '../domain/useCase/orderCard';
+import { useState } from 'react';
 
-export interface Props{
-    dataCards: ICardOrdered[]
-    buttonIndex: number
-}
-
-export default function Cards({dataCards, buttonIndex}: Props) {
-    const [question, setQuestion] = useState('');
-    const [response, setResponse] = useState('');
-    const [card, setCard] = useState<ICardOrdered[]>([]);
+export default function Cards() {
     const [areaQuest, setAreaQuest] = useState('');
     const [areaResponse, setAreaResponse] = useState('');
-    useEffect(()=>{ 
-        setCard(dataCards)
-    }, [dataCards])
-
-    useEffect(() => {
-        if (card.length && buttonIndex <= card.length) {
-            setQuestion(card[buttonIndex - 1].question);
-            setResponse(card[buttonIndex - 1].response);
-        }
-        else {
-            setQuestion("Não há mais cards.");
-            setResponse("Não há mais cards.");
-        }
-    }, [buttonIndex]);
     
     function saveCards(){
-        //Esse comentario é para ajudar o Pedro:
-        //Quando for mandar para o back-end, faça nessa function aqui
-        // Antes dos comandos abaixo.
-
-        if(areaQuest == '' || areaResponse == ''){
-            console.error('404 Bad Request');
-        }
-        else{
-            setAreaQuest('');
-            setAreaResponse('');
-        }
+        setAreaQuest('');
+        setAreaResponse('');
     }
     return(
         <>
@@ -54,8 +22,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
         </section>
         <section className="dashboard__content__next">
                 <button className="buttons" id="dashboard__content__saveCard" onClick={saveCards}>Salvar Card</button>
-
-            </section>
+        </section>
         </>
     );
 }
