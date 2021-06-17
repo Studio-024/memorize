@@ -1,12 +1,17 @@
 import { useState } from 'react'
+import { saveCard } from '../service/api'
 
 export default function Cards() {
     const [areaQuest, setAreaQuest] = useState('')
     const [areaResponse, setAreaResponse] = useState('')
     
-    function saveCards() {
-        setAreaQuest('')
-        setAreaResponse('')
+    function handleAdd() {
+        saveCard(areaQuest, areaResponse)
+        function resetTextArea() {
+            setAreaQuest('')
+            setAreaResponse('')
+        }
+        resetTextArea()
     }
     return(
         <>
@@ -23,7 +28,7 @@ export default function Cards() {
 
         <section className="dashboard__content__next">
 
-            <button className="buttons" id="dashboard__content__saveCard" onClick={saveCards}>Salvar Card</button>
+            <button className="buttons" id="dashboard__content__saveCard" onClick={handleAdd}>Salvar Card</button>
 
         </section>
         </>
