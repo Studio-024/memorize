@@ -1,8 +1,8 @@
-import Status from '../components/Status';
-import Cards from './Cards';
-import New from './New';
-import { useState } from 'react';
-import { ICardOrdered } from '../domain/useCase/orderCard';
+import Status from '../components/Status'
+import Cards from './Cards'
+import New from './New'
+import { useState } from 'react'
+import { ICardOrdered } from '../domain/useCase/orderCard'
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
@@ -22,7 +22,7 @@ const Dashboard = () => {
                 <New/>
             </footer>
         </div>
-	);
+	)
 }
 
-export default Dashboard;
+export default Dashboard

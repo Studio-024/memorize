@@ -1,8 +1,8 @@
-import { ICard } from "../entities/Card";
+import { ICard } from "../entities/Card"
 
 export interface ICardOrdered {
-    question: string;
-    response: string;
+    question: string
+    response: string
 }
 
 export interface OrderCardUseCase {

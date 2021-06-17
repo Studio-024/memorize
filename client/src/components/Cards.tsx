@@ -1,5 +1,5 @@
-import { useState, useEffect, FocusEventHandler } from 'react';
-import { ICardOrdered } from '../domain/useCase/orderCard';
+import { useState, useEffect } from 'react'
+import { ICardOrdered } from '../domain/useCase/orderCard'
 
 export interface Props{
     dataCards: ICardOrdered[]
@@ -7,27 +7,28 @@ export interface Props{
 }
 
 export default function Cards({dataCards, buttonIndex}: Props) {
-    const [question, setQuestion] = useState('');
-    const [response, setResponse] = useState('');
-    const [card, setCard] = useState<ICardOrdered[]>([]);
-    useEffect(()=>{ 
+    const [question, setQuestion] = useState('')
+    const [response, setResponse] = useState('')
+    const [card, setCard] = useState<ICardOrdered[]>([])
+
+    useEffect(() => {
         setCard(dataCards)
     }, [dataCards])
 
     useEffect(() => {
         if (card.length && buttonIndex <= card.length) {
-            setQuestion(card[buttonIndex - 1].question);
-            setResponse(card[buttonIndex - 1].response);
+            setQuestion(card[buttonIndex - 1].question)
+            setResponse(card[buttonIndex - 1].response)
         }
         else {
-            setQuestion("Não há mais cards.");
-            setResponse("Não há mais cards.");
+            setQuestion("Não há mais cards.")
+            setResponse("Não há mais cards.")
         }
-    }, [buttonIndex]);
+    }, [buttonIndex])
     
-    function handleClick(){
-        document.getElementById("dashboard__content__SeeResponse")!.style.display = "none";
-        document.getElementById("dashboard__content__response")!.style.display = "inline";
+    function handleClick() {
+        document.getElementById("dashboard__content__SeeResponse")!.style.display = "none"
+        document.getElementById("dashboard__content__response")!.style.display = "inline"
      
     }
     return(
@@ -43,13 +44,13 @@ export default function Cards({dataCards, buttonIndex}: Props) {
             <section className="dashboard__content__questFlex" id="dashboard__content__section_response">
                 <div id="dashboard__content__response_output">
                     <p id="dashboard__content__response" style={{display: "none"}}>{response}</p>
-                    <div  className="dashboard__content__see" >                    
+                    <div className="dashboard__content__see">                    
                         <button className="buttons" id="dashboard__content__SeeResponse" onClick={handleClick}>Resposta</button>    
-                    </div>   
+                    </div>
                 </div>
             </section>
             
         </section>
         </>
-    );
+    )
 }
