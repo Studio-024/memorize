@@ -13,12 +13,12 @@ export default function Status({dataCards, buttonIndex}: Props) {
     useEffect(() => {
         if(dataCards && buttonIndex > 0 && buttonIndex <= dataCards.length) {
             setReviewed(reviewed + 1)
-            setMissing(dataCards.length - reviewed - 1) //n adianta colocar antes kk
+            setMissing(dataCards.length - reviewed - 1)
         }
 
     }, [buttonIndex])
 
-    return(
+    return (
         <section>
             {/* Left */}
             <div className="dashboard__header__left">

@@ -21,6 +21,7 @@ body{
 }
 /*CSS Independentes*/
 
+
 .hide{
   display: none;
 }
@@ -41,9 +42,10 @@ body{
 .buttons:focus{
   border: 1px aqua solid;
 }
-/* CSS flex-conteiner */
+/* CSS flex-container */
 
-.conteiner{
+.container{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -53,7 +55,7 @@ body{
   margin: 50px auto 0 auto;
 }
 
-/* Dashboard Header */
+/* flex-container Dashboard Header */
 
 header{
   background-color: var(--dashboard-background-color-primary);
@@ -77,8 +79,9 @@ header.dashboard__header__status > section{
   color: rgb(0, 124, 0);
 }
 
-/* Dashboard Content */
+/* flex-container Dashboard Content */
 
+/* components */
 main{
   display: flex;
   flex-direction: column;
@@ -87,22 +90,89 @@ main{
 }
 .dashboard__content__cards {
   display: flex;
-  flex-basis: 380px;
+  flex-basis: 50%;
   flex-direction: column;
 }
+
+/* addCard */
+#dashboard__New_content__quest_textArea{
+  display: inline-block;
+  resize: none;
+  height: 180px;
+  width: 100%;
+  border: none;
+  background-color: var(--dashboard-background-color-primary);
+  padding: 0px;
+}
+#dashboard__New_content__response_textArea{
+  resize: none;
+  height: 180px;
+  width: 100%;
+
+  border: none;
+  background-color: var(--dashboard-background-color-primary);
+  padding: 0px;
+
+}
+#dashboard__New_content__quest_textArea:focus{
+  box-shadow: 0 0 0 0;
+  border: none;
+  outline: 0;
+}
+#dashboard__New_content__response_textArea:focus{
+  box-shadow: 0 0 0 0;
+  border: none;
+  outline: 0;
+}
+
+
+/* Quest */
+
 .dashboard__content__questFlex{
-  flex-basis:180px;
+
+  flex-basis: 180px;
+  padding: 0.5rem;
   background-color:var(--dashboard-background-color-primary);
   border:var(--dashboard-border-primary);   
   border-bottom: none;
 }
 
-#dashboard__content__response{
-  position: relative;
+#dashboard__content__quest_input{
+  height: 100%;
 
+  flex-direction: column;
+}
+
+/* Response */
+
+#dashboard__content__section_response{
+  position: relative;
   display: flex;
   background-color:var(--dashboard-background-color-primary);
   border:var(--dashboard-border-primary);
+}
+.dashboard__alert{
+  transition: 2s;
+  position: fixed;
+  place-self: center;
+  display: flex;
+  top: -150px;
+  transition: 2s;
+  animation: alert 6s 1;
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: var(--dashboard-background-color-primary);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: var(--dashboard-border-primary);
+}
+@keyframes alert{
+  0% {top: -100px;}
+  50% {top: -25px;}
+  100% {top: -150px;}
+
 }
 #dashboard__content__SeeResponse{
   font-weight: bolder;
@@ -122,9 +192,15 @@ main{
 .dashboard__content__flexText{
   display: inline-flex;
   flex-basis: 100%;
-  padding: 10px 10px 10px 10px;
   margin: 0px;
   font-size: 15px;
+}
+#dashboard__content__response_output{
+  width: 100%;
+}
+#dashboard__content__response{
+  font-size: 15px;
+  width: 100%;
 }
 .dashboard__content__see{
   position:absolute;
@@ -136,6 +212,15 @@ main{
   place-items: center;
   transition: 2s;
 }
+
+#dashboard__content__response_input{
+  height: 100%;
+  flex-direction: column;
+  border-bottom: var(--dashboard-border-primary);
+}
+
+/* Buttons of Next Cards */
+
 .dashboard__content__next{
   display: inline-flex;
   place-content: center;  
@@ -179,8 +264,14 @@ main{
   background-color: rgb(177, 36, 43);
   
 }
+#dashboard__content__saveCard{
+  background-color: rgb(48, 109, 146);
+  font-size: 15px;
+  padding: 10px 25px 10px 25px;
 
-/* Dashboard Footer */
+  transition: 0.3s;
+}
+/* flex-container Dashboard Footer */
 
 .dashboard__footer__new{
   display: flex;
@@ -212,8 +303,32 @@ main{
   background-color:  rgb(202, 223, 223);
   border-bottom: 3px rgb(149, 166, 174) double;
 }
+#dashboard__footer__Cards{   
+  transition: 10s;
+  width: 100%;
+  transition: 0.2s;
+  text-align: center;
+  flex-basis: 100%;
+  background-color: var(--dashboard-background-color-primary);
+  color: black;      
+  font-size: 20px;
+  border: none;
+}
+#dashboard__footer__Cards:hover{   
+  transition: 0.6s;
+  background-color:  rgb(217, 240, 240);
+
+  cursor:pointer;  
+  border: 1px rgb(171, 192, 192) solid ;
+}
+#dashboard__footer__Cards:active{ 
+  transition: 0s;
+  font-size: 19px;  
+  background-color:  rgb(202, 223, 223);
+  border-bottom: 3px rgb(149, 166, 174) double;
+}
 @media screen and (max-width: 800px){
-  .conteiner{
+  .container{
     padding: 3% 10% 10% 10%;
   }
 }
