@@ -1,4 +1,4 @@
-import './App.css'
+import './css/App.css'
 import Dashboard from './components/Dashboard'
 import AddCard from './addCard/Dashboard'
 import {getCard} from './service/api'

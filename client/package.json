@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cra-template-typescript": "1.1.2",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-native": "^0.64.0",
@@ -14,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "node-sass -w ./src/scss -o ./src/css"
   },
   "eslintConfig": {
     "extends": [
