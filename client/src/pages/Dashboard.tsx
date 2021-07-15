@@ -1,6 +1,4 @@
-import Status from './Status'
-import Cards from './Cards'
-import New from './New'
+import Cards from '../components/Cards'
 import { getCard } from '../service/api'
 import { useEffect, useState } from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
@@ -30,23 +28,13 @@ const Dashboard = () => {
 
 	return(
         <div className="container" id="containerCard">
-        
-            <header className="dashboard__header__status">
-                <Status dataCards={orderCards} buttonIndex={index} />
-            </header>
-
             <main>
-                <Cards dataCards={orderCards} buttonIndex={index} />
-
-                <section className="dashboard__content__next">
+                <Cards dataCards={orderCards} buttonIndex={index}/>
+                <div className="dashboard__content__next">
                     <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
                     <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
-                </section>
+                </div>
             </main>
-            
-            <footer>
-                <New/>
-            </footer>
             
         </div>
 	)
