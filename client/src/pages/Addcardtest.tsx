@@ -7,12 +7,12 @@ const AddCardTest = () => {
     
 	return(
 
-            <main>
-              <textarea name="" id="">test</textarea>
-              <span>Test</span>
-              <div >test</div>
-            </main>
-            
+    <main>
+      <textarea name="" id="">test</textarea>
+      <span>Test</span>
+      <div >test</div>
+    </main>
+    
 	)
 }
 

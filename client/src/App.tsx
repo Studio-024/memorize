@@ -5,8 +5,8 @@ import AddCardTest from './pages/Addcardtest'
 export default function App() {
 	return(
 		<>
-			{/* <Dashboard/> */}
-			<AddCardTest/>
+			<Dashboard/>
+			{/* <AddCardTest/> */}
 		</>
 	)
 }
