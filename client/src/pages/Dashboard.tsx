@@ -35,7 +35,6 @@ const Dashboard = () => {
                     <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
                 </div>
             </main>
-            
         </div>
 	)
 }
