@@ -6,7 +6,7 @@ export interface ICardMysqlViewModel extends ICardViewModel, RowDataPacket{
     cod: number,
     question: String,
     response: String,
-    timeEnd?: Date,
-    timeNext?: Date
+    timeEnd: Date,
+    timeNext: Date
 }
       
