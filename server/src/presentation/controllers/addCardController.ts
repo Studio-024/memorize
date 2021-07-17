@@ -10,7 +10,7 @@ export class addCardController implements IController{
     ){}
 
     async handle (request: HttpRequest): Promise<HttpResponse> {
-        const requiredParans = ['question', 'response', 'timeEnd', 'timeNext']
+        const requiredParans = ['question', 'response']
 
         for(const param of requiredParans){
             if(!request.body[param]){
