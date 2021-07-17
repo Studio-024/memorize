@@ -3,6 +3,6 @@ export type ICard = {
             
     question: string
     response: string
-    timeEnd: Date
-    timeNext: Date
+    timeEnd?: Date
+    timeNext?: Date
 }

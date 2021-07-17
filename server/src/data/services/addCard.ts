@@ -10,9 +10,9 @@ export class AddCardService implements ICreateCard {
 
     async save(card: ICardViewModel){
 
-        if(card.timeNext <= card.timeEnd){
-            throw new ErrorREST(badRequest("the 'timeEnd' cannot be bigger than 'timeNext'", "error"))
-        }
+        // if(card.timeNext <= card.timeEnd){
+            // throw new ErrorREST(badRequest("the 'timeEnd' cannot be bigger than 'timeNext'", "error"))
+        // }
 
         try {
             await this.addCardRepository.addCard(card)
