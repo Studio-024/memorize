@@ -1,17 +1,87 @@
 button {
   border: none;
-  padding: 10px 25px 10px 25px;
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.2rem;
   border-radius: 5px;
-  color: white;
-  background-color: gray;
-  font-weight: bolder;
-  font-family: var(--font-family-primary);
   cursor: pointer; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(185deg, #3189B4 0%, #2B7AA1 50%, #266A8D 100%); }
 
 .container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100%;
+  width: 100%; }
 
 main {
   display: flex;
   flex-direction: column; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ebf5ff;
+  height: 43rem;
+  width: 40rem;
+  margin-inline: auto;
+  margin-top: 4rem;
+  border-radius: 10px; }
+
+.card_title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  height: 4rem;
+  font-size: 1.7rem; }
+
+.card_quest {
+  display: flex;
+  flex-direction: column;
+  height: 33rem;
+  margin: 0 1rem 0 1rem;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem; }
+
+.card_footer {
+  display: flex;
+  margin-top: 1rem;
+  height: 3rem;
+  position: relative; }
+  .card_footer > div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.301);
+    font-size: 1.2rem; }
+  .card_footer > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    position: absolute;
+    font-size: 1rem; }
+
+.card_missAndHit {
+  margin: 1rem auto 1rem auto; }
+
+#card_missed {
+  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #e9f4ff;
+  margin-right: 1.5rem; }
+
+#card_hit {
+  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #e9f4ff;
+  margin-left: 1.5rem; }

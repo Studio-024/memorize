@@ -30,9 +30,9 @@ const Dashboard = () => {
         <div className="container" id="containerCard">
             <main>
                 <Cards dataCards={orderCards} buttonIndex={index}/>
-                <div className="dashboard__content__next">
-                    <button className="buttons" id="dashboard__content__erro" onClick={resetCard}>Errei</button>
-                    <button className="buttons" id="dashboard__content__acerto" onClick={resetCard}>Acertei</button>
+                <div className="card_missAndHit">
+                    <button id="card_missed" onClick={resetCard}>Errei</button>
+                    <button id="card_hit" onClick={resetCard}>Acertei</button>
                 </div>
             </main>
         </div>

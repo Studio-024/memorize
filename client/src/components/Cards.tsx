@@ -30,7 +30,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
             <h1 className="card_title">Title</h1>
             <p className="card_quest">{question}</p>
             <div className="card_footer">
-                <span>Total: <a></a></span> 
+                <span>Total:&nbsp;<a>2/11</a></span> 
                 <div> Virar Card</div>
             </div>
         </div>
