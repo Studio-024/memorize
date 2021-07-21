@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
+import '../css/Cards.css'
 
 export interface Props{
     dataCards: ICardOrdered[]
