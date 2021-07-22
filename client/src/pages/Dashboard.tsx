@@ -1,8 +1,11 @@
-import Cards from '../components/Cards'
+import Revision from '../components/Revision'
 import { getCard } from '../service/api'
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'
+import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
+import AddCard  from '../components/AddCard'
+const CardContext = React.createContext('');
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
@@ -29,11 +32,8 @@ const Dashboard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                <Cards dataCards={orderCards} buttonIndex={index}/>
-                <div className="card_missAndHit">
-                    <button id="card_missed" onClick={resetCard}>Errei</button>
-                    <button id="card_hit" onClick={resetCard}>Acertei</button>
-                </div>
+                <Revision dataCards={orderCards} buttonIndex={index}/>
+                <AddCard dataCards={orderCards} buttonIndex={index}/>
             </main>
         </div>
 	)
