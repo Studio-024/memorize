@@ -12,12 +12,8 @@ export default function AddCard({dataCards, buttonIndex}: Props) {
     return(
         <>
         <div className="card">
-            <textarea className="card_title">Title</textarea>
-            <textarea className="card_quest"></textarea>
-            <div className="card_footer">
-                <span>Total:&nbsp;<a>2/11</a></span> 
-                <div> Virar Card</div>
-            </div>
+            <textarea className="card_title" placeholder="Digite o titulo"></textarea>
+            <textarea className="card_quest" placeholder="Digite aqui a pergunta"></textarea>
         </div>
             <div className="card_missAndHit">
             <button id="card_hit" >Proximo</button>

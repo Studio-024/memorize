@@ -32,7 +32,7 @@ const Dashboard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                <Revision dataCards={orderCards} buttonIndex={index}/>
+                {/* <Revision dataCards={orderCards} buttonIndex={index}/> */}
                 <AddCard dataCards={orderCards} buttonIndex={index}/>
             </main>
         </div>
