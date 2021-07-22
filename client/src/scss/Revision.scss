@@ -40,6 +40,8 @@
     align-items: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.301);
     font-size: $font-size-default;
+    cursor:pointer;
+
   }
   & > span{
     display: flex;
@@ -48,5 +50,7 @@
     margin: 1rem;
     position: absolute;
     font-size: $font-size-min;    
+    cursor:pointer;
+
   }
 }
