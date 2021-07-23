@@ -14,11 +14,11 @@ export const getCard = async() => {
 	}
 }
 
-export const saveCard = async(question:string, response:string) => {
+export const saveCard = async(front:string, back:string) => {
 	try {
 		const res = await Axios.post<ICard[]>('http://localhost:3001/card', {
-			question: question,
-			response: response		
+			front: front,
+			back: back
 		})
 	}
 	
