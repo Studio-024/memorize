@@ -24,8 +24,8 @@ const Dashboard = () => {
     }, [])
     function resetCard() {
         setIndex(index + 1)
-        document.getElementById("dashboard__content__response")!.style.display = "none"
-        document.getElementById("dashboard__content__SeeResponse")!.style.display = "initial"
+        document.getElementById("dashboard__content__back")!.style.display = "none"
+        document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
         
     }
 

@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import '../css/Revision.css'
 
-export interface Props{
+export interface Props {
     dataCards: ICardOrdered[]
     buttonIndex: number
 }
 
 export default function Revision({dataCards, buttonIndex}: Props) {
-    const [question, setQuestion] = useState('')
-    const [response, setResponse] = useState('')
+    const [front, setFront] = useState('')
+    const [back, setBack] = useState('')
     const [card, setCard] = useState<ICardOrdered[]>([])
 
     useEffect(() => {
@@ -18,19 +18,20 @@ export default function Revision({dataCards, buttonIndex}: Props) {
 
     useEffect(() => {
         if (card.length && buttonIndex <= card.length) {
-            setQuestion(card[buttonIndex - 1].question)
-            setResponse(card[buttonIndex - 1].response)
+            setFront(card[buttonIndex - 1].front)
+            setBack(card[buttonIndex - 1].back)
         }
         else {
-            setQuestion("Não há mais cards.")
-            setResponse("Não há mais cards.")
+            setFront("Não há mais cards.")
+            setBack("Não há mais cards.")
         }
     }, [buttonIndex])
+
     return(
         <>
         <div className="card">
             <h1 className="card_title">Title</h1>
-            <p className="card_quest">{question}</p>
+            <p className="card_quest">{front}</p>
             <div className="card_footer">
                 <span>Total:&nbsp;<a>2/11</a></span> 
                 <div> Virar Card</div>

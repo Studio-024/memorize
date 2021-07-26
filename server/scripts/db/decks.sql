@@ -3,5 +3,5 @@ CREATE TABLE decks (
 	deck VARCHAR(30) NOT NULL,
 	category_cod INT,
 	PRIMARY KEY ( cod ),
-	FOREIGN KEY ( category_cod ) REREFERENCES category(cod)
+	FOREIGN KEY ( category_cod ) REFERENCES categories(cod)
 );
