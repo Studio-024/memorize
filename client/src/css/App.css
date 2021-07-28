@@ -1,0 +1,37 @@
+button {
+  border: none;
+  height: 3rem;
+  width: 10rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #266A8D 100%; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%; }
+
+main {
+  display: flex;
+  flex-direction: column; }
+
+.card_missAndHit {
+  margin: 1rem auto 1rem auto; }
+
+#card_missed {
+  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
+  margin-right: 1.5rem;
+  color: #e9f4ff; }
+
+#card_hit {
+  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
+  border-radius: 10px;
+  margin-left: 1.5rem;
+  color: #e9f4ff; }
