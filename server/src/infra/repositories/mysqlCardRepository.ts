@@ -7,7 +7,7 @@ import { pool } from "../mysqlPoolConnection";
 export class MysqlcardRepository implements IListCardRepository, IAddCardRepository{
     async listCard(): Promise<ICardMysqlViewModel[]>{  
         try {
-            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'select * from flashcard', []); 
+            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'select * from flashcards', []); 
             return rows
         } catch (error) {
             throw new Error(error)
@@ -16,7 +16,7 @@ export class MysqlcardRepository implements IListCardRepository, IAddCardReposit
 
     async addCard(card: ICardViewModel): Promise<void>{
         try {
-        await pool.query(`INSERT INTO flashcard SET ?`, card);
+        await pool.query(`INSERT INTO flashcards SET ?`, card);
     } catch (error) {
             throw new Error(error.stack)
         }

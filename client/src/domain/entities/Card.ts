@@ -1,8 +1,8 @@
 export type ICard = {
-    cod?: number
-            
-    question: string
-    response: string
-    timeEnd?: Date
-    timeNext?: Date
+    cod?: number,
+    front: string,
+    back: string,
+    streak?: number,
+    interval_time?: number,
+    revision_date?: Date
 }
