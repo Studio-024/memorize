@@ -35,6 +35,7 @@ export default function Cards({dataCards, buttonIndex}: Props) {
         <>
         <section className="dashboard__content__cards">
             
+            
             <section className="dashboard__content__questFlex" id="dashboard__content__quest"> 
                 <div id="dashboard__content__quest_output">
                     <p className="dashboard__content__flexText">{question}</p>
