@@ -1,14 +1,13 @@
-import RevisionQuest from '../components/RevisionQuest'
-import RevisionResponse from '../components/RevisionResponse'
 import { getCard } from '../service/api'
 import { useEffect, useState} from 'react'
 import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
-import AddCard  from '../components/AddQuest'
+import AddQuest  from '../components/AddQuest'
+import AddResponse  from '../components/AddResponse'
 const CardContext = React.createContext('');
 
-const Dashboard = () => { 
+const AddCard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
     
@@ -33,12 +32,11 @@ const Dashboard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
-                {/* <RevisionResponse dataCards={orderCards} buttonIndex={index}/> */}
-
+                {/* <AddQuest/> */}
+                {/* <AddResponse/> */}
             </main>
         </div>
 	)
 }
 
-export default Dashboard
+export default AddCard

@@ -12,7 +12,7 @@ export default function Revision({dataCards, buttonIndex}: Props) {
     const [back, setBack] = useState('')
     const [card, setCard] = useState<ICardOrdered[]>([])
 
-    useEffect(() => {
+    useEffect(() => { 
         setCard(dataCards)
     }, [dataCards])
 
