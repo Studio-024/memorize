@@ -3,7 +3,7 @@ import { ICardOrdered } from '../domain/useCase/orderCard'
 import '../css/AddCard.css'
 
 
-export default function AddCard() {
+export default function AddResponse() {
     return(
         <>
         <div className="card">
