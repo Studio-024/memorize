@@ -6,7 +6,10 @@ import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
 import AddCard  from '../components/AddQuest'
+import history from '../hooks/history'
 const CardContext = React.createContext('');
+
+let b = new history('test2');
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
