@@ -9,7 +9,22 @@ export const getCard = async() => {
 	}
 	
 	catch (error) {
-		console.error(error)
+		
+		if (error.response.status) {
+			const errorStatusCode = error.response.status
+			if (errorStatusCode == 500) {
+				alert("DataBase off!")
+			}
+
+		} else {
+			if (error.message == "Network Error") {
+				// Error without statuscode
+				alert("API off!")
+			}
+		}
+		
+		console.log(error.message)
+		// console.error(error)
 		throw new Error(error)
 	}
 }
