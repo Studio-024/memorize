@@ -7,7 +7,7 @@ export interface Props {
     buttonIndex: number
 }
 
-export default function Revision({dataCards, buttonIndex}: Props) {
+const Revision = ({dataCards, buttonIndex}: Props) => {
     const [front, setFront] = useState('')
     const [back, setBack] = useState('')
     const [card, setCard] = useState<ICardOrdered[]>([])
@@ -44,3 +44,4 @@ export default function Revision({dataCards, buttonIndex}: Props) {
         </>
     )
 }
+export default Revision;

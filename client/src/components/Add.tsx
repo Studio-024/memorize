@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-import { ICardOrdered } from '../domain/useCase/orderCard'
 import '../css/AddCard.css'
 
 export default function AddQuest() {
@@ -15,7 +13,7 @@ export default function AddQuest() {
             <div style={{height: "3rem", margin: "1rem"}}/>
         </div>
             <div className="card_missAndHit">
-            <button className="button_staps" >Proximo</button>
+            <button className="button_staps">Proximo</button>
         </div>
         </>
     )

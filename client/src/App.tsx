@@ -1,24 +1,10 @@
-import './css/App.css'
-import Dashboard from './pages/Dashboard'
-import {getCard} from './service/api'
-import AddCard from './pages/AddCard'
-import { useEffect, useState } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import './css/App.css';
+import Dashboard from './pages/Dashboard';
+import AddCard from './pages/AddCard';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-// let a = new history('test');
 
-export default function App() {
-	const [getDashbortType, setDashboardType] = useState('Dashboard')
-	useEffect(() => {
-	
-		if(getDashbortType == 'Dashboard'){
-		}
-	})
+const App = () => {
 	return(
 		<>
 			<Router>
@@ -34,3 +20,5 @@ export default function App() {
 		</>
 	)
 }
+
+export default App;
