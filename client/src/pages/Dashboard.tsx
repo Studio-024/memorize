@@ -6,12 +6,13 @@ import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
 import AddCard  from '../components/AddQuest'
-import history from '../hooks/history'
+import { Route, Switch, useRouteMatch } from 'react-router-dom'
 const CardContext = React.createContext('');
 
-let b = new history('test2');
+// let b = new history('test2');
 
 const Dashboard = () => { 
+    let match = useRouteMatch();
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
     
@@ -36,9 +37,14 @@ const Dashboard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
-                {/* <RevisionResponse dataCards={orderCards} buttonIndex={index}/> */}
-
+                <Switch>
+                    <Route path={`${match.path}/Quest`}>
+                        <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
+                    </Route>
+                    <Route  path={`${match.path}/Response`}>
+                        <RevisionResponse dataCards={orderCards} buttonIndex={index}/>
+                    </Route>
+                </Switch>
             </main>
         </div>
 	)
