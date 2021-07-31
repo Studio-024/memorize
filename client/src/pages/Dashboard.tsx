@@ -6,6 +6,7 @@ import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
 import AddCard  from '../components/AddQuest'
+import ErrorNotification from '../components/ErrorNotification'
 const CardContext = React.createContext('');
 
 const Dashboard = () => { 
@@ -27,7 +28,7 @@ const Dashboard = () => {
         setIndex(index + 1)
         document.getElementById("dashboard__content__back")!.style.display = "none"
         document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
-        
+
     }
 
 	return(
@@ -35,7 +36,7 @@ const Dashboard = () => {
             <main>
                 <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
                 {/* <RevisionResponse dataCards={orderCards} buttonIndex={index}/> */}
-
+                <ErrorNotification />
             </main>
         </div>
 	)

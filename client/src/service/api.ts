@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import ErrorNotification from '../components/ErrorNotification'
 import { ICard } from '../domain/entities/Card'
 
 export const getCard = async() => {
@@ -11,10 +12,7 @@ export const getCard = async() => {
 	catch (error) {
 		
 		if (error.response.status) {
-			const errorStatusCode = error.response.status
-			if (errorStatusCode == 500) {
-				alert("DataBase off!")
-			}
+			console.log(error.response.status)
 
 		} else {
 			if (error.message == "Network Error") {
@@ -23,7 +21,6 @@ export const getCard = async() => {
 			}
 		}
 		
-		console.log(error.message)
 		// console.error(error)
 		throw new Error(error)
 	}
