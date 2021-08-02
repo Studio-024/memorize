@@ -1,6 +1,6 @@
 import Axios from 'axios'
-import ErrorNotification from '../components/ErrorNotification'
 import { ICard } from '../domain/entities/Card'
+import { ErrorHandler } from '../utils/ErrorHandler'
 
 export const getCard = async() => {
 	try {
@@ -9,19 +9,9 @@ export const getCard = async() => {
 		return data
 	}
 	
-	catch (error) {
-		
-		if (error.response.status) {
-			console.log(error.response.status)
+	catch (error) {		
+		ErrorHandler(error)
 
-		} else {
-			if (error.message == "Network Error") {
-				// Error without statuscode
-				alert("API off!")
-			}
-		}
-		
-		// console.error(error)
 		throw new Error(error)
 	}
 }
