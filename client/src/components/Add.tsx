@@ -1,6 +1,6 @@
 import '../css/AddCard.css'
 
-export default function AddQuest() {
+const Add = () => {
     return(
         <>
         <div className="card">
@@ -18,3 +18,4 @@ export default function AddQuest() {
         </>
     )
 }
+export default Add;
