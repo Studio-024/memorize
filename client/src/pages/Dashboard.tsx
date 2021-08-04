@@ -10,7 +10,6 @@ const Dashboard = () => {
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
     let match = useRouteMatch();
-    
     useEffect(() => {
         async function downloadCards() {
             const orderObj = new OrderCardService()
@@ -27,10 +26,10 @@ const Dashboard = () => {
         <div className="container" id="containerCard">
             <main>
                 <Switch>
-                    <Route path={`${match.path}/Quest`}>
+                    <Route exact path={`/dashboard/front`}>
                         <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
                     </Route>
-                    <Route  path={`${match.path}/Response`}>
+                    <Route  path={`/dashboard/back`}>
                         <RevisionResponse dataCards={orderCards} buttonIndex={index}/>
                     </Route>
                 </Switch>

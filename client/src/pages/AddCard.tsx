@@ -32,14 +32,14 @@ const AddCard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                    <Switch>
-                        <Route path={`${match.path}/Quest`}>
-                            <AddQuest/>
-                        </Route>
-                        <Route path={`${match.path}/Response`}>
-                            <AddResponse/>
-                        </Route>
-                    </Switch>
+                <Switch>
+                    <Route path={`/addCard/front`}>
+                        <AddQuest add={"front"}/>
+                    </Route>
+                    <Route path={`/addCard/back`}>
+                        <AddResponse add={"back"}/>
+                    </Route>
+                </Switch>
             </main>
         </div>
 	)
