@@ -1,5 +1,5 @@
-import '../css/Revision.css'
 import { useState, useEffect } from 'react'
+import '../css/Revision.css'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { Link } from 'react-router-dom'
 
