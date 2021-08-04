@@ -10,9 +10,7 @@ export const getCard = async() => {
 	}
 	
 	catch (error) {		
-		ErrorHandler(error)
-
-		throw new Error(error)
+		throw new ErrorHandler(error.request.status).Threat()
 	}
 }
 

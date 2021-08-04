@@ -6,6 +6,8 @@ import RevisionResponse from '../components/RevisionResponse'
 import { getCard } from '../service/api'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const CardContext = React.createContext('');
 
@@ -33,6 +35,7 @@ const Dashboard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
+                <ToastContainer />
                 <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
                 {/* <RevisionResponse dataCards={orderCards} buttonIndex={index}/> */}
             </main>
