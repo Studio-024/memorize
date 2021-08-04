@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import '../css/AddCard.css'
+import { Link } from 'react-router-dom'
 
 interface Props{
     add: string
@@ -20,13 +20,12 @@ const Add = (Props: Props) => {
             </div>
             <div style={{height: "3rem", margin: "1rem"}}/>
         </div>
-            <div className="card_missAndHit">
+        <div className="card_missAndHit">
             {side === 'front' && 
             <Link to={"/addCard/back"}><button className="button_staps">Próximo</button></Link>
             || side === 'back' && 
             <button className="button_staps">Salvar Card</button>
-            }
-            
+            }    
         </div>
         </>
     )

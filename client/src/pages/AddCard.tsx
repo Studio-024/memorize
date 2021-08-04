@@ -33,10 +33,10 @@ const AddCard = () => {
         <div className="container" id="containerCard">
             <main>
                 <Switch>
-                    <Route path={`/addCard/front`}>
+                    <Route exact path={`/addCard/front`}>
                         <AddQuest add={"front"}/>
                     </Route>
-                    <Route path={`/addCard/back`}>
+                    <Route exact path={`/addCard/back`}>
                         <AddResponse add={"back"}/>
                     </Route>
                 </Switch>

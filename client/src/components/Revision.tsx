@@ -1,7 +1,7 @@
+import '../css/Revision.css'
 import { useState, useEffect } from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
-import '../css/Revision.css'
-import { Link, Route, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export interface Props {
     dataCards: ICardOrdered[]

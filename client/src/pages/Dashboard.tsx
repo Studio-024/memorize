@@ -29,7 +29,7 @@ const Dashboard = () => {
                     <Route exact path={`/dashboard/front`}>
                         <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
                     </Route>
-                    <Route  path={`/dashboard/back`}>
+                    <Route exact path={`/dashboard/back`}>
                         <RevisionResponse dataCards={orderCards} buttonIndex={index}/>
                     </Route>
                 </Switch>
