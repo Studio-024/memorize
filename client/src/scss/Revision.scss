@@ -56,3 +56,17 @@
 
   }
 }
+.card_missAndHit{
+  margin: 1rem auto 1rem auto;
+}
+#card_missed{
+  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
+  margin-right: 1.5rem;
+  color: rgba(233, 244, 255, 1);
+}
+#card_hit{
+  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
+  border-radius: 10px;
+  margin-left: 1.5rem;
+  color: rgba(233, 244, 255, 1);
+}
