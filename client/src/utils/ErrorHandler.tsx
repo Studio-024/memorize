@@ -1,22 +1,26 @@
-import { toast, ToastContainer } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.min.css'
+import { toast } from "react-toastify"
 
 export class ErrorHandler extends Error {
-    statusCode: number
-    constructor(statusCode: number) {
+    errorStatusCode: number
+    constructor(errorStatusCode: number) {
         super()
-        this.statusCode = statusCode
+        this.errorStatusCode = errorStatusCode
     }
     
     Threat () {
-        if (this.statusCode) {
-            console.log(this.statusCode)
-            toast.error('DB off!')
+        if (this.errorStatusCode) {
+            switch(this.errorStatusCode) {
+                case 404: 
+                    toast.error('Wrong URL/route!')
+                    break
+                case 500:
+                    toast.error('DataBase off!')
+                    break
+            }
         }
 
-        if (!this.statusCode) {
+        if (!this.errorStatusCode) {
             toast.error('API off!')
         }
     }
-
 }

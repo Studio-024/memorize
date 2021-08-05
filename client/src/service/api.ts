@@ -9,8 +9,8 @@ export const getCard = async() => {
 		return data
 	}
 	
-	catch (error) {		
-		throw new ErrorHandler(error.request.status).Threat()
+	catch (err) {
+		throw new ErrorHandler(err.request.status).Threat()
 	}
 }
 
