@@ -6,14 +6,14 @@ import {Switch, Route} from "react-router-dom";
 const App = () => {
 	return(
 		<>
-				<Switch>
-					<Route path="/Dashboard">		
-						<Dashboard/>
-					</Route>		
-					<Route path="/addCard">		
-						<AddCard/>
-					</Route>		
-				</Switch>
+		<Switch>
+			<Route path="/Dashboard">
+				<Dashboard/>
+			</Route>		
+			<Route path="/addCard">
+				<AddCard/>
+			</Route>
+		</Switch>
 		</>
 	)
 }

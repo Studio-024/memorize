@@ -1,5 +1,5 @@
-import RevisionQuest from '../components/Revision'
-import RevisionResponse from '../components/Revision'
+import RevisionFront from '../components/Revision'
+import RevisionBack from '../components/Revision'
 import { getCard } from '../service/api'
 import { useEffect, useState} from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
@@ -27,10 +27,10 @@ const Dashboard = () => {
             <main>
                 <Switch>
                     <Route exact path={`/dashboard/front`}>
-                        <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
+                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
                     </Route>
                     <Route exact path={`/dashboard/back`}>
-                        <RevisionResponse dataCards={orderCards} buttonIndex={index}/>
+                        <RevisionBack dataCards={orderCards} buttonIndex={index}/>
                     </Route>
                 </Switch>
             </main>

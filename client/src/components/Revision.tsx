@@ -8,7 +8,7 @@ export interface Props {
     buttonIndex: number
 }
 
-const Revision = ({dataCards, buttonIndex,}: Props) => {
+const Revision = ({dataCards, buttonIndex}: Props) => {
     const [front, setFront] = useState('')
     const [back, setBack] = useState('')
     const [card, setCard] = useState<ICardOrdered[]>([])
@@ -48,8 +48,8 @@ const Revision = ({dataCards, buttonIndex,}: Props) => {
             </div>
         </div>
             <div className="card_missAndHit">
-            <button id="card_missed">Errei</button>
-            <button id="card_hit" >Acertei</button>
+            <Link to="/dashboard/front"><button id="card_missed">Errei</button></Link>
+            <Link to="/dashboard/front"><button id="card_hit">Acertei</button></Link>
         </div>
         </>
     )

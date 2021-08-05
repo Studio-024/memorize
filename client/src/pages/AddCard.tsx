@@ -2,8 +2,8 @@ import { getCard } from '../service/api'
 import { useEffect, useState} from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
-import AddQuest  from '../components/Add'
-import AddResponse  from '../components/Add'
+import AddFront  from '../components/Add'
+import AddBack  from '../components/Add'
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom'
 
 const AddCard = () => { 
@@ -34,10 +34,10 @@ const AddCard = () => {
             <main>
                 <Switch>
                     <Route exact path={`/addCard/front`}>
-                        <AddQuest add={"front"}/>
+                        <AddFront add={"front"}/>
                     </Route>
                     <Route exact path={`/addCard/back`}>
-                        <AddResponse add={"back"}/>
+                        <AddBack add={"back"}/>
                     </Route>
                 </Switch>
             </main>
