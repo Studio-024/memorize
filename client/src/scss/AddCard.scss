@@ -1,14 +1,8 @@
 @import 'vars.scss';
+@import 'Revision.scss';
 
 .AddCard{
-  display: flex;
-  flex-direction: column;
-  height: 43rem;
-  width: 40rem;
-  margin-inline: auto;
-  margin-top: 4rem;
-  border-radius: 10px;
-  background-color: $background-Card;
+  @extend .card;
 }
 .AddCard_title{
   text-align: center;
