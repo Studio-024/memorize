@@ -6,5 +6,5 @@ export interface IReview {
     interval_time: number
     easiness_factor?: number
 
-    revison_date?: Date
+    revision_date?: Date
 }
