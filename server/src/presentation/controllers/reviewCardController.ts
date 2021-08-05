@@ -13,7 +13,7 @@ export class reviewCardController implements IController {
     // add infra viewModel
     async handle(request: HttpRequest<IReview>): Promise<HttpResponse>{
         const ReviewCard: IReview = {
-            cod: request.body!.cod,
+            cod: request.query!.cod,
             streak : request.body!.streak,
             interval_time: request.body!.interval_time,
             userGrade: request.body!.userGrade

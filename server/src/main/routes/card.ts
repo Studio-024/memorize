@@ -10,6 +10,6 @@ routes.get('/card', adaptRoute(makeListCardController()))
 
 routes.post('/card', adaptRoute(makeAddCardController()))
 
-routes.put('/card', adaptRoute(makeReviewCardController()))
+routes.put('/card/review', adaptRoute(makeReviewCardController()))
 
 export default routes
