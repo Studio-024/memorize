@@ -1,17 +1,15 @@
-import RevisionQuest from '../components/RevisionQuest'
-import RevisionResponse from '../components/RevisionResponse'
+import RevisionFront from '../components/Revision'
+import RevisionBack from '../components/Revision'
 import { getCard } from '../service/api'
 import { useEffect, useState} from 'react'
-import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
-import AddCard  from '../components/AddQuest'
-const CardContext = React.createContext('');
+import { Route, Switch, useRouteMatch } from 'react-router-dom'
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
-    
+    let match = useRouteMatch();
     useEffect(() => {
         async function downloadCards() {
             const orderObj = new OrderCardService()
@@ -23,19 +21,18 @@ const Dashboard = () => {
         downloadCards()
 
     }, [])
-    function resetCard() {
-        setIndex(index + 1)
-        document.getElementById("dashboard__content__back")!.style.display = "none"
-        document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
-        
-    }
 
 	return(
         <div className="container" id="containerCard">
             <main>
-                <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
-                {/* <RevisionResponse dataCards={orderCards} buttonIndex={index}/> */}
-
+                <Switch>
+                    <Route exact path={`/dashboard/front`}>
+                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
+                    </Route>
+                    <Route exact path={`/dashboard/back`}>
+                        <RevisionBack dataCards={orderCards} buttonIndex={index}/>
+                    </Route>
+                </Switch>
             </main>
         </div>
 	)

@@ -1,15 +1,15 @@
 import { getCard } from '../service/api'
 import { useEffect, useState} from 'react'
-import React from 'react'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
-import AddQuest  from '../components/AddQuest'
-import AddResponse  from '../components/AddResponse'
-const CardContext = React.createContext('');
+import AddFront  from '../components/Add'
+import AddBack  from '../components/Add'
+import { Link, Route, Switch, useRouteMatch } from 'react-router-dom'
 
 const AddCard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
+    let match = useRouteMatch();
     
     useEffect(() => {
         async function downloadCards() {
@@ -32,8 +32,14 @@ const AddCard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                {/* <AddQuest/> */}
-                {/* <AddResponse/> */}
+                <Switch>
+                    <Route exact path={`/addCard/front`}>
+                        <AddFront add={"front"}/>
+                    </Route>
+                    <Route exact path={`/addCard/back`}>
+                        <AddBack add={"back"}/>
+                    </Route>
+                </Switch>
             </main>
         </div>
 	)
