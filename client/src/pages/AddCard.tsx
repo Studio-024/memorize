@@ -1,32 +1,15 @@
-import { getCard } from '../service/api'
-import { useEffect, useState} from 'react'
-import { ICardOrdered } from '../domain/useCase/orderCard'
-import { OrderCardService } from '../service/OrderCardService'
-import AddFront  from '../components/Add'
-import AddBack  from '../components/Add'
-import { Link, Route, Switch, useRouteMatch } from 'react-router-dom'
+import React, { useState } from 'react'
+import AddQuest  from '../components/AddQuest'
+import AddResponse  from '../components/AddResponse'
+const CardContext = React.createContext('');
 
-const AddCard = () => { 
-    const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
+const AddCard = () => {
     const [index, setIndex] = useState(0)
-    let match = useRouteMatch();
-    
-    useEffect(() => {
-        async function downloadCards() {
-            const orderObj = new OrderCardService()
-            const data = await orderObj.order(getCard())
 
-            setOrderCards(data)
-        }
-
-        downloadCards()
-
-    }, [])
     function resetCard() {
         setIndex(index + 1)
         document.getElementById("dashboard__content__back")!.style.display = "none"
         document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
-        
     }
 
 	return(

@@ -1,10 +1,15 @@
-import RevisionFront from '../components/Revision'
-import RevisionBack from '../components/Revision'
-import { getCard } from '../service/api'
+import React from 'react'
 import { useEffect, useState} from 'react'
+import AddCard  from '../components/AddQuest'
+import RevisionQuest from '../components/RevisionQuest'
+import RevisionResponse from '../components/RevisionResponse'
+import { getCard } from '../service/api'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
-import { Route, Switch, useRouteMatch } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
+
+const CardContext = React.createContext('');
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
@@ -21,11 +26,17 @@ const Dashboard = () => {
         downloadCards()
 
     }, [])
+    function resetCard() {
+        setIndex(index + 1)
+        document.getElementById("dashboard__content__back")!.style.display = "none"
+        document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
+    }
 
 	return(
         <div className="container" id="containerCard">
             <main>
-                <Switch>
+                <ToastContainer />
+                <Switch>                
                     <Route exact path={`/dashboard/front`}>
                         <RevisionFront dataCards={orderCards} buttonIndex={index}/>
                     </Route>

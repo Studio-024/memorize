@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import { ICard } from '../domain/entities/Card'
+import { ErrorHandler } from '../utils/ErrorHandler'
 
 export const getCard = async() => {
 	try {
@@ -8,9 +9,8 @@ export const getCard = async() => {
 		return data
 	}
 	
-	catch (error) {
-		console.error(error)
-		throw new Error(error)
+	catch (err) {
+		throw new ErrorHandler(err.request.status).Threat()
 	}
 }
 
