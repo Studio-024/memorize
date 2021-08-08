@@ -1,5 +1,4 @@
-import React from 'react'
-import { useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import RevisionFront from '../components/Revision'
 import RevisionBack from '../components/Revision'
 import { getCard } from '../service/api'
@@ -9,7 +8,6 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import { Route, Switch } from 'react-router-dom'
 
-const CardContext = React.createContext('');
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
