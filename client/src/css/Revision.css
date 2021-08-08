@@ -42,24 +42,22 @@
     font-size: 1.2rem;
     cursor: pointer; }
   .card_footer > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
     position: absolute;
+    left: 1rem;
     font-size: 1rem;
-    cursor: pointer; }
+    cursor: pointer;
+    align-self: center; }
 
 .card_missAndHit {
-  margin: 1rem auto 1rem auto; }
+  display: flex;
+  justify-content: space-around;
+  width: calc(40rem - 20vmin);
+  margin: 1rem auto auto auto; }
 
 #card_missed {
   background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  margin-right: 1.5rem;
   color: #e9f4ff; }
 
 #card_hit {
   background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  border-radius: 10px;
-  margin-left: 1.5rem;
   color: #e9f4ff; }
