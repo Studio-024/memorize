@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-router-dom": "^5.1.8",
     "axios": "^0.21.1",
     "cra-template-typescript": "1.1.2",
     "node-sass": "^6.0.1",
@@ -11,6 +12,7 @@
     "react-native": "^0.64.0",
     "react-scripts": "4.0.2",
     "react-toastify": "^7.0.4"
+    "react-router-dom": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

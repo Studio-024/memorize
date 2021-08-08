@@ -14,7 +14,7 @@ const CardContext = React.createContext('');
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
     const [index, setIndex] = useState(0)
-    
+    let match = useRouteMatch();
     useEffect(() => {
         async function downloadCards() {
             const orderObj = new OrderCardService()
@@ -36,8 +36,14 @@ const Dashboard = () => {
         <div className="container" id="containerCard">
             <main>
                 <ToastContainer />
-                <RevisionQuest dataCards={orderCards} buttonIndex={index}/>
-                {/* <RevisionResponse dataCards={orderCards} buttonIndex={index}/> */}
+                <Switch>                
+                    <Route exact path={`/dashboard/front`}>
+                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
+                    </Route>
+                    <Route exact path={`/dashboard/back`}>
+                        <RevisionBack dataCards={orderCards} buttonIndex={index}/>
+                    </Route>
+                </Switch>
             </main>
         </div>
 	)

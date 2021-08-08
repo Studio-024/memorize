@@ -15,8 +15,14 @@ const AddCard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
-                {/* <AddQuest/> */}
-                {/* <AddResponse/> */}
+                <Switch>
+                    <Route exact path={`/addCard/front`}>
+                        <AddFront add={"front"}/>
+                    </Route>
+                    <Route exact path={`/addCard/back`}>
+                        <AddBack add={"back"}/>
+                    </Route>
+                </Switch>
             </main>
         </div>
 	)
