@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import AddQuest  from '../components/AddQuest'
-import AddResponse  from '../components/AddResponse'
-const CardContext = React.createContext('');
+import { useState } from 'react'
+import { Route, Switch } from 'react-router-dom';
+import AddFront from '../components/Add'
+import AddBack from '../components/Add'
 
 const AddCard = () => {
     const [index, setIndex] = useState(0)
