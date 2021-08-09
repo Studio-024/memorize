@@ -7,7 +7,7 @@ CREATE TABLE flashcards (
 	user_cod INT,
 	
 	PRIMARY KEY ( cod ),
-	FOREIGN KEY (review_cod) REFERENCES reviews( cod ),
+	FOREIGN KEY ( review_cod ) REFERENCES reviews( cod ),
 	FOREIGN KEY ( deck_cod ) REFERENCES decks( cod ),
 	FOREIGN KEY ( user_cod ) REFERENCES users( cod )
 );
