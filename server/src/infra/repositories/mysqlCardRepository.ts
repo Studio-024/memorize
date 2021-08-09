@@ -32,7 +32,7 @@ export class MysqlcardRepository implements IListCardRepository, IAddCardReposit
     }
     async updateCardReview(cardReview: IReviewMysqlViewModel ): Promise<void>{
         try{
-            await pool.query(`UPDATE reviews SET streak=${cardReview.streak}, interval_time=${cardReview.interval_time}WHERE cod= ${cardReview.cod}`)
+            await pool.query(`UPDATE reviews SET streak=${cardReview.streak}, interval_time=${cardReview.interval_time} WHERE cod=${cardReview.cod}`)
             
         }catch(error){
             console.error(error.stack)
