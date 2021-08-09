@@ -38,7 +38,6 @@ export class ReviewCardService implements IReviewCardUseCase {
             cardReview.streak = 0
             cardReview.interval_time = 1
         }
-        cardReview.revision_date = new Date()
 
         try {
             await this.updateCardRepository.updateCardReview(cardReview)

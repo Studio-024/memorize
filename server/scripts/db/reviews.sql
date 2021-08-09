@@ -4,8 +4,5 @@ CREATE TABLE reviews (
     interval_time INT NOT NULL DEFAULT 0,
     easiness_factor DECIMAL(5, 2) NOT NULL  DEFAULT 1.30,
 
-    revision_date DATETIME NOT NULL DEFAULT NOW(),
-
-
     PRIMARY KEY (cod)
 );
