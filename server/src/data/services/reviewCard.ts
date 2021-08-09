@@ -3,13 +3,21 @@ import { serverError } from "@/domain/err/helper";
 import {  IReview  } from "@/domain/entities/review";
 import { IupdateCardReviewRepository } from "../contracts/updateCardReviewRepository";
 import { IReviewCardUseCase } from "@/domain/usecases/reviewCard";
+import { GetReviewByCod } from "../contracts/getReviewByCod";
 
 
 export class ReviewCardService implements IReviewCardUseCase {
-    constructor(private readonly updateCardRepository: IupdateCardReviewRepository){}
+    constructor(
+        private readonly updateCardRepository: IupdateCardReviewRepository,
+        private readonly getTableByCod: GetReviewByCod        
+        ){}
 
     async reviewCard(card: IReview){
         // sove problem
+    
+        const review = this.getTableByCod.getReviewByCod(card.cod)
+        console.log(card.cod)
+
         card.easiness_factor = 1.3
 
 

@@ -6,7 +6,7 @@ import { reviewCardController } from "@/presentation/controllers/reviewCardContr
 export const makeReviewCardController = (): IController => {
     const repo = new MysqlcardRepository()
 
-    const review = new ReviewCardService(repo)
+    const review = new ReviewCardService(repo, repo)
 
     return new reviewCardController(review)
 }
