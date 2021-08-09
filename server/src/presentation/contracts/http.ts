@@ -5,6 +5,7 @@ export type HttpResponse<T = any> = {
 
 export type HttpRequest <T = any>= {
   body?: T
+  query?: T
 }
 
 export const ok = (data: any): HttpResponse => ({
