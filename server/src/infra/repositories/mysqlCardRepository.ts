@@ -20,20 +20,19 @@ export class MysqlcardRepository implements IListCardRepository, IAddCardReposit
 
     async addCard(card: ICardViewModel): Promise<void>{
         try {
-            await pool.query(`INSERT INTO flashcards SET ?`, card);
+            // guambiarra a gente aceita
+            await pool.query(`INSERT INTO reviews SET streak= 0` );
+            const test: any = await pool.query('SELECT @@IDENTITY;')
+            await pool.query(`INSERT INTO flashcards SET ?`, {front: card.front, back: card.back, review_cod: test[0][0]['@@IDENTITY']});
+
+
         } catch (error) {
             throw new Error(error.stack)
         }
     }
     async updateCardReview(cardReview: IReviewMysqlViewModel ): Promise<void>{
-        const updateQuery = {
-            streak: cardReview.streak,
-            interval_time: cardReview.interval_time,
-            cod: cardReview.cod
-        }
-
         try{
-            await pool.query(`UPDATE reviews SET streak=${updateQuery.streak}, interval_time=${updateQuery.interval_time} WHERE cod= ${updateQuery.cod}`)
+            await pool.query(`UPDATE reviews SET streak=${cardReview.streak}, interval_time=${cardReview.interval_time} WHERE cod= ${cardReview.cod}`)
             
         }catch(error){
             console.error(error.stack)
@@ -41,6 +40,7 @@ export class MysqlcardRepository implements IListCardRepository, IAddCardReposit
             
         }
     }
+    
     async getReviewByCod(options: number){
         try {
             const [rows] =  await pool.query<IReviewMysqlViewModel[]>( `select * from reviews where cod=${options}`, []); 
