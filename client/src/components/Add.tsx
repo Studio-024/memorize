@@ -20,7 +20,7 @@ const Add = (Props: Props) => {
             </div>
             <div style={{height: "3rem", margin: "1rem"}}/>
         </div>
-        <div className="card_missAndHit">
+        <div className="AddCard_missAndHit">
             {side === 'front' && 
             <Link to={"/addCard/back"}><button className="AddButton_staps">Próximo</button></Link>
             || side === 'back' && 
