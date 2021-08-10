@@ -18,7 +18,7 @@ const Add = (Props: Props) => {
             { side === 'front' && <p contentEditable="true" spellCheck={true} className="AddCard_quest" placeholder={"Digite aqui a pergunta"}></p>}
             { side === 'back' && <p contentEditable="true" spellCheck={true} className="AddCard_quest" placeholder={"Digite aqui a resposta"}></p>}
             </div>
-            <div style={{height: "3rem", margin: "1rem"}}/>
+            { side === 'front' && <div style={{height: "3rem", margin: "1rem"}}/>}
         </div>
         <div className="AddCard_missAndHit">
             {side === 'front' && 
