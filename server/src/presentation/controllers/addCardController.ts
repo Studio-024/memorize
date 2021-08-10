@@ -1,8 +1,7 @@
 import { ICreateCard } from "@/domain/usecases/createCard";
 import { IController } from "../contracts/controller";
 import { HttpRequest, HttpResponse, noContent, errorHandler} from "../contracts/http";
-import { ErrorREST } from "@/domain/err/errorRest";
-import { missingParamError } from "@/domain/err/helper";
+import { requiredParams } from "../helper/requireParams";
 
 export class addCardController implements IController{
     constructor(
@@ -10,13 +9,9 @@ export class addCardController implements IController{
     ){}
 
     async handle (request: HttpRequest): Promise<HttpResponse> {
-        const requiredParans = ['question', 'response', 'timeEnd', 'timeNext']
-
-        for(const param of requiredParans){
-            if(!request.body[param]){
-                const error = new ErrorREST(missingParamError(param))
-                return errorHandler(error.response)
-            }
+        const error = requiredParams(['front', 'back'], request)
+        if(error) {
+            return errorHandler(error.response)
         }
         
         try {

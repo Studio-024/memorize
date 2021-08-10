@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import { ICard } from '../domain/entities/Card'
+import { ErrorHandler } from '../utils/ErrorHandler'
 
 export const getCard = async() => {
 	try {
@@ -8,27 +9,21 @@ export const getCard = async() => {
 		return data
 	}
 	
-	catch (error) {
-		console.error(error)
-		throw new Error(error)
+	catch (err) {
+		throw new ErrorHandler(err.request.status).Threat()
 	}
 }
 
-export const saveCard = async(question:string, response:string) => {
+export const saveCard = async(front:string, back:string) => {
 	try {
 		const res = await Axios.post<ICard[]>('http://localhost:3001/card', {
-			question: question,
-			response: response,
-			timeEnd: "2021-03-15T02:09:34.000Z",
-			timeNext: "2021-03-15T02:09:34.000Z"		
+			front: front,
+			back: back
 		})
-
-		console.log(res)
-
 	}
 	
 	catch (error) {
-		console.error(error)
+		console.log(error)
 		throw new Error(error)
 	}
 }

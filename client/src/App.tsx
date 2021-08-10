@@ -1,16 +1,21 @@
-import './App.css'
-import Dashboard from './components/Dashboard'
-import AddCard from './addCard/Dashboard'
-import {getCard} from './service/api'
+import './css/App.css';
+import Dashboard from './pages/Dashboard';
+import AddCard from './pages/AddCard';
+import {Switch, Route} from "react-router-dom";
 
-
-
-export default function App() {
+const App = () => {
 	return(
 		<>
-			<Dashboard/>
-			
-			<AddCard/>
+		<Switch>
+			<Route path="/Dashboard">
+				<Dashboard/>
+			</Route>		
+			<Route path="/addCard">
+				<AddCard/>
+			</Route>
+		</Switch>
 		</>
 	)
 }
+
+export default App;

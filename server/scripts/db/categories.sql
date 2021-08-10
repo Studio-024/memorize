@@ -1,0 +1,5 @@
+CREATE TABLE categories (
+	cod INT NOT NULL AUTO_INCREMENT,
+	category VARCHAR(30) NOT NULL,
+	PRIMARY KEY ( cod )
+);

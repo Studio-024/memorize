@@ -1,0 +1,86 @@
+@import 'vars.scss';
+@import 'Revision.scss';
+
+.AddCard{
+  @extend .card;
+}
+.AddCard_title{
+  text-align: center;
+  justify-content: center;
+  font-size: $font-size-great;
+  &[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555; 
+  }
+  &[placeholder]:empty:focus::before {
+    content: "";
+  }
+}
+#AddContainer_title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem;
+  min-height: 5rem;
+}
+.AddCard_quest{
+  margin: auto 1rem auto 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: $font-size-min;
+  cursor: text;
+  &[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555; 
+  }
+  &[placeholder]:empty:focus::before {
+    content: "";
+  }
+}
+#AddContainer_quest{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  min-height: 20rem;
+}
+.AddCard_missAndHit{
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  justify-content: center;
+}
+.AddButton_staps{
+  background-color: #051B24 !important;
+  color: $background-Card;
+}
+@media screen and (max-width: 600px) {
+  .AddCard{
+    min-height: 33rem;
+    width: 80%;
+  }
+  #AddContainer_quest{
+    min-height: 23rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  $font-size-min: 0.9rem;
+  $font-size-default: 1.1rem;
+  $font-size-great: 1.6rem;
+  .AddCard{
+    min-height: 28rem  !important;
+    width: 80% !important;
+    margin-top: 10vmin;
+  }
+  #AddContainer_quest{
+    min-height: 18rem  !important;
+  }
+  .AddCard_title{
+    margin: 0.5rem !important;
+    font-size: $font-size-great;
+  }
+  .AddCard_quest{
+    font-size: $font-size-min;
+  }
+}
