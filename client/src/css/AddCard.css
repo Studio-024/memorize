@@ -1,10 +1,11 @@
 .card, .AddCard {
   display: flex;
   flex-direction: column;
-  height: 43rem;
-  width: 40rem;
+  min-height: 33rem;
+  height: 100%;
+  width: 30rem;
   margin-inline: auto;
-  margin-top: 4rem;
+  margin-top: 5vmin;
   border-radius: 10px;
   background-color: #ebf5ff; }
 
@@ -14,20 +15,25 @@
   text-align: center;
   justify-content: center;
   margin: 1rem;
-  height: 4rem;
-  font-size: 1.7rem; }
+  min-height: 4rem;
+  height: 100%;
+  font-size: 1.7rem;
+  word-wrap: break-word; }
 
 .card_quest {
   display: flex;
   flex-direction: column;
-  height: 33rem;
+  min-height: 23rem;
+  height: 100%;
   margin: 0 1rem 0 1rem;
   text-align: center;
   justify-content: center;
-  font-size: 1rem; }
+  font-size: 1rem;
+  word-wrap: break-word; }
 
 .card_footer {
   display: flex;
+  justify-self: end;
   margin-top: 1rem;
   height: 3rem;
   position: relative; }
@@ -42,27 +48,64 @@
     font-size: 1.2rem;
     cursor: pointer; }
   .card_footer > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
     position: absolute;
+    left: 1rem;
     font-size: 1rem;
-    cursor: pointer; }
+    cursor: pointer;
+    align-self: center; }
 
 .card_missAndHit {
-  margin: 1rem auto 1rem auto; }
+  display: flex;
+  width: calc(40rem - 20vmin);
+  margin: 1rem auto auto auto;
+  justify-content: center; }
 
 #card_missed {
   background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  margin-right: 1.5rem;
-  color: #e9f4ff; }
+  color: #e9f4ff;
+  margin: auto 1rem auto auto; }
 
 #card_hit {
   background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  border-radius: 10px;
-  margin-left: 1.5rem;
-  color: #e9f4ff; }
+  color: #e9f4ff;
+  margin: auto auto auto 1rem; }
+
+@media screen and (max-width: 600px) {
+  .card, .AddCard {
+    min-height: calc(33rem);
+    width: 80%;
+    min-height: 33rem; }
+  .card_quest {
+    min-height: 23rem; }
+  .card_missAndHit {
+    width: 80%; }
+  #card_missed, #card_hit {
+    width: 9rem !important;
+    height: 2.8rem !important; } }
+
+@media screen and (max-width: 450px) {
+  .card, .AddCard {
+    min-height: 28rem  !important;
+    width: 80% !important;
+    margin-top: 10vmin; }
+  .card_quest {
+    min-height: 18rem  !important; }
+  .card_missAndHit {
+    width: 80% !important;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  #card_missed, #card_hit {
+    width: 7rem !important;
+    height: 2.6rem !important;
+    margin: 0; }
+  .card_title {
+    font-size: 1.6rem; }
+  .card_quest {
+    font-size: 0.9rem; }
+  .card_footer > a {
+    font-size: 1.1rem; }
+  .card_footer > span {
+    display: none; } }
 
 .AddCard_title {
   text-align: center;
@@ -79,7 +122,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 1rem;
-  height: 5rem; }
+  min-height: 5rem; }
 
 .AddCard_quest {
   margin: auto 1rem auto 1rem;
@@ -99,8 +142,34 @@
   justify-content: center;
   margin: auto;
   width: 100%;
-  height: 33rem; }
+  min-height: 20rem; }
+
+.AddCard_missAndHit {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  justify-content: center; }
 
 .AddButton_staps {
   background-color: #051B24 !important;
   color: #ebf5ff; }
+
+@media screen and (max-width: 600px) {
+  .AddCard {
+    min-height: 33rem;
+    width: 80%; }
+  #AddContainer_quest {
+    min-height: 23rem; } }
+
+@media screen and (max-width: 450px) {
+  .AddCard {
+    min-height: 28rem  !important;
+    width: 80% !important;
+    margin-top: 10vmin; }
+  #AddContainer_quest {
+    min-height: 18rem  !important; }
+  .AddCard_title {
+    margin: 0.5rem !important;
+    font-size: 1.6rem; }
+  .AddCard_quest {
+    font-size: 0.9rem; } }
