@@ -3,7 +3,6 @@ import { GetReviewByCod } from "@/data/contracts/getReviewByCod";
 import { IListCardRepository } from "@/data/contracts/listCardRepository";
 import { IupdateCardReviewRepository } from "@/data/contracts/updateCardReviewRepository";
 import { ICardViewModel } from "@/data/models/cardViewModel";
-import { RowDataPacket } from "mysql2";
 import { ICardMysqlViewModel } from "../models/cardMysqlViewModel";
 import { IReviewMysqlViewModel } from "../models/reviewMysqlViewModel";
 import { pool } from "../mysqlPoolConnection";
@@ -11,7 +10,7 @@ import { pool } from "../mysqlPoolConnection";
 export class MysqlcardRepository implements IListCardRepository, IAddCardRepository, IupdateCardReviewRepository, GetReviewByCod{
     async listCard(): Promise<ICardMysqlViewModel[]>{  
         try {
-            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'SELECT flashcards.cod, front, back, interval_time from flashcards INNER JOIN reviews ON flashcards.review_cod = reviews.cod WHERE reviews.interval_time >= 0 ORDER BY reviews.interval_time', []); 
+            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'SELECT flashcards.cod, front, back, interval_time, review_cod  from flashcards INNER JOIN reviews ON flashcards.review_cod = reviews.cod ORDER BY reviews.interval_time asc', []); 
             return rows
         } catch (error) {
             throw new Error(error)
