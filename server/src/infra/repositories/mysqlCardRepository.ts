@@ -11,7 +11,7 @@ import { pool } from "../mysqlPoolConnection";
 export class MysqlcardRepository implements IListCardRepository, IAddCardRepository, IupdateCardReviewRepository, GetReviewByCod{
     async listCard(): Promise<ICardMysqlViewModel[]>{  
         try {
-            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'select * from flashcards', []); 
+            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'SELECT flashcards.cod, front, back, interval_time from flashcards INNER JOIN reviews ON flashcards.review_cod = reviews.cod WHERE reviews.interval_time >= 0 ORDER BY reviews.interval_time', []); 
             return rows
         } catch (error) {
             throw new Error(error)
