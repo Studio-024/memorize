@@ -33,7 +33,10 @@ const Dashboard = () => {
         <div className="container" id="containerCard">
             <main>
                 <ToastContainer />
-                <Switch>                
+                <Switch>     
+                    <Route exact path={`/dashboard`}>
+                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
+                    </Route>           
                     <Route exact path={`/dashboard/front`}>
                         <RevisionFront dataCards={orderCards} buttonIndex={index}/>
                     </Route>

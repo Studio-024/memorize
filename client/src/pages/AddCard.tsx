@@ -16,6 +16,9 @@ const AddCard = () => {
         <div className="container" id="containerCard">
             <main>
                 <Switch>
+                    <Route exact path={`/addCard`}>
+                        <AddFront add={"front"}/>
+                    </Route>     
                     <Route exact path={`/addCard/front`}>
                         <AddFront add={"front"}/>
                     </Route>
