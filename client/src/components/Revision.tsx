@@ -5,34 +5,30 @@ import { Link } from 'react-router-dom'
 
 export interface Props {
     dataCards: ICardOrdered[]
-    buttonIndex: number
 }
 
-const Revision = ({dataCards, buttonIndex}: Props) => {
-    const [front, setFront] = useState('')
-    const [back, setBack] = useState('')
-    const [card, setCard] = useState<ICardOrdered[]>([])
-    const [getRoute, setRoute] = useState("/dashboard/front")
+const Revision = ({dataCards}: Props) => {
+    const [index, setIndex] = useState(0)
+
+    const [card, setCard] = useState<ICardOrdered[]>([{front: "null", back: "null"}])
+    const [route, setRoute] = useState("/dashboard/front")
     
     useEffect(() => { 
-        setCard(dataCards)
+        if(dataCards.length !== 0){
+            setCard(dataCards)
+        }
+        console.log("dataCards", dataCards)
+     
     }, [dataCards])
 
-    useEffect(() => {
-        if (card.length && buttonIndex <= card.length) {
-            setFront(card[buttonIndex - 1].front)
-            setBack(card[buttonIndex - 1].back)
-        }
-        else {
-            setFront("Não há mais cards.")
-            setBack("Não há mais cards.")
-        }
-    }, [buttonIndex])
-    const route = () => {
-        if(getRoute == "/dashboard/front"){
+
+
+
+    const switchRoute = () => {
+        if(route == "/dashboard/front"){
             setRoute("/dashboard/back");
         }
-        if(getRoute == "/dashboard/back"){
+        if(route == "/dashboard/back"){
             setRoute("/dashboard/front");
         }
         
@@ -41,15 +37,31 @@ const Revision = ({dataCards, buttonIndex}: Props) => {
         <>
         <div className="card">
             <h1 className="card_title">Title</h1>
-            <p className="card_quest">{front}</p>
+            <p className="card_quest">{
+                route === "/dashboard/front" 
+                    ? card[index].front 
+                    : card[index].back
+            }</p>
             <div className="card_footer">
-                <span>Total:&nbsp;<a>2/11</a></span> 
-                <Link to={getRoute} onClick={route}><div> Virar Card</div></Link>
+                <span>Total:&nbsp;<a>{index+1}/{card.length}</a></span> 
+                <Link to={route} onClick={switchRoute}><div> Virar Card</div></Link>
             </div>
         </div>
             <div className="card_missAndHit">
-            <Link to="/dashboard/front"><button id="card_missed">Errei</button></Link>
-            <Link to="/dashboard/front"><button id="card_hit">Acertei</button></Link>
+            <Link to="/dashboard/front">
+                <button onClick={() => {
+                    if (card.length != 0 && index+1 < card.length) { 
+                        setIndex(index + 1)
+                    } 
+                }} id="card_missed">Errei</button>
+            </Link>
+
+            <Link to="/dashboard/front"><button id="card_hit" onClick={() => {
+                if (card.length != 0 && index+1 < card.length) { 
+                    setIndex(index + 1)
+                } 
+            }}>Acertei</button></Link>
+            
         </div>
         </>
     )

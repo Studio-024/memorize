@@ -11,37 +11,32 @@ import { Route, Switch } from 'react-router-dom'
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
-    const [index, setIndex] = useState(0)
-    useEffect(() => {
-        async function downloadCards() {
-            const orderObj = new OrderCardService()
-            const data = await orderObj.order(getCard())
 
-            setOrderCards(data)
-        }
 
-        downloadCards()
+    async function downloadCards() {
+        const orderObj = new OrderCardService()
+        const data = await orderObj.order(getCard())
 
-    }, [])
-    function resetCard() {
-        setIndex(index + 1)
-        document.getElementById("dashboard__content__back")!.style.display = "none"
-        document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
+        setOrderCards(data)
     }
 
+    useEffect(() => {
+        downloadCards()
+    }, [])
+    
 	return(
         <div className="container" id="containerCard">
             <main>
                 <ToastContainer />
                 <Switch>     
                     <Route exact path={`/dashboard`}>
-                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
+                        <RevisionFront dataCards={orderCards} />
                     </Route>           
                     <Route exact path={`/dashboard/front`}>
-                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
+                        <RevisionFront dataCards={orderCards}/>
                     </Route>
                     <Route exact path={`/dashboard/back`}>
-                        <RevisionBack dataCards={orderCards} buttonIndex={index}/>
+                        <RevisionBack dataCards={orderCards}/>
                     </Route>
                 </Switch>
             </main>
