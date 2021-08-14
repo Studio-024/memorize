@@ -10,7 +10,7 @@ export const getCard = async() => {
 	}
 	
 	catch (err) {
-		throw new ErrorHandler(err.request.status).Threat()
+		throw new ErrorHandler(err.request.status).Get()
 	}
 }
 
@@ -22,8 +22,7 @@ export const saveCard = async(front:string, back:string) => {
 		})
 	}
 	
-	catch (error) {
-		console.log(error)
-		throw new Error(error)
+	catch (err) {
+		throw new ErrorHandler(err.request.message).Post()
 	}
 }

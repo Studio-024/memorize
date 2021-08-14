@@ -7,7 +7,7 @@ export class ErrorHandler extends Error {
         this.errorStatusCode = errorStatusCode
     }
     
-    Threat () {
+    Get () {
         if (this.errorStatusCode) {
             switch(this.errorStatusCode) {
                 case 404: 
@@ -22,5 +22,8 @@ export class ErrorHandler extends Error {
         if (!this.errorStatusCode) {
             toast.error('API off!')
         }
+    }
+
+    Post () {
     }
 }
