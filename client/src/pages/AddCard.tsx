@@ -8,13 +8,13 @@ const AddCard = () => {
             <main>
                 <Switch>
                     <Route exact path={`/addCard`}>
-                        <AddFront add={"front"}/>
+                        <AddFront />
                     </Route>     
                     <Route exact path={`/addCard/front`}>
-                        <AddFront add={"front"}/>
+                        <AddFront />
                     </Route>
                     <Route exact path={`/addCard/back`}>
-                        <AddBack add={"back"}/>
+                        <AddBack />
                     </Route>
                 </Switch>
             </main>
