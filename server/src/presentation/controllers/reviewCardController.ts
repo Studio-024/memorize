@@ -13,7 +13,7 @@ export class reviewCardController implements IController {
 
     async handle(request: HttpRequest<IReviewPresentationViewModel>): Promise<HttpResponse>{
         const error = requiredParams(['userGrade', 'cod'], request)
-        console.log(error)
+
         if (error) {
             return errorHandler(error.response) 
         }
@@ -22,7 +22,6 @@ export class reviewCardController implements IController {
             cod: request.query!.cod,
             userGrade: request.body!.userGrade
         }
-
 
         try {
            await this.reviewCardUseCase.reviewCard(ReviewCard)

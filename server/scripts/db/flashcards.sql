@@ -2,9 +2,10 @@ CREATE TABLE flashcards (
 	cod INT NOT NULL AUTO_INCREMENT,
 	front VARCHAR(150) NOT NULL,
 	back VARCHAR(150) NOT NULL,
-	review_cod INT,
-	deck_cod INT,
+	review_cod INT NOT NULL,
 	user_cod INT,
+	deck_cod INT,
+
 	
 	PRIMARY KEY ( cod ),
 	FOREIGN KEY ( review_cod ) REFERENCES reviews( cod ),

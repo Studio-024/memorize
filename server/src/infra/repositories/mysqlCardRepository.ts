@@ -2,9 +2,11 @@ import { IAddCardRepository } from "@/data/contracts/addCardRepository";
 import { GetReviewByCod } from "@/data/contracts/getReviewByCod";
 import { IListCardRepository } from "@/data/contracts/listCardRepository";
 import { IupdateCardReviewRepository } from "@/data/contracts/updateCardReviewRepository";
+
 import { ICardViewModel } from "@/data/models/cardViewModel";
 import { ICardMysqlViewModel } from "../models/cardMysqlViewModel";
 import { IReviewMysqlViewModel } from "../models/reviewMysqlViewModel";
+
 import { pool } from "../mysqlPoolConnection";
 
 export class MysqlcardRepository implements IListCardRepository, IAddCardRepository, IupdateCardReviewRepository, GetReviewByCod{

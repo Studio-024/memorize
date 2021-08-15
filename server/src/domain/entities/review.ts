@@ -5,5 +5,4 @@ export interface IReview {
     streak?: number
     interval_time?: number
     easiness_factor?: number
-
 }
