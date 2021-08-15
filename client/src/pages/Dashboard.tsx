@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.min.css'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import { OrderCardService } from '../service/OrderCardService'
+import AddButton from '../components/AddButton'
 
 const Dashboard = () => { 
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
@@ -38,6 +39,7 @@ const Dashboard = () => {
                         <Revision dataCards={orderCards}/>
                     </Route>
                 </Switch>
+                <AddButton/>
             </main>
         </div>
 	)
