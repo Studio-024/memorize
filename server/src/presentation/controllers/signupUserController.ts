@@ -2,6 +2,7 @@ import { SignupUserService } from "@/data/services/signupUserService"
 import { IUser } from "@/domain/entities/user"
 import { IController } from "../contracts/controller"
 import { errorHandler, HttpRequest, HttpResponse, noContent } from "../contracts/http"
+import { requiredParams } from "../helper/requireParams"
 
 export class SignupUserController implements IController{
     constructor(
@@ -9,6 +10,12 @@ export class SignupUserController implements IController{
     ){}
 
     async handle (request: HttpRequest): Promise<HttpResponse> {
+        const error = requiredParams(['name', 'email', 'password'], request)
+
+        if (error) {
+            return errorHandler(error.response) 
+        } 
+
         try {
             const user: IUser = {
                 ...request.body

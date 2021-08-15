@@ -21,8 +21,6 @@ export class MysqlAccontRepository implements CheckAccountByEmailRepository, IAd
             await pool.query(`INSERT INTO users SET ?`, user)
         } catch (error) {
             throw new Error(error.stack);
-            
         }
-
     }
 }
