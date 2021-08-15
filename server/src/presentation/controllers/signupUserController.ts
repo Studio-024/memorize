@@ -13,9 +13,8 @@ export class SignupUserController implements IController{
             const user: IUser = {
                 ...request.body
             }
-            this.signupUserService.signup(user)
+            await this.signupUserService.signup(user)
 
-            console.log('rodando')
             return noContent()
         } catch (error) {
             return errorHandler(error.response)
