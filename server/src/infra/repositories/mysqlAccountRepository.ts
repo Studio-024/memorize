@@ -1,8 +1,10 @@
+import { IAddUserRepository } from "@/data/contracts/addUserRepository";
 import { CheckAccountByEmailRepository } from "@/data/contracts/chekAccountByEmail";
 import { RowDataPacket } from "mysql2";
+import { IUserMysqlViewModel } from "../models/userMysqlViewModel";
 import { pool } from "../mysqlPoolConnection";
 
-export class MysqlAccontRepository implements CheckAccountByEmailRepository{
+export class MysqlAccontRepository implements CheckAccountByEmailRepository, IAddUserRepository{
     constructor(){}
 
     async checkByEmail(email: string): Promise<CheckAccountByEmailRepository.Result>{
@@ -13,5 +15,14 @@ export class MysqlAccontRepository implements CheckAccountByEmailRepository{
         }else{
             return false
         }
+    }
+    async addUser(user: IUserMysqlViewModel){
+        try {
+            await pool.query(`INSERT INTO users SET ?`, user)
+        } catch (error) {
+            throw new Error(error.stack);
+            
+        }
+
     }
 }
