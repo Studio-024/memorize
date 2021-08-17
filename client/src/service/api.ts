@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { toast } from 'react-toastify'
 import { ICard } from '../domain/entities/Card'
 import { ErrorHandler } from '../utils/ErrorHandler'
 
@@ -16,10 +17,12 @@ export const getCard = async() => {
 
 export const saveCard = async(front:string, back:string) => {
 	try {
-		const res = await Axios.post<ICard[]>('http://localhost:3001/card', {
+		await Axios.post<ICard[]>('http://localhost:3001/card', {
 			front: front,
 			back: back
 		})
+
+		toast.success('Card created!')
 	}
 	
 	catch (err) {

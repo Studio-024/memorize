@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import AddFront from '../components/Add'
 import AddBack from '../components/Add'
 
@@ -6,6 +7,7 @@ const AddCard = () => {
 	return(
         <div className="container" id="containerCard">
             <main>
+                <ToastContainer />
                 <Switch>
                     <Route exact path={`/addCard`}>
                         <AddFront />

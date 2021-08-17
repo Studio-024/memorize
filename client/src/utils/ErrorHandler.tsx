@@ -16,6 +16,8 @@ export class ErrorHandler extends Error {
                 case 500:
                     toast.error('DataBase off!')
                     break
+                default:
+                    toast.error('Unexpected error!')
             }
         }
 
@@ -25,5 +27,14 @@ export class ErrorHandler extends Error {
     }
 
     Post () {
+        if (this.errorStatusCode) {
+            switch(this.errorStatusCode) {
+                case 422:
+                    toast.error('Missing parameter!')
+                    break
+                default:
+                    toast.error('Unexpected error!')
+            }
+        }
     }
 }
