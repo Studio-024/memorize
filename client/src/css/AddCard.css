@@ -147,3 +147,9 @@
 #AddCreateCard_button {
   background-color: #266A8D;
   color: #051B24; }
+
+#AddBack {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  cursor: pointer; }

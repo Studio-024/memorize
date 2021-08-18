@@ -44,6 +44,12 @@
   background-color: $background-primary;
   color: $background-secondary;
 }
+#AddBack{
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  cursor:pointer;
+}
 // @media screen and (max-width: 600px) {
 //   .AddCard{
 //     min-height: 33rem;
