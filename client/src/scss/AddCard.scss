@@ -1,86 +1,75 @@
 @import 'vars.scss';
 @import 'Revision.scss';
 
+#AddBackground{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
 .AddCard{
-  @extend .card;
-}
-.AddCard_title{
-  text-align: center;
-  justify-content: center;
-  font-size: $font-size-great;
-  &[placeholder]:empty:before {
-    content: attr(placeholder);
-    color: #555; 
-  }
-  &[placeholder]:empty:focus::before {
-    content: "";
-  }
-}
-#AddContainer_title{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1rem;
-  min-height: 5rem;
-}
-.AddCard_quest{
-  margin: auto 1rem auto 1rem;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, 0);
+  min-height: 10rem;
+  width: 30rem;
+  margin-inline: auto;
   padding: 1rem;
+  border-radius: 10px;
+  background-color: $background-secondary;
   text-align: center;
+  z-index: 1;
+  color: $background-primary;
+}
+.AddCard_TextInput{
+  text-align:left;
+  margin: 1rem auto 1rem auto;
+  border-bottom: 2px solid $background-primary;
+  background: $input-background;
+  border-radius: 10px 10px 0px 0px;
+  padding: 1rem;
   font-size: $font-size-min;
+  color: $input-color;
   cursor: text;
   &[placeholder]:empty:before {
     content: attr(placeholder);
-    color: #555; 
+    color: $input-placeholder; 
   }
   &[placeholder]:empty:focus::before {
     content: "";
   }
 }
-#AddContainer_quest{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  width: 100%;
-  min-height: 20rem;
+#AddCreateCard_button{
+  background-color: $background-primary;
+  color: $background-secondary;
 }
-.AddCard_missAndHit{
-  display: flex;
-  width: 100%;
-  margin-top: 1rem;
-  justify-content: center;
-}
-.AddButton_staps{
-  background-color: #051B24 !important;
-  color: $background-Card;
-}
-@media screen and (max-width: 600px) {
-  .AddCard{
-    min-height: 33rem;
-    width: 80%;
-  }
-  #AddContainer_quest{
-    min-height: 23rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  $font-size-min: 0.9rem;
-  $font-size-default: 1.1rem;
-  $font-size-great: 1.6rem;
-  .AddCard{
-    min-height: 28rem  !important;
-    width: 80% !important;
-    margin-top: 10vmin;
-  }
-  #AddContainer_quest{
-    min-height: 18rem  !important;
-  }
-  .AddCard_title{
-    margin: 0.5rem !important;
-    font-size: $font-size-great;
-  }
-  .AddCard_quest{
-    font-size: $font-size-min;
-  }
-}
+// @media screen and (max-width: 600px) {
+//   .AddCard{
+//     min-height: 33rem;
+//     width: 80%;
+//   }
+//   #AddContainer_quest{
+//     min-height: 23rem;
+//   }
+// }
+// @media screen and (max-width: 450px) {
+//   $font-size-min: 0.9rem;
+//   $font-size-default: 1.1rem;
+//   $font-size-great: 1.6rem;
+//   .AddCard{
+//     min-height: 28rem  !important;
+//     width: 80% !important;
+//     margin-top: 10vmin;
+//   }
+//   #AddContainer_quest{
+//     min-height: 18rem  !important;
+//   }
+//   .AddCard_title{
+//     margin: 0.5rem !important;
+//     font-size: $font-size-great;
+//   }
+//   .AddCard_quest{
+//     font-size: $font-size-min;
+//   }
+// }
