@@ -1,4 +1,4 @@
-import { encryptPlainText, ICrypter } from "@/data/contracts/cryptography/crypter";
+import { decryptResponse, encryptPlainText, ICrypter } from "@/data/contracts/cryptography/crypter";
 
 import jwt from 'jsonwebtoken'
 
@@ -8,7 +8,7 @@ export class JwtAdapter implements ICrypter {
         return jwt.sign({ id: plaintext.id, name: plaintext.name }, this.secret, {expiresIn: "1h"})
       }
     
-    async decrypt (ciphertext: string): Promise<string> {
+    async decrypt (ciphertext: string): Promise<decryptResponse> {
       return jwt.verify(ciphertext, this.secret) as any
     }
 }
