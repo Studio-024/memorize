@@ -9,10 +9,24 @@ import { IReviewMysqlViewModel } from "../models/reviewMysqlViewModel";
 
 import { pool } from "../mysqlPoolConnection";
 
-export class MysqlcardRepository implements IListCardRepository, IAddCardRepository, IupdateCardReviewRepository, GetReviewByCod{
+export class MysqlcardRepository implements 
+    IListCardRepository, 
+    IAddCardRepository, 
+    IupdateCardReviewRepository, 
+    GetReviewByCod
+{
+    private userId: number | null 
+
+    constructor(){
+        this.userId = null
+    }
+
+    setUserId(id: number){
+         this.userId = id
+    }
     async listCard(): Promise<ICardMysqlViewModel[]>{  
         try {
-            const [rows] =  await pool.query<ICardMysqlViewModel[]>( 'SELECT flashcards.cod, front, back, interval_time, review_cod  from flashcards INNER JOIN reviews ON flashcards.review_cod = reviews.cod ORDER BY reviews.interval_time asc', []); 
+            const [rows] =  await pool.query<ICardMysqlViewModel[]>( `SELECT flashcards.cod, front, back, interval_time, review_cod from flashcards INNER JOIN reviews ON flashcards.review_cod = reviews.cod WHERE flashcards.user_cod = ${this.userId} ORDER BY reviews.interval_time asc`, []); 
             return rows
         } catch (error) {
             throw new Error(error)
@@ -22,9 +36,10 @@ export class MysqlcardRepository implements IListCardRepository, IAddCardReposit
     async addCard(card: ICardViewModel): Promise<void>{
         try {
             // guambiarra a gente aceita
+            console.log('user id: ', this.userId)
             await pool.query(`INSERT INTO reviews SET streak= 0` );
             const test: any = await pool.query('SELECT @@IDENTITY;')
-            await pool.query(`INSERT INTO flashcards SET ?`, {front: card.front, back: card.back, review_cod: test[0][0]['@@IDENTITY']});
+            await pool.query(`INSERT INTO flashcards SET ?`, {front: card.front, back: card.back, review_cod: test[0][0]['@@IDENTITY'], user_cod: this.userId});
 
 
         } catch (error) {
