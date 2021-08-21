@@ -3,7 +3,7 @@ CREATE TABLE flashcards (
 	front VARCHAR(150) NOT NULL,
 	back VARCHAR(150) NOT NULL,
 	review_cod INT NOT NULL,
-	user_cod INT,
+	user_cod INT NOT NULL,
 	deck_cod INT,
 
 	
