@@ -10,7 +10,7 @@ button {
 html, body {
   width: 100%;
   height: 100%;
-  background: #266A8D 100%; }
+  background: #266A8D; }
 
 .container {
   display: flex;
