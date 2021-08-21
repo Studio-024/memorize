@@ -5,7 +5,9 @@ import { HttpRequest } from "../contracts/http"
 export function requiredParams(reqParans: string[], request: HttpRequest) {
     const totalRequest = {
         ...request.query,
-        ...request.body
+        ...request.body,
+        ...request.headers,
+        ...request
     }
     
     for(const param of reqParans){
