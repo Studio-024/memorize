@@ -6,6 +6,7 @@ export type HttpResponse<T = any> = {
 export type HttpRequest <T = any>= {
   body?: T
   query?: T
+  headers?: T
 }
 
 export const ok = (data: any): HttpResponse => ({
@@ -16,6 +17,15 @@ export const ok = (data: any): HttpResponse => ({
 export const noContent = (): HttpResponse => ({
   statusCode: 200,
   data: null
+})
+
+export const unauthorized  = (data: string): HttpResponse => ({
+  statusCode: 401,
+  data: {
+    status: 401,
+    message: data,
+    stack: 'undefined'
+  }
 })
 
 export const errorHandler = (error: {status: number, message: string,  stack: string}): HttpResponse => ({
