@@ -11,6 +11,6 @@ export interface decryptResponse {
 }
 
 export interface encryptPlainText {
-    id: number
-    name: string
+    id?: number
+    name?: string
 }

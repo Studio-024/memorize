@@ -5,6 +5,7 @@ import { makeAddCardController } from '../factories/addCardController'
 import { makeListCardController } from '../factories/listCardController'
 import { makeAuthMiddleware } from '../factories/middlewares/middlewareAdapter'
 import { makeReviewCardController } from '../factories/reviewCardController'
+import { makeSignInUserController } from '../factories/signInUserController'
 import { makeSignupUserController } from '../factories/signupUserController'
 
 const routes = Router()
@@ -16,6 +17,8 @@ routes.post('/card', adaptMiddleware(makeAuthMiddleware()), adaptRoute(makeAddCa
 routes.put('/card/review', adaptMiddleware(makeAuthMiddleware()), adaptRoute(makeReviewCardController()))
 
 
-routes.post('/test/user', adaptRoute(makeSignupUserController()))
+routes.post('/user/signup', adaptRoute(makeSignupUserController()))
+
+routes.post('/user/login', adaptRoute(makeSignInUserController()))
 
 export default routes
