@@ -7,7 +7,7 @@ export class ErrorHandler extends Error {
         this.errorStatusCode = errorStatusCode
     }
     
-    Threat () {
+    Get () {
         if (this.errorStatusCode) {
             switch(this.errorStatusCode) {
                 case 404: 
@@ -16,11 +16,25 @@ export class ErrorHandler extends Error {
                 case 500:
                     toast.error('DataBase off!')
                     break
+                default:
+                    toast.error('Unexpected error!')
             }
         }
 
         if (!this.errorStatusCode) {
             toast.error('API off!')
+        }
+    }
+
+    Post () {
+        if (this.errorStatusCode) {
+            switch(this.errorStatusCode) {
+                case 422:
+                    toast.error('Missing parameter!')
+                    break
+                default:
+                    toast.error('Unexpected error!')
+            }
         }
     }
 }

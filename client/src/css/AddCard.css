@@ -1,10 +1,11 @@
-.card, .AddCard {
+.card {
   display: flex;
   flex-direction: column;
-  height: 43rem;
-  width: 40rem;
+  min-height: 33rem;
+  height: 100%;
+  width: 30rem;
   margin-inline: auto;
-  margin-top: 4rem;
+  margin-top: 5vmin;
   border-radius: 10px;
   background-color: #ebf5ff; }
 
@@ -14,20 +15,25 @@
   text-align: center;
   justify-content: center;
   margin: 1rem;
-  height: 4rem;
-  font-size: 1.7rem; }
+  min-height: 4rem;
+  height: 100%;
+  font-size: 1.7rem;
+  word-wrap: break-word; }
 
 .card_quest {
   display: flex;
   flex-direction: column;
-  height: 33rem;
+  min-height: 23rem;
+  height: 100%;
   margin: 0 1rem 0 1rem;
   text-align: center;
   justify-content: center;
-  font-size: 1rem; }
+  font-size: 1rem;
+  word-wrap: break-word; }
 
 .card_footer {
   display: flex;
+  justify-self: end;
   margin-top: 1rem;
   height: 3rem;
   position: relative; }
@@ -50,55 +56,100 @@
 
 .card_missAndHit {
   display: flex;
-  justify-content: space-around;
   width: calc(40rem - 20vmin);
-  margin: 1rem auto auto auto; }
+  margin: 1rem auto auto auto;
+  justify-content: center; }
 
 #card_missed {
   background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  color: #e9f4ff; }
+  color: #e9f4ff;
+  margin: auto 1rem auto auto; }
 
 #card_hit {
   background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  color: #e9f4ff; }
+  color: #e9f4ff;
+  margin: auto auto auto 1rem; }
 
-.AddCard_title {
-  text-align: center;
-  justify-content: center;
-  font-size: 1.7rem; }
-  .AddCard_title[placeholder]:empty:before {
-    content: attr(placeholder);
-    color: #555; }
-  .AddCard_title[placeholder]:empty:focus::before {
-    content: ""; }
+@media screen and (max-width: 600px) {
+  .card {
+    min-height: calc(33rem);
+    width: 80%;
+    min-height: 33rem; }
+  .card_quest {
+    min-height: 23rem; }
+  .card_missAndHit {
+    width: 80%; }
+  #card_missed, #card_hit {
+    width: 9rem !important;
+    height: 2.8rem !important; } }
 
-#AddContainer_title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 1rem;
-  height: 5rem; }
+@media screen and (max-width: 450px) {
+  .card {
+    min-height: 28rem  !important;
+    width: 80% !important;
+    margin-top: 10vmin; }
+  .card_quest {
+    min-height: 18rem  !important; }
+  .card_missAndHit {
+    width: 80% !important;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  #card_missed, #card_hit {
+    width: 7rem !important;
+    height: 2.6rem !important;
+    margin: 0; }
+  .card_title {
+    font-size: 1.6rem; }
+  .card_quest {
+    font-size: 0.9rem; }
+  .card_footer > a {
+    font-size: 1.1rem; }
+  .card_footer > span {
+    display: none; } }
 
-.AddCard_quest {
-  margin: auto 1rem auto 1rem;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1rem;
-  cursor: text; }
-  .AddCard_quest[placeholder]:empty:before {
-    content: attr(placeholder);
-    color: #555; }
-  .AddCard_quest[placeholder]:empty:focus::before {
-    content: ""; }
-
-#AddContainer_quest {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
+#AddBackground {
+  position: fixed;
   width: 100%;
-  height: 33rem; }
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); }
 
-.AddButton_staps {
-  background-color: #051B24 !important;
-  color: #ebf5ff; }
+.AddCard {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, 0);
+  min-height: 10rem;
+  width: 30rem;
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #051B24;
+  text-align: center;
+  z-index: 1;
+  color: #266A8D; }
+
+.AddCard_TextInput {
+  text-align: left;
+  margin: 1rem auto 1rem auto;
+  border-bottom: 2px solid #266A8D;
+  background: rgba(40, 112, 148, 0.21);
+  border-radius: 10px 10px 0px 0px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #71B6D9;
+  cursor: text; }
+  .AddCard_TextInput[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: rgba(40, 112, 148, 0.5); }
+  .AddCard_TextInput[placeholder]:empty:focus::before {
+    content: ""; }
+
+#AddCreateCard_button {
+  background-color: #266A8D;
+  color: #051B24; }
+
+#AddBack {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  cursor: pointer; }

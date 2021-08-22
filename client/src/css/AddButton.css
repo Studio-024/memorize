@@ -1,0 +1,10 @@
+.crud_button {
+  position: fixed;
+  right: 3rem;
+  bottom: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  font-size: 2.5rem;
+  color: #266A8D;
+  background-color: #051B24; }

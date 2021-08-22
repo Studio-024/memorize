@@ -5,5 +5,6 @@ import {RowDataPacket} from 'mysql2'
 export interface ICardMysqlViewModel extends ICardViewModel, RowDataPacket{
     cod: number,
     front: string,
-    back: string
+    back: string,
+    interval_time: number
 }
