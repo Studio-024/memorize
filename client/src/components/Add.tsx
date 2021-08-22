@@ -1,33 +1,39 @@
-import '../css/AddCard.css'
-import { Link } from 'react-router-dom'
+import '../css/AddCard.css';
+import { saveCard } from '../service/api';
+import { ErrorHandler } from '../utils/ErrorHandler';
+import backSVG from  '../assets/back.svg';
 
-interface Props{
-    add: string
-}
+const Add = () => {
+    function handleGoBack(){
+        document.getElementById('AddContainer')!.style.display = 'none';
+    }
+    function create() {
+        const front = document.getElementById('front')!.innerHTML;
+        const back = document.getElementById('back')!.innerHTML;
 
-const Add = (Props: Props) => {
-    let side  = Props.add
-    console.log(side)
+        if (front && back) {
+            saveCard(front, back)
+            document.getElementById('front')!.innerHTML = '';
+            document.getElementById('back')!.innerHTML = '';
+        } else {
+            new ErrorHandler(422).Post();
+        }
+    }
+
     return(
-        <>
-        <div className="AddCard">
-            { side === 'front' && <div id="AddContainer_title">
-                <h1 contentEditable="true"  spellCheck={true} className="AddCard_title" placeholder="Digite aqui o titulo"></h1>
-            </div>}
-            <div id="AddContainer_quest">
-            { side === 'front' && <p contentEditable="true" spellCheck={true} className="AddCard_quest" placeholder={"Digite aqui a pergunta"}></p>}
-            { side === 'back' && <p contentEditable="true" spellCheck={true} className="AddCard_quest" placeholder={"Digite aqui a resposta"}></p>}
+        <div id="AddContainer" style={{display:'none'}}>
+            <div id="AddBackground" onClick={handleGoBack}/>
+            <div className="AddCard">
+                <div id="AddBack" onClick={handleGoBack}>
+                    <img src={backSVG} alt="" />
+                </div>
+                <h1>Novo Card</h1>
+                <p contentEditable="true" spellCheck={true} className="AddCard_TextInput" placeholder={"Titulo"}></p>
+                <p contentEditable="true" spellCheck={true} className="AddCard_TextInput" placeholder={"Pergunta"}></p>
+                <p contentEditable="true" spellCheck={true} className="AddCard_TextInput" placeholder={"Resposta"}></p>                    
+                <button id='AddCreateCard_button'>Criar Card</button>
             </div>
-            { side === 'front' && <div style={{height: "3rem", margin: "1rem"}}/>}
         </div>
-        <div className="AddCard_missAndHit">
-            {side === 'front' && 
-            <Link to={"/addCard/back"}><button className="AddButton_staps">Próximo</button></Link>
-            || side === 'back' && 
-            <button className="AddButton_staps">Salvar Card</button>
-            }    
-        </div>
-        </>
     )
 }
 export default Add;

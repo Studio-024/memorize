@@ -1,0 +1,13 @@
+@import 'vars.scss';
+ 
+.crud_button{
+  position: fixed;
+  right: 3rem;
+  bottom: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  font-size: 2.5rem;
+  color: $background-primary;
+  background-color: $background-secondary;
+}

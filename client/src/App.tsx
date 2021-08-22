@@ -1,6 +1,5 @@
 import './css/App.css';
 import Dashboard from './pages/Dashboard';
-import AddCard from './pages/AddCard';
 import {Switch, Route} from "react-router-dom";
 
 const App = () => {
@@ -10,9 +9,6 @@ const App = () => {
 			<Route path="/Dashboard">
 				<Dashboard/>
 			</Route>		
-			<Route path="/addCard">
-				<AddCard/>
-			</Route>
 		</Switch>
 		</>
 	)

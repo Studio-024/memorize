@@ -1,57 +1,73 @@
-import { useState, useEffect } from 'react'
 import '../css/Revision.css'
-import { ICardOrdered } from '../domain/useCase/orderCard'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { ICardOrdered } from '../domain/useCase/orderCard'
 
 export interface Props {
     dataCards: ICardOrdered[]
-    buttonIndex: number
 }
 
-const Revision = ({dataCards, buttonIndex}: Props) => {
-    const [front, setFront] = useState('')
-    const [back, setBack] = useState('')
-    const [card, setCard] = useState<ICardOrdered[]>([])
-    const [getRoute, setRoute] = useState("/dashboard/front")
+const Revision = ({dataCards}: Props) => {
+    const [index, setIndex] = useState(0)
+    const [card, setCard] = useState<ICardOrdered[]>([{front: 'null', back: 'null'}])
+    const [route, setRoute] = useState('/dashboard/front')
     
     useEffect(() => { 
-        setCard(dataCards)
+        if (dataCards.length !== 0) {
+            setCard(dataCards)
+        }
+     
     }, [dataCards])
 
-    useEffect(() => {
-        if (card.length && buttonIndex <= card.length) {
-            setFront(card[buttonIndex - 1].front)
-            setBack(card[buttonIndex - 1].back)
+    const switchRoute = () => {
+        switch (route) {
+            case '/dashboard/front':
+                setRoute('/dashboard/back')
+                break
+            case '/dashboard/back':
+                setRoute('/dashboard/front')
+                break
         }
-        else {
-            setFront("Não há mais cards.")
-            setBack("Não há mais cards.")
-        }
-    }, [buttonIndex])
-    const route = () => {
-        if(getRoute == "/dashboard/front"){
-            setRoute("/dashboard/back");
-        }
-        if(getRoute == "/dashboard/back"){
-            setRoute("/dashboard/front");
-        }
-        
     }
-    return(
+
+    const nextCard = () => {
+        if (index+1 < card.length) { 
+            setIndex(index + 1)
+        } else {
+            card[index].front = 'Não há mais cards'
+            card[index].back = 'Não há mais cards'
+            switchRoute()
+        }
+    }
+
+    return (
         <>
-        <div className="card">
-            <h1 className="card_title">Title</h1>
-            <p className="card_quest">{front}</p>
-            <div className="card_footer">
-                <span>Total:&nbsp;<a>2/11</a></span> 
-                <Link to={getRoute} onClick={route}><div> Virar Card</div></Link>
+        <div className='card'>
+            <h1 className='card_title'>Title</h1>
+            
+            <p className='card_quest'>{
+                route === '/dashboard/front'
+                    ? card[index].front 
+                    : card[index].back
+            }</p>
+
+            <div className='card_footer'>
+                <span>Total:&nbsp;<a>{index+1}/{card.length}</a></span> 
+                <Link to={route} onClick={switchRoute}><div>Virar Card</div></Link>
             </div>
         </div>
-            <div className="card_missAndHit">
-            <Link to="/dashboard/front"><button id="card_missed">Errei</button></Link>
-            <Link to="/dashboard/front"><button id="card_hit">Acertei</button></Link>
+
+        <div className='card_missAndHit'>
+            <Link to='/dashboard/front'>
+                <button id='card_missed' onClick={nextCard}>Errei</button>
+            </Link>
+
+            <Link to='/dashboard/front'>
+                <button id='card_hit' onClick={nextCard}>Acertei</button>
+            </Link>
+            
         </div>
         </>
     )
 }
-export default Revision;
+export default Revision
