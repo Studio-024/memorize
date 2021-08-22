@@ -10,9 +10,7 @@ const App = () => {
 			<Route path="/Dashboard">
 				<Dashboard/>
 			</Route>		
-
-			{/* Test */}
-			<Route path="/registro">
+			<Route path="/registry">
 				<Registry/>
 			</Route>
 		</Switch>
