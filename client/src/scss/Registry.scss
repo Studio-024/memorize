@@ -1,23 +1,29 @@
 @import './vars.scss';
 @import './fonts.scss';
 
+
 .registry{
-  background-image: url('../assets/Rectangle\ 39.png');
-  position: fixed;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
+  #registry_background{
+    background-image: url('../assets/backgroundSecundary.png');
+    position: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
   &_header{
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    width: 28rem;
     justify-content: center;
     margin-inline: auto;
     align-items: center;
+    width: 28rem;
     height: 16rem;
+    font-family: 'Risque';
     font-size: 3.5rem;
     color: $input-color;
-    font-family: 'Risque';
+    user-select: none;
   }
   &_main{
     display: flex;
@@ -43,10 +49,8 @@
       &::placeholder{
         color: $input-placeholder;
       }
-      
       &:nth-of-type(3){
         margin-bottom: 5rem;
-
       }
     }
     &_submit{
@@ -55,6 +59,35 @@
       font-family: 'Poly';
       font-size: 1.5rem;
     }
-    
+  }
+}
+@media screen and (max-width: 43rem) {
+  .registry{
+    &_header{
+      width: 18rem;
+      height: 8rem;
+      font-size: 3.5rem;
+    }
+    &_main{
+      width: 18rem;
+      &_container_input{ 
+        display: flex;
+      }  
+      &_input{
+        margin: calc(2rem + 5vh) 0 0 0;
+        height: 3rem;
+        width: 14rem;
+        border-radius: 12px 12px 1px 1px;
+        color: $input-color;
+        font-size: 1.2rem;
+        &:nth-of-type(3){
+          margin-bottom: calc(3rem + 5vh);
+        }
+      }
+      &_submit{
+        width: 16rem;
+        font-size: 1.7rem;
+      }
+    }
   }
 }

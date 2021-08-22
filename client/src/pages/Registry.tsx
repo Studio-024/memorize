@@ -8,6 +8,7 @@ const Registry = () => {
     
     <>
     <div className="registry">
+      <div id='registry_background'/>
       <header className="registry_header">MEMORIZE</header>
       <main className="registry_main">
         <form className='registry_main_container_input'>
@@ -16,7 +17,7 @@ const Registry = () => {
           <input type="password" className="registry_main_input" placeholder="Senha"/>
           <button className="registry_main_submit">Criar Conta</button>
         </form>
-      </main>   
+      </main>
     </div>
     </>
 
