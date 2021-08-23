@@ -1,7 +1,7 @@
 import { SignInUserService } from "@/data/services/signInUserService";
 import { IUserLogin } from "@/domain/entities/userLogin";
 import { IController } from "../contracts/controller";
-import { errorHandler, HttpRequest, HttpResponse, noContent } from "../contracts/http";
+import { errorHandler, HttpRequest, HttpResponse, ok } from "../contracts/http";
 import { requiredParams } from "../helper/requireParams";
 
 export class SignInUserController implements IController {
@@ -24,9 +24,9 @@ export class SignInUserController implements IController {
                 data: await this.signInUserService.signIn(user)
             }
             
-            return response
+            return ok(response)
         } catch (error) {
-            return errorHandler(error)
+            return errorHandler(error.response)
         }
     }
 }
