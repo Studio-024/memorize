@@ -1,0 +1,9 @@
+header {
+  margin-block: 5rem; }
+
+main, form, header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%; }

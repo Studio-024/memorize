@@ -2,6 +2,7 @@ import './css/App.css';
 import Dashboard from './pages/Dashboard';
 import AddCard from './pages/AddCard';
 import {Switch, Route} from "react-router-dom";
+import Login from './pages/Login';
 
 const App = () => {
 	return(
@@ -12,6 +13,9 @@ const App = () => {
 			</Route>		
 			<Route path="/addCard">
 				<AddCard/>
+			</Route>
+			<Route path="/login">
+				<Login/>
 			</Route>
 		</Switch>
 		</>
