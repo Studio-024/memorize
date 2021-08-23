@@ -1,4 +1,4 @@
-import { Hasher} from '@/data/contracts/hasher'
+import { Hasher} from '@/data/contracts/cryptography/hasher'
 
 import bcrypt from 'bcrypt'
 

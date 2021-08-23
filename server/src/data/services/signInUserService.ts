@@ -2,8 +2,10 @@ import { IUserLogin } from "@/domain/entities/userLogin";
 import { ISignInUser } from "@/domain/usecases/signInUser";
 import { PasswordEncryptedRepository, SignInRepository } from "../contracts/signIn"
 import { CheckAccountByEmailRepository } from "../contracts/chekAccountByEmail";
-import { Hasher } from "../contracts/hasher";
 import { encryptPlainText, ICrypter } from "../contracts/cryptography/crypter";
+import { Hasher } from "../contracts/cryptography/hasher";
+import { ErrorREST } from "@/domain/err/errorRest";
+import { badRequest } from "@/domain/err/helper";
 
 export class SignInUserService implements ISignInUser {
     constructor (
@@ -13,23 +15,25 @@ export class SignInUserService implements ISignInUser {
         private readonly hasher: Hasher,
         private readonly crypter: ICrypter
     ) {}
+
     async signIn(user: IUserLogin){
         const emailExists = await this.checkAccountByEmail.checkByEmail(user.email)
-        
-        if (emailExists) {
+
+        if (!emailExists)  throw new ErrorREST(badRequest('email does not'))
+            
             const passwordEncrypted = await this.checkCredentials.passwordEncrypted(user)
             const passwordIsCorrect = await this.hasher.compare(user.password, passwordEncrypted)
 
-            if (passwordIsCorrect) {
-                const rowUser:encryptPlainText = await this.signInRepository.signIn({email: user.email, password: passwordEncrypted})
-                const token = await this.crypter.encrypt(rowUser)
-
-                return token
-            } else {
-                throw new Error('Password dont match')
+        if (!passwordIsCorrect) throw new ErrorREST(badRequest('password does not match'))
+            
+        const rowUser:encryptPlainText = await this.signInRepository.signIn(
+            {
+                email: user.email, 
+                password: passwordEncrypted
             }
-        } else {
-            throw new Error('Email dont exist')
-        }
+        )
+        const token = await this.crypter.encrypt(rowUser)
+
+        return token
     }
 }

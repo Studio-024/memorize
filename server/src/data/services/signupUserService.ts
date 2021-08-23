@@ -3,7 +3,7 @@ import { badRequest } from "@/domain/err/helper";
 import { ISignupUser } from "@/domain/usecases/signupUser";
 import { IAddUserRepository } from "../contracts/addUserRepository";
 import { CheckAccountByEmailRepository } from "../contracts/chekAccountByEmail";
-import { Hasher } from "../contracts/hasher";
+import { Hasher } from "../contracts/cryptography/hasher";
 import { IuserViewModel } from "../models/userViewModel";
 
 export class SignupUserService implements ISignupUser {
@@ -13,13 +13,18 @@ export class SignupUserService implements ISignupUser {
         private readonly haser: Hasher
     ){}
     async signup(user: IuserViewModel){
-        const emailExists = await this.checkAccountByEmail.checkByEmail(user.email);
+        try {
+            const emailExists = await this.checkAccountByEmail.checkByEmail(user.email);
 
-        if(emailExists){
+            if(emailExists){
             throw new ErrorREST(badRequest('email alredy exists', 'email existis'))
+            }
+
+            const passwordHashed = await this.haser.hash(user.password)
+            await this.addUser.addUser({...user, password: passwordHashed})
+            
+        } catch (error) {
+            throw new ErrorREST(error.stack)
         }
-        
-        const passwordHashed = await this.haser.hash(user.password)
-        await this.addUser.addUser({...user, password: passwordHashed})
     }
 }
