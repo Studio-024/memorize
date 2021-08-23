@@ -1,49 +1,55 @@
-import { useEffect, useState } from 'react'
-import RevisionFront from '../components/Revision'
-import RevisionBack from '../components/Revision'
-import { getCard } from '../service/api'
-import { ICardOrdered } from '../domain/useCase/orderCard'
-import { OrderCardService } from '../service/OrderCardService'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.min.css'
-import { Route, Switch } from 'react-router-dom'
-
+import { getCard } from '../service/api';
+import { useEffect, useState } from 'react';
+import Revision from '../components/Revision';
+import { ToastContainer } from 'react-toastify';
+import { Link, Route, Switch, useHistory } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.min.css';
+import { ICardOrdered } from '../domain/useCase/orderCard';
+import { OrderCardService } from '../service/OrderCardService';
+import '../css/AddButton.css';
+import Add from '../components/Add';
 
 const Dashboard = () => { 
-    const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
-    const [index, setIndex] = useState(0)
-    useEffect(() => {
-        async function downloadCards() {
-            const orderObj = new OrderCardService()
-            const data = await orderObj.order(getCard())
+    let history = useHistory();
+    const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([]);
 
-            setOrderCards(data)
-        }
+    function handleClickAdd(){
+        document.getElementById('AddContainer')!.style.display = 'initial';
+    }
+    async function downloadCards() {
+        const orderObj = new OrderCardService();
+        const data = await orderObj.order(getCard());
 
-        downloadCards()
-
-    }, [])
-    function resetCard() {
-        setIndex(index + 1)
-        document.getElementById("dashboard__content__back")!.style.display = "none"
-        document.getElementById("dashboard__content__seeBack")!.style.display = "initial"
+        setOrderCards(data);
     }
 
+    useEffect(() => {
+        downloadCards();
+    }, [])
+
 	return(
-        <div className="container" id="containerCard">
+        <div className='container' id='containerCard'>
             <main>
                 <ToastContainer />
-                <Switch>                
+                <Add/>
+                <Switch>
+                    <Route exact path={`/dashboard`}>
+                        <>{history.push('/')}</>
+                        <>{history.push('dashboard/front')}</>
+                    </Route>
                     <Route exact path={`/dashboard/front`}>
-                        <RevisionFront dataCards={orderCards} buttonIndex={index}/>
+                        {/* Front */}
+                        <Revision dataCards={orderCards}/>
                     </Route>
                     <Route exact path={`/dashboard/back`}>
-                        <RevisionBack dataCards={orderCards} buttonIndex={index}/>
+                        {/* Back */}
+                        <Revision dataCards={orderCards}/>
                     </Route>
                 </Switch>
+                <button className="crud_button" onClick={handleClickAdd}>+</button>
             </main>
         </div>
 	)
 }
 
-export default Dashboard
+export default Dashboard;

@@ -3,10 +3,11 @@
 .card{
   display: flex;
   flex-direction: column;
-  height: 43rem;
-  width: 40rem;
+  min-height: 33rem;
+  height: 100%;
+  width: 30rem;
   margin-inline: auto;
-  margin-top: 4rem;
+  margin-top: 5vmin;
   border-radius: 10px;
   background-color: $background-Card;
 }
@@ -16,20 +17,25 @@
   text-align: center;
   justify-content: center;
   margin: 1rem;
-  height: 4rem;
+  min-height: 4rem;
+  height: 100%;
   font-size: $font-size-great;
+  word-wrap: break-word;
 }
 .card_quest{
   display: flex;
   flex-direction: column;
-  height: 33rem;
+  min-height: 23rem;
+  height: 100%;
   margin: 0 1rem 0 1rem;
   text-align: center;
   justify-content: center;
   font-size: $font-size-min;
+  word-wrap: break-word;
 }
 .card_footer{
   display: flex;
+  justify-self: end;
   margin-top: 1rem;
   height: 3rem;
   position: relative;
@@ -43,7 +49,7 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.301);
     font-size: $font-size-default;
     cursor:pointer;
-
+    
   }
   & > span{
     position: absolute;
@@ -55,15 +61,75 @@
 }
 .card_missAndHit{
   display: flex;
-  justify-content: space-around;
   width: calc(40rem - 20vmin);
   margin: 1rem auto auto auto ;
+  justify-content: center;
 }
 #card_missed{
   background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
   color: rgba(233, 244, 255, 1);
+  margin: auto 1rem auto auto;
 }
 #card_hit{
   background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
   color: rgba(233, 244, 255, 1);
+  margin: auto auto auto 1rem;
+  
+}
+@media screen and (max-width: 600px) {
+  .card{
+    min-height: calc(33rem);
+    width: 80%;
+    min-height: 33rem;
+  }
+  .card_quest{
+    min-height: 23rem;
+
+  }
+  .card_missAndHit{
+    width: 80%;
+  }
+  #card_missed, #card_hit{
+    width: 9rem !important;
+    height: 2.8rem !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  $font-size-min: 0.9rem;
+  $font-size-default: 1.1rem;
+  $font-size-great: 1.6rem;
+  .card{
+    min-height: 28rem  !important;
+    width: 80% !important;
+    margin-top: 10vmin;
+  }
+  .card_quest{
+    min-height: 18rem  !important;
+
+  }
+  .card_missAndHit{
+    width: 80% !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #card_missed, #card_hit{
+    width: 7rem !important; //10
+    height: 2.6rem !important; //3
+    margin: 0;
+  }
+  .card_title{
+    // margin: 0.5rem !important;
+    font-size: $font-size-great;
+  }
+  .card_quest{
+    font-size: $font-size-min;
+  }
+  .card_footer{
+    & > a{
+      font-size: $font-size-default;
+    }
+    & > span{
+      display: none;
+    }
+  }
 }
