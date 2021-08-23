@@ -1,5 +1,4 @@
-import { IuserViewModel } from '@/data/models/userViewModel'
+import { IUserViewModel } from '@/data/models/userViewModel'
+import { RowDataPacket } from 'mysql2'
 
-import {RowDataPacket} from 'mysql2'
-
-export interface IUserMysqlViewModel extends IuserViewModel, RowDataPacket{}
+export interface IUserMysqlViewModel extends IUserViewModel, RowDataPacket{}

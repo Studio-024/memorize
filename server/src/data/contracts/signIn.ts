@@ -1,4 +1,4 @@
-import { IUserLogin } from "@/domain/entities/userLogin";
+import { IUserLogin } from '@/domain/entities/userLogin'
 
 export interface PasswordEncryptedRepository {
     passwordEncrypted: (user: IUserLogin) => Promise<string>

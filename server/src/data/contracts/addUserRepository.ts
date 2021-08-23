@@ -1,5 +1,5 @@
-import { IuserViewModel } from "../models/userViewModel";
+import { IUserViewModel } from '../models/userViewModel'
 
 export interface IAddUserRepository {
-    addUser(user: IuserViewModel): Promise<void>
+    addUser(user: IUserViewModel): Promise<void>
 }

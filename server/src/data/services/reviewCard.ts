@@ -1,18 +1,18 @@
-import { ErrorREST } from "@/domain/err/errorRest";
-import { serverError } from "@/domain/err/helper";
-import { IupdateCardReviewRepository } from "../contracts/updateCardReviewRepository";
-import { IReviewCardUseCase } from "@/domain/usecases/reviewCard";
-import { GetReviewByCod } from "../contracts/getReviewByCod";
-import { IReviewCardViewModel } from "../models/reviewCardViewModel";
+import { ErrorREST } from '@/domain/err/errorRest'
+import { serverError } from '@/domain/err/helper'
+import { IUpdateCardReviewRepository } from '../contracts/updateCardReviewRepository'
+import { IReviewCardUseCase } from '@/domain/usecases/reviewCard'
+import { GetReviewByCod } from '../contracts/getReviewByCod'
+import { IReviewCardViewModel } from '../models/reviewCardViewModel'
 
 
 export class ReviewCardService implements IReviewCardUseCase {
     constructor(
-        private readonly updateCardRepository: IupdateCardReviewRepository,
+        private readonly updateCardRepository: IUpdateCardReviewRepository,
         private readonly getTableByCod: GetReviewByCod        
         ){}
 
-    async reviewCard(card: IReviewCardViewModel){
+    async reviewCard(card: IReviewCardViewModel) {
         const review = await this.getTableByCod.getReviewByCod(card.cod)
 
         const cardReview: IReviewCardViewModel = {
@@ -20,7 +20,7 @@ export class ReviewCardService implements IReviewCardUseCase {
             userGrade: card.userGrade 
         }
 
-        if (cardReview.userGrade>= 3){
+        if (cardReview.userGrade>= 3) {
             if (cardReview.streak === 0) {
                 cardReview.interval_time = 1
             } else if (cardReview.streak === 1){
@@ -34,7 +34,7 @@ export class ReviewCardService implements IReviewCardUseCase {
             if(cardReview.easiness_factor < 1.3) cardReview.easiness_factor = 1.3
             cardReview.streak++
 
-        } else{
+        } else {
             cardReview.streak = 0
             cardReview.interval_time = 1
         }

@@ -1,3 +1,3 @@
-import { IUser } from "@/domain/entities/user";
+import { IUser } from '@/domain/entities/user'
 
-export interface IuserViewModel extends IUser{}
+export interface IUserViewModel extends IUser{}

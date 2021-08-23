@@ -1,3 +1,3 @@
-import { IReview } from "@/domain/entities/review";
+import { IReview } from '@/domain/entities/review'
 
-export interface IReviewPresentationViewModel extends  IReview{}
+export interface IReviewPresentationViewModel extends IReview{}

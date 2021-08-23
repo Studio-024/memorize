@@ -1,33 +1,32 @@
-import { IAddUserRepository } from "@/data/contracts/addUserRepository";
-import { PasswordEncryptedRepository, SignInRepository } from "@/data/contracts/signIn";
-import { CheckAccountByEmailRepository } from "@/data/contracts/chekAccountByEmail";
-import { RowDataPacket } from "mysql2";
-import { IUserMysqlViewModel } from "../models/userMysqlViewModel";
-import { pool } from "../mysqlPoolConnection";
-import { IUserLogin } from "@/domain/entities/userLogin";
-import { IUser } from "@/domain/entities/user";
+import { IAddUserRepository } from '@/data/contracts/addUserRepository'
+import { PasswordEncryptedRepository, SignInRepository } from '@/data/contracts/signIn'
+import { CheckAccountByEmailRepository } from '@/data/contracts/chekAccountByEmail'
+import { RowDataPacket } from 'mysql2'
+import { IUserMysqlViewModel } from '../models/userMysqlViewModel'
+import { pool } from '../mysqlPoolConnection'
+import { IUserLogin } from '@/domain/entities/userLogin'
 
-export class MysqlAccontRepository implements 
-    CheckAccountByEmailRepository, 
-    IAddUserRepository, 
-    PasswordEncryptedRepository, 
+export class MysqlAccontRepository implements
+    CheckAccountByEmailRepository,
+    IAddUserRepository,
+    PasswordEncryptedRepository,
     SignInRepository {
     constructor(){}
 
-    async checkByEmail(email: string): Promise<CheckAccountByEmailRepository.Result>{
+    async checkByEmail(email: string): Promise<CheckAccountByEmailRepository.Result> {
         const emailQuery = await pool.query<RowDataPacket[]>(`SELECT * FROM users WHERE email= '${email}' `)
 
-        if(emailQuery[0].length !== 0){
+        if (emailQuery[0].length !== 0) {
             return true
-        }else{
+        } else {
             return false
         }
     }
-    async addUser(user: IUserMysqlViewModel){
+    async addUser(user: IUserMysqlViewModel) {
         try {
             await pool.query(`INSERT INTO users SET ?`, user)
         } catch (error) {
-            throw new Error(error.stack);
+            throw new Error(error.stack)
         }
     }
     async passwordEncrypted(user: IUserLogin): Promise<string> {

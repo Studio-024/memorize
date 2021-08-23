@@ -1,11 +1,11 @@
-import { IUserLogin } from "@/domain/entities/userLogin";
-import { ISignInUser } from "@/domain/usecases/signInUser";
-import { PasswordEncryptedRepository, SignInRepository } from "../contracts/signIn"
-import { CheckAccountByEmailRepository } from "../contracts/chekAccountByEmail";
-import { encryptPlainText, ICrypter } from "../contracts/cryptography/crypter";
-import { Hasher } from "../contracts/cryptography/hasher";
-import { ErrorREST } from "@/domain/err/errorRest";
-import { badRequest } from "@/domain/err/helper";
+import { IUserLogin } from '@/domain/entities/userLogin'
+import { ISignInUser } from '@/domain/usecases/signInUser'
+import { PasswordEncryptedRepository, SignInRepository } from '../contracts/signIn'
+import { CheckAccountByEmailRepository } from '../contracts/chekAccountByEmail'
+import { encryptPlainText, ICrypter } from '../contracts/cryptography/crypter'
+import { Hasher } from '../contracts/cryptography/hasher'
+import { ErrorREST } from '@/domain/err/errorRest'
+import { badRequest } from '@/domain/err/helper'
 
 export class SignInUserService implements ISignInUser {
     constructor (
@@ -16,13 +16,13 @@ export class SignInUserService implements ISignInUser {
         private readonly crypter: ICrypter
     ) {}
 
-    async signIn(user: IUserLogin){
+    async signIn(user: IUserLogin) {
         const emailExists = await this.checkAccountByEmail.checkByEmail(user.email)
 
         if (!emailExists)  throw new ErrorREST(badRequest('email does not'))
             
-            const passwordEncrypted = await this.checkCredentials.passwordEncrypted(user)
-            const passwordIsCorrect = await this.hasher.compare(user.password, passwordEncrypted)
+        const passwordEncrypted = await this.checkCredentials.passwordEncrypted(user)
+        const passwordIsCorrect = await this.hasher.compare(user.password, passwordEncrypted)
 
         if (!passwordIsCorrect) throw new ErrorREST(badRequest('password does not match'))
             
