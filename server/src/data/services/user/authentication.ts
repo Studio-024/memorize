@@ -1,6 +1,6 @@
 import { IAuthenticationUseCase } from '@/domain/usecases/authentication'
 import { MysqlcardRepository } from '@/infra/repositories/mysqlCardRepository'
-import { ICrypter } from '../contracts/cryptography/crypter'
+import { ICrypter } from '../../contracts/cryptography/crypter'
 
 export class Authentication implements IAuthenticationUseCase {
     constructor(

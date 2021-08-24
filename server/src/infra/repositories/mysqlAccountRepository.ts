@@ -1,10 +1,10 @@
-import { IAddUserRepository } from '@/data/contracts/addUserRepository'
-import { PasswordEncryptedRepository, SignInRepository } from '@/data/contracts/signIn'
-import { CheckAccountByEmailRepository } from '@/data/contracts/chekAccountByEmail'
+import { IAddUserRepository } from '@/data/contracts/user/addUserRepository'
+import { PasswordEncryptedRepository, SignInRepository } from '@/data/contracts/user/signIn'
+import { CheckAccountByEmailRepository } from '@/data/contracts/user/chekAccountByEmail'
 import { RowDataPacket } from 'mysql2'
 import { IUserMysqlViewModel } from '../models/userMysqlViewModel'
 import { pool } from '../mysqlPoolConnection'
-import { IUserLogin } from '@/domain/entities/userLogin'
+import { IUserLogin } from '@/domain/entities/user/userLogin'
 
 export class MysqlAccontRepository implements
     CheckAccountByEmailRepository,

@@ -1,5 +1,5 @@
-import { signUpUserService } from '@/data/services/signUpUserService'
-import { IUser } from '@/domain/entities/user'
+import { signUpUserService } from '@/data/services/user/signUpUserService'
+import { IUser } from '@/domain/entities/user/user'
 import { IController } from '../contracts/controller'
 import { errorHandler, HttpRequest, HttpResponse, noContent } from '../contracts/http'
 import { requiredParams } from '../helper/requireParams'

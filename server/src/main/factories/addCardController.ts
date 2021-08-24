@@ -1,4 +1,4 @@
-import { AddCardService } from '@/data/services/addCard'
+import { AddCardService } from '@/data/services/card/addCard'
 import { IController } from '@/presentation/contracts/controller'
 import { addCardController } from '@/presentation/controllers/addCardController'
 import { repo } from './mysqlCardRepo'

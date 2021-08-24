@@ -1,4 +1,4 @@
-import { Authentication } from '@/data/services/authentication'
+import { Authentication } from '@/data/services/user/authentication'
 import { errorHandler, noContent, unauthorized } from '../contracts/http'
 import { Middleware } from '../contracts/middleware'
 import { requiredParams } from '../helper/requireParams'

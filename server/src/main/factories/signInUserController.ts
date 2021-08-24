@@ -1,4 +1,4 @@
-import { SignInUserService } from '@/data/services/signInUserService'
+import { SignInUserService } from '@/data/services/user/signInUserService'
 import { BcryptAdapter } from '@/infra/cryptography/bycriptAdapter'
 import { JwtAdapter } from '@/infra/cryptography/jwtAdapter'
 import { MysqlAccontRepository } from '@/infra/repositories/mysqlAccountRepository'

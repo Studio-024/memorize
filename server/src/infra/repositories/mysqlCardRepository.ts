@@ -1,7 +1,7 @@
-import { IAddCardRepository } from '@/data/contracts/addCardRepository'
-import { GetReviewByCod } from '@/data/contracts/getReviewByCod'
-import { IListCardRepository } from '@/data/contracts/listCardRepository'
-import { IUpdateCardReviewRepository } from '@/data/contracts/updateCardReviewRepository'
+import { IAddCardRepository } from '@/data/contracts/card/addCardRepository'
+import { GetReviewByCod } from '@/data/contracts/card/getReviewByCod'
+import { IListCardRepository } from '@/data/contracts/card/listCardRepository'
+import { IUpdateCardReviewRepository } from '@/data/contracts/card/updateCardReviewRepository'
 
 import { ICardViewModel } from '@/data/models/cardViewModel'
 import { ICardMysqlViewModel } from '../models/cardMysqlViewModel'
@@ -34,15 +34,21 @@ export class MysqlcardRepository implements
 
     async addCard(card: ICardViewModel): Promise<void> {
         try {
-            // guambiarra a gente aceita
-            console.log('user id: ', this.userId)
             await pool.query(` INSERT INTO reviews SET streak= 0 ` )
-            const test: any = await pool.query('SELECT @@IDENTITY')
-            await pool.query(` INSERT INTO flashcards SET ? `, { front: card.front, back: card.back, review_cod: test[0][0]['@@IDENTITY'], user_cod: this.userId })
+            const lastColumnCreated: any = await pool.query('SELECT @@IDENTITY')
+
+            await pool.query(` INSERT INTO flashcards SET ? `, { 
+                front: card.front, 
+                back: card.back, 
+                review_cod: lastColumnCreated[0][0]['@@IDENTITY'], 
+                user_cod: this.userId 
+            })
+
         } catch (error) {
             throw new Error(error.stack)
         }
     }
+
     async updateCardReview(cardReview: IReviewMysqlViewModel ): Promise<void> {
         try {
             await pool.query(` UPDATE reviews SET streak=${cardReview.streak}, interval_time=${cardReview.interval_time} WHERE cod=${cardReview.cod} `)

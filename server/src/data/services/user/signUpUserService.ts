@@ -1,10 +1,10 @@
 import { ErrorREST } from '@/domain/err/errorRest'
 import { badRequest } from '@/domain/err/helper'
 import { ISignUpUser } from '@/domain/usecases/signUpUser'
-import { IAddUserRepository } from '../contracts/addUserRepository'
-import { CheckAccountByEmailRepository } from '../contracts/chekAccountByEmail'
-import { Hasher } from '../contracts/cryptography/hasher'
-import { IUserViewModel } from '../models/userViewModel'
+import { IAddUserRepository } from '../../contracts/user/addUserRepository'
+import { CheckAccountByEmailRepository } from '../../contracts/user/chekAccountByEmail'
+import { Hasher } from '../../contracts/cryptography/hasher'
+import { IUserViewModel } from '../../models/userViewModel'
 
 export class signUpUserService implements ISignUpUser {
     constructor(

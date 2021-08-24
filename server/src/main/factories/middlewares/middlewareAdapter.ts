@@ -1,4 +1,4 @@
-import { Authentication } from '@/data/services/authentication'
+import { Authentication } from '@/data/services/user/authentication'
 import { JwtAdapter } from '@/infra/cryptography/jwtAdapter'
 import { AuthMiddleware } from '@/presentation/middlewares/authMiddleware'
 

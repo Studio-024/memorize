@@ -1,9 +1,9 @@
 import { ErrorREST } from '@/domain/err/errorRest'
 import { serverError } from '@/domain/err/helper'
-import { IUpdateCardReviewRepository } from '../contracts/updateCardReviewRepository'
+import { IUpdateCardReviewRepository } from '../../contracts/card/updateCardReviewRepository'
 import { IReviewCardUseCase } from '@/domain/usecases/reviewCard'
-import { GetReviewByCod } from '../contracts/getReviewByCod'
-import { IReviewCardViewModel } from '../models/reviewCardViewModel'
+import { GetReviewByCod } from '../../contracts/card/getReviewByCod'
+import { IReviewCardViewModel } from '../../models/reviewCardViewModel'
 
 
 export class ReviewCardService implements IReviewCardUseCase {

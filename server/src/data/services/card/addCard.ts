@@ -1,8 +1,8 @@
 import { ErrorREST  } from '@/domain/err/errorRest'
 import { badRequest, serverError } from '@/domain/err/helper'
 import { ICreateCard } from '@/domain/usecases/createCard'
-import { IAddCardRepository } from '../contracts/addCardRepository'
-import { ICardViewModel } from '../models/cardViewModel'
+import { IAddCardRepository } from '../../contracts/card/addCardRepository'
+import { ICardViewModel } from '../../models/cardViewModel'
 
 export class AddCardService implements ICreateCard {
     constructor(private readonly addCardRepository: IAddCardRepository) {

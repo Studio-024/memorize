@@ -1,4 +1,4 @@
-import { signUpUserService } from '@/data/services/signUpUserService'
+import { signUpUserService } from '@/data/services/user/signUpUserService'
 import { BcryptAdapter } from '@/infra/cryptography/bycriptAdapter'
 import { MysqlAccontRepository } from '@/infra/repositories/mysqlAccountRepository'
 import { IController } from '@/presentation/contracts/controller'
