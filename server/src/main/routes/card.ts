@@ -1,15 +1,28 @@
-import {Router} from 'express'
+import { Router } from 'express'
+
+import { adaptMiddleware } from '../adapters/expressMiddlewareAdapter'
 import { adaptRoute } from '../adapters/expressRouterAdapter'
+
 import { makeAddCardController } from '../factories/addCardController'
 import { makeListCardController } from '../factories/listCardController'
 import { makeReviewCardController } from '../factories/reviewCardController'
+import { makeSignInUserController } from '../factories/signInUserController'
+import { makesignUpUserController } from '../factories/signUpUserController'
+
+import { makeAuthMiddleware } from '../factories/middlewares/middlewareAdapter'
 
 const routes = Router()
 
-routes.get('/card', adaptRoute(makeListCardController()))
+routes.get('/card',adaptMiddleware(makeAuthMiddleware()) ,adaptRoute(makeListCardController()))
 
-routes.post('/card', adaptRoute(makeAddCardController()))
+routes.post('/card', adaptMiddleware(makeAuthMiddleware()), adaptRoute(makeAddCardController()))
 
-routes.put('/card/review', adaptRoute(makeReviewCardController()))
+routes.put('/card/review', adaptMiddleware(makeAuthMiddleware()), adaptRoute(makeReviewCardController()))
+
+
+routes.post('/user/signUp', adaptRoute(makesignUpUserController()))
+
+routes.post('/user/login', adaptRoute(makeSignInUserController()))
+
 
 export default routes

@@ -1,5 +1,5 @@
-import { ICard } from "../entities/card";
+import { ICard } from '../entities/card'
 
-export interface IListCard{
+export interface IListCard {
     listAll(): Promise<ICard[]>
 }
