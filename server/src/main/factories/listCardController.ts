@@ -1,10 +1,9 @@
-import { ListCardService } from "@/data/services/listAllCard";
-import { MysqlcardRepository } from "@/infra/repositories/mysqlCardRepository";
-import { IController } from "@/presentation/contracts/controller";
-import { ListCardController } from "@/presentation/controllers/listCardController";
+import { ListCardService } from '@/data/services/card/listAllCard'
+import { IController } from '@/presentation/contracts/controller'
+import { ListCardController } from '@/presentation/controllers/listCardController'
+import { repo } from './mysqlCardRepo'
 
 export const makeListCardController = (): IController => {
-    const repo = new MysqlcardRepository()
 
     const list = new ListCardService(repo)
 

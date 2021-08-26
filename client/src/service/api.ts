@@ -29,3 +29,23 @@ export const saveCard = async(front:string, back:string) => {
 		throw new ErrorHandler(err.request.message).Post()
 	}
 }
+
+export const signupUser = async({name, email, password}: User) => {
+	try {
+		await Axios.post('http://localhost:3001/user/signup', {
+			name, 
+			email,
+			password
+		})
+		toast.success('user created')
+	}
+	catch (err) {
+		throw new ErrorHandler(err.request.message).Post()
+	}
+}
+
+export interface User {
+	name: string
+	email: string
+	password: string
+}

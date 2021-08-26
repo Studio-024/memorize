@@ -1,7 +1,7 @@
-import { IListCard } from "@/domain/usecases/ListCard";
-import { IController } from "../contracts/controller";
-import { errorHandler, HttpResponse, ok } from "../contracts/http";
-import { ICardPresetationViewModel } from "../view-models/CardPresetationViewModel";
+import { IListCard } from '@/domain/usecases/ListCard'
+import { IController } from '../contracts/controller'
+import { errorHandler, HttpResponse, ok } from '../contracts/http'
+import { ICardPresetationViewModel } from '../view-models/CardPresetationViewModel'
 
 export class ListCardController implements IController {
     constructor(private readonly listCard: IListCard){}
