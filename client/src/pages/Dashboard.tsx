@@ -14,7 +14,7 @@ const Dashboard = () => {
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([]);
 
     function handleClickAdd(){
-        document.getElementById('AddContainer')!.style.display = 'initial';
+        document.getElementById('AddCard')!.style.display = 'initial';
     }
     async function downloadCards() {
         const orderObj = new OrderCardService();
