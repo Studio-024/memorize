@@ -18,9 +18,9 @@ const Dashboard = () => {
     }
     async function downloadCards() {
         const orderObj = new OrderCardService();
-        const data = await orderObj.order(getCard());
+        // const data = await orderObj.order(getCard());
 
-        setOrderCards(data);
+        // setOrderCards(data);
     }
 
     useEffect(() => {
