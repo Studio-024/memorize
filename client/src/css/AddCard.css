@@ -1,155 +1,60 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  min-height: 33rem;
-  height: 100%;
-  width: 30rem;
-  margin-inline: auto;
-  margin-top: 5vmin;
-  border-radius: 10px;
-  background-color: #ebf5ff; }
-
-.card_title {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  margin: 1rem;
-  min-height: 4rem;
-  height: 100%;
-  font-size: 1.7rem;
-  word-wrap: break-word; }
-
-.card_quest {
-  display: flex;
-  flex-direction: column;
-  min-height: 23rem;
-  height: 100%;
-  margin: 0 1rem 0 1rem;
-  text-align: center;
-  justify-content: center;
-  font-size: 1rem;
-  word-wrap: break-word; }
-
-.card_footer {
-  display: flex;
-  justify-self: end;
-  margin-top: 1rem;
-  height: 3rem;
-  position: relative; }
-  .card_footer > a {
-    display: flex;
-    text-decoration: none;
-    color: initial;
+#AddCard {
+  display: none; }
+  #AddCard_background {
+    position: fixed;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.301);
-    font-size: 1.2rem;
-    cursor: pointer; }
-  .card_footer > span {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0; }
+  #AddCard .AddCard_main {
     position: absolute;
-    left: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    align-self: center; }
-
-.card_missAndHit {
-  display: flex;
-  width: calc(40rem - 20vmin);
-  margin: 1rem auto auto auto;
-  justify-content: center; }
-
-#card_missed {
-  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  color: #e9f4ff;
-  margin: auto 1rem auto auto; }
-
-#card_hit {
-  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  color: #e9f4ff;
-  margin: auto auto auto 1rem; }
-
-@media screen and (max-width: 600px) {
-  .card {
-    min-height: calc(33rem);
-    width: 80%;
-    min-height: 33rem; }
-  .card_quest {
-    min-height: 23rem; }
-  .card_missAndHit {
-    width: 80%; }
-  #card_missed, #card_hit {
-    width: 9rem !important;
-    height: 2.8rem !important; } }
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, 0);
+    min-height: 10rem;
+    min-width: 15rem;
+    max-width: 25rem;
+    width: 60%;
+    margin-inline: auto;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #051B24;
+    text-align: center;
+    color: #266A8D;
+    z-index: 1; }
+    #AddCard .AddCard_main_header #AddCard_arrowBack {
+      position: absolute;
+      top: 1.3rem;
+      left: 1rem;
+      cursor: pointer; }
+    #AddCard .AddCard_main_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-block: auto; }
+      #AddCard .AddCard_main_form_input {
+        text-align: left;
+        width: calc(100% - 2rem);
+        padding: 1rem 1rem .3rem 1rem;
+        min-height: 2rem;
+        margin: 1rem auto 1rem auto;
+        border-bottom: 2px solid #266A8D;
+        background: rgba(40, 112, 148, 0.21);
+        border-radius: 10px 10px 0px 0px;
+        font-size: 1.2rem;
+        color: #71B6D9;
+        word-wrap: break-word;
+        cursor: text; }
+        #AddCard .AddCard_main_form_input[placeholder]:empty:before {
+          content: attr(placeholder);
+          color: rgba(40, 112, 148, 0.5); }
+        #AddCard .AddCard_main_form_input[placeholder]:empty:focus::before {
+          content: ""; }
+      #AddCard .AddCard_main_form_submit {
+        background-color: #266A8D;
+        font-size: 1.2rem; }
 
 @media screen and (max-width: 450px) {
-  .card {
-    min-height: 28rem  !important;
-    width: 80% !important;
-    margin-top: 10vmin; }
-  .card_quest {
-    min-height: 18rem  !important; }
-  .card_missAndHit {
-    width: 80% !important;
-    flex-wrap: wrap;
-    justify-content: space-around; }
-  #card_missed, #card_hit {
-    width: 7rem !important;
-    height: 2.6rem !important;
-    margin: 0; }
-  .card_title {
-    font-size: 1.6rem; }
-  .card_quest {
-    font-size: 0.9rem; }
-  .card_footer > a {
-    font-size: 1.1rem; }
-  .card_footer > span {
-    display: none; } }
-
-#AddBackground {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); }
-
-.AddCard {
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  transform: translate(-50%, 0);
-  min-height: 10rem;
-  width: 30rem;
-  margin-inline: auto;
-  padding: 1rem;
-  border-radius: 10px;
-  background-color: #051B24;
-  text-align: center;
-  z-index: 1;
-  color: #266A8D; }
-
-.AddCard_TextInput {
-  text-align: left;
-  margin: 1rem auto 1rem auto;
-  border-bottom: 2px solid #266A8D;
-  background: rgba(40, 112, 148, 0.21);
-  border-radius: 10px 10px 0px 0px;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #71B6D9;
-  cursor: text; }
-  .AddCard_TextInput[placeholder]:empty:before {
-    content: attr(placeholder);
-    color: rgba(40, 112, 148, 0.5); }
-  .AddCard_TextInput[placeholder]:empty:focus::before {
-    content: ""; }
-
-#AddCreateCard_button {
-  background-color: #266A8D;
-  color: #051B24; }
-
-#AddBack {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  cursor: pointer; }
+  #AddCard .AddCard_main {
+    width: 85%; } }
