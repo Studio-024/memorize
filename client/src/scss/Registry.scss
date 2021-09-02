@@ -1,7 +1,6 @@
 @import './vars.scss';
 @import './fonts.scss';
 
-
 .registry{
   #registry_background{
     background-image: url('../assets/backgroundSecundary.png');
@@ -19,7 +18,7 @@
     margin-inline: auto;
     align-items: center;
     width: 28rem;
-    height: 14rem;
+    height: calc(8rem + 5vw);
     font-family: 'Risque';
     font-size: 3.5rem;
     color: $input-color;
@@ -60,6 +59,19 @@
       font-family: 'Poly';
       font-size: 1.5rem;
     }
+    &_login{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 1.5rem auto 1.5rem auto;
+    width: 18rem;
+    height: 4rem;
+    font-size: $font-size-great;
+    color: $input-color;
+    font-family: 'roboto';
+    cursor: pointer;
+    }
   }
 }
 @media screen and (max-width: 43rem) {
@@ -75,7 +87,7 @@
         display: flex;
       }  
       &_input{
-        margin: calc(2rem + 5vh) 0 0 0;
+        margin: calc(1rem + 5vh) 0 0 0;
         height: 3rem;
         width: 14rem;
         border-radius: 12px 12px 1px 1px;
@@ -88,6 +100,19 @@
       &_submit{
         width: 16rem;
         font-size: 1.7rem;
+      }
+      &_login{
+        display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 1.5rem auto 1.5rem auto;
+      width: 18rem;
+      height: 4rem;
+      font-size: $font-size-great;
+      color: $input-color;
+      font-family: 'roboto';
+      cursor: pointer;
       }
     }
   }

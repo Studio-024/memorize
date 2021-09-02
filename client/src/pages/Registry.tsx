@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Registry.css';
 
 const Registry = () => {
@@ -31,10 +32,13 @@ const Registry = () => {
           <input type="password" className="registry_main_input" placeholder="Senha"
             onChange={event => setPassWord(event.target.value)}
           />
-          <button className="registry_main_submit" onClick={HandleSubmit}>
-            Criar Conta
-          </button>
+          <Link to="/login">
+            <button className="registry_main_submit" onClick={HandleSubmit}>
+              Criar Conta
+            </button>
+          </Link>
         </form>
+        <Link to="/login" className="registry_main_login">Já tenho uma conta!</Link>
       </main>
     </div>
     </>
