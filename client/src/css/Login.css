@@ -105,8 +105,11 @@
   width: 100%;
   z-index: -1; }
 
-.login_main_form_submit {
+.login_main_form_input {
   margin-top: calc(3rem + 5vh); }
+
+.login_main_form_submit {
+  margin-top: none !important; }
 
 .login_main #login_main_createAccont {
   display: flex;
@@ -137,7 +140,8 @@
         border-radius: 12px 12px 1px 1px;
         color: #71B6D9;
         font-size: 1.2rem; }
+        .login_main_form_input:nth-child(2) {
+          margin-bottom: calc(3rem + 5vh); }
       .login_main_form_submit {
-        margin-top: calc(3rem + 5vh);
         width: 16rem;
         font-size: 1.7rem; } }
