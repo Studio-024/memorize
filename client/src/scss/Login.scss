@@ -20,6 +20,9 @@
       &_input{
         @extend .registry_main_input;
         margin-top:  calc(3rem + 5vh);
+        &:nth-child(2){
+          margin-bottom: calc(3rem + 5vh);
+        }
       }
       &_submit{
         @extend .registry_main_submit;
@@ -31,7 +34,7 @@
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      margin: 2rem auto 2rem auto;
+      margin: 1.5rem auto 1.5rem auto;
       width: 18rem;
       height: 4rem;
       font-size: $font-size-great;
