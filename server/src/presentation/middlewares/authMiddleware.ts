@@ -7,18 +7,17 @@ export class AuthMiddleware implements Middleware {
     constructor(private readonly authentication: Authentication){}
 
     async handle(httpRequest: any) {
-        const error = requiredParams(['cookie'], httpRequest)
+        const error = requiredParams(['x-access-token'], httpRequest)
         if(error){
             return errorHandler(error.response)
         }
         
-        const token = httpRequest.cookie.split('=')[1]
+        const token = httpRequest['accessToken']
         const isAuthenticated = await this.authentication.auth(token)
         if(!isAuthenticated){
             return unauthorized('Token invalid!')
         }
         
-        console.log('ok')
         return noContent()
     }
 }
