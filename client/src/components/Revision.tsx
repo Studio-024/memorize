@@ -31,7 +31,7 @@ const Revision = ({dataCards}: Props) => {
     }
 
     const review = (userGrade = 0) => {
-        // reviewCard(userGrade)
+        reviewCard(userGrade) // missing 'review_cod'
         nextCard()
     }
 
@@ -76,3 +76,7 @@ const Revision = ({dataCards}: Props) => {
     )
 }
 export default Revision
+
+function reviewCard(userGrade: number) {
+    throw new Error('Function not implemented.')
+}

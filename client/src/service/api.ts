@@ -70,3 +70,20 @@ export const loginUser = async({email, password}: IUserLogin) => {
 		console.log(err.message)
 	}
 }
+
+export const reviewCard = async(userGrade: number) => {
+	try {
+		await Axios.put('http://localhost:3001/card/review', {
+			userGrade
+		}, {
+			headers: {
+				'x-access-token': document.cookie.split('=')[1]
+			}	
+		})
+
+		toast.success('Reviewed!')
+	}
+	catch (err) {
+		console.log(err.response)
+	}
+}
