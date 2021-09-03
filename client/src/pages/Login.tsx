@@ -13,7 +13,7 @@ const Login = () => {
           <input type="password" placeholder="Senha" className="login_main_form_input"/>
           <Link to="/dashboard"><button className="login_main_form_submit">Entrar</button></Link>
         </form>
-       <Link to='/registry' id="login_main_createAccont"> Criar Conta </Link>
+       <Link to='/sign' id="login_main_createAccont"> Criar Conta </Link>
       </main>
     </div>
 

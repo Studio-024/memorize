@@ -14,7 +14,7 @@ const App = () => {
 			<Route path="/login">
 				<Login/>
 			</Route>
-			<Route path="/registry">
+			<Route path="/sign">
 				<Registry/>
 			</Route>
 		</Switch>
