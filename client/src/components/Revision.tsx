@@ -2,7 +2,6 @@ import '../css/Revision.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ICardOrdered } from '../domain/useCase/orderCard'
-import { login, getCard } from '../service/api'
 
 export interface Props {
     dataCards: ICardOrdered[]
@@ -29,6 +28,11 @@ const Revision = ({dataCards}: Props) => {
                 setRoute('/dashboard/front')
                 break
         }
+    }
+
+    const review = (userGrade = 0) => {
+        // reviewCard(userGrade)
+        nextCard()
     }
 
     const nextCard = () => {
@@ -60,11 +64,11 @@ const Revision = ({dataCards}: Props) => {
 
         <div className='card_missAndHit'>
             <Link to='/dashboard/front'>
-                <button id='card_missed' onClick={login}>Login</button>
+                <button id='card_missed' onClick={() => {review(0)}}>Errei</button>
             </Link>
 
             <Link to='/dashboard/front'>
-                <button id='card_hit' onClick={getCard}>Get Card</button>
+                <button id='card_hit' onClick={() => {review(4)}}>Acertei</button>
             </Link>
             
         </div>

@@ -6,3 +6,8 @@ export type ICard = {
     interval_time?: number,
     revision_date?: Date
 }
+
+export interface ICardUser {
+    front: string
+    back: string
+}
