@@ -5,7 +5,7 @@ import backSVG from  '../assets/back.svg';
 
 const Add = () => {
     function handleGoBack(){
-        document.getElementById('AddContainer')!.style.display = 'none';
+        document.getElementById('AddCard')!.style.display = 'none';
     }
     function create() {
         loginUser({email: 'teste2@teste.com', password: '1234'}) //4debug
@@ -22,19 +22,23 @@ const Add = () => {
     }
 
     return(
-        <div id="AddContainer" style={{display:'none'}}>
-            <div id="AddBackground" onClick={handleGoBack}/>
-            <div className="AddCard">
-                <div id="AddBack" onClick={handleGoBack}>
-                    <img src={backSVG} alt="" />
+        <>
+        <div id="AddCard">
+            <div id="AddCard_background" onClick={handleGoBack}/>
+            <main className="AddCard_main">
+                <div className="AddCard_main_header" >
+                    <img id="AddCard_arrowBack" src={backSVG} alt="Voltar" onClick={handleGoBack} />
+                    <h1 className="AddCard_main_header_title">Novo Card</h1>
                 </div>
-                <h1>Novo Card</h1>
-                <p contentEditable="true" id='title' spellCheck={true} className="AddCard_TextInput" placeholder={"Titulo"}></p>
-                <p contentEditable="true" id='front' spellCheck={true} className="AddCard_TextInput" placeholder={"Pergunta"}></p>
-                <p contentEditable="true" id='back' spellCheck={true} className="AddCard_TextInput" placeholder={"Resposta"}></p>                    
-                <button id='AddCreateCard_button' onClick={create}>Criar Card</button>
-            </div>
+                <form className="AddCard_main_form">
+                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='title' placeholder={"Titulo"}/>
+                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='front' placeholder={"Pergunta"}/>
+                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='back' placeholder={"Resposta"}/>                    
+                    <button className='AddCard_main_form_submit' onClick={create}>Criar Card</button>
+                </form>
+            </main>
         </div>
+        </>
     )
 }
 export default Add;

@@ -1,6 +1,5 @@
 @import 'vars.scss';
 
-
 *{
   outline: none;
   margin: 0;
@@ -9,7 +8,7 @@
 html, body{
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 }
@@ -22,13 +21,6 @@ button{
   border-radius: 10px;
   cursor:pointer;
 }
-
-.container{
-  height: 100%;
-  width: 100%;
-  background: $background-primary;
-}
-
 main{
   display: flex; 
   flex-direction: column;
