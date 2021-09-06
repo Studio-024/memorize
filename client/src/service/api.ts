@@ -12,7 +12,6 @@ export const getCard = async() => {
 			}
 		})
 
-		console.log(data)
 		return data
 	}
 	
@@ -71,12 +70,13 @@ export const loginUser = async({email, password}: IUserLogin) => {
 	}
 }
 
-export const reviewCard = async(userGrade: number) => {
+export const reviewCard = async(userGrade: number, review_cod: number) => {
 	try {
 		await Axios.put('http://localhost:3001/card/review', {
-			userGrade
+			'userGrade': userGrade
 		}, {
 			headers: {
+				'cod': review_cod,
 				'x-access-token': document.cookie.split('=')[1]
 			}	
 		})

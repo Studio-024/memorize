@@ -8,7 +8,7 @@ const Add = () => {
         document.getElementById('AddCard')!.style.display = 'none';
     }
     function create() {
-        loginUser({email: 'teste2@teste.com', password: '1234'}) //4debug
+        loginUser({email:'teste2@teste.com', password:'1234'})
         const front = document.getElementById('front')!.innerHTML;
         const back = document.getElementById('back')!.innerHTML;
 
@@ -31,9 +31,9 @@ const Add = () => {
                     <h1 className="AddCard_main_header_title">Novo Card</h1>
                 </div>
                 <form className="AddCard_main_form">
-                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='title' placeholder={"Titulo"}/>
-                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='front' placeholder={"Pergunta"}/>
-                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='back' placeholder={"Resposta"}/>                    
+                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" placeholder={"Titulo"}/>
+                    <span contentEditable={true} id='front' spellCheck={true} className="AddCard_main_form_input" placeholder={"Pergunta"}/>
+                    <span contentEditable={true} id='back' spellCheck={true} className="AddCard_main_form_input" placeholder={"Resposta"}/>                    
                     <button className='AddCard_main_form_submit' onClick={create}>Criar Card</button>
                 </form>
             </main>

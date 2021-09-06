@@ -2,6 +2,7 @@ import '../css/Revision.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ICardOrdered } from '../domain/useCase/orderCard'
+import { reviewCard } from '../service/api'
 
 export interface Props {
     dataCards: ICardOrdered[]
@@ -9,7 +10,7 @@ export interface Props {
 
 const Revision = ({dataCards}: Props) => {
     const [index, setIndex] = useState(0)
-    const [card, setCard] = useState<ICardOrdered[]>([{front: 'null', back: 'null'}])
+    const [card, setCard] = useState<ICardOrdered[]>([{cod: 0, front: 'null', back: 'null'}])
     const [route, setRoute] = useState('/dashboard/front')
     
     useEffect(() => { 
@@ -31,7 +32,7 @@ const Revision = ({dataCards}: Props) => {
     }
 
     const review = (userGrade = 0) => {
-        reviewCard(userGrade) // missing 'review_cod'
+        reviewCard(userGrade, card[index].cod) // missing 'review_cod'
         nextCard()
     }
 
@@ -77,7 +78,3 @@ const Revision = ({dataCards}: Props) => {
     )
 }
 export default Revision
-
-function reviewCard(userGrade: number) {
-    throw new Error('Function not implemented.')
-}
