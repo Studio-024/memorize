@@ -1,12 +1,18 @@
 import Axios from 'axios'
 import { toast } from 'react-toastify'
-import { ICard } from '../domain/entities/Card'
+import { ICard, ICardUser } from '../domain/entities/Card'
+import { IUser, IUserLogin } from '../domain/entities/User'
 import { ErrorHandler } from '../utils/ErrorHandler'
 
 export const getCard = async() => {
 	try {
-		const {data} = await Axios.get<ICard[]>('http://localhost:3001/card')
+		const {data} = await Axios.get<ICard[]>('http://localhost:3001/card', {
+			headers: {
+				'x-access-token': document.cookie.split('=')[1]
+			}
+		})
 
+		console.log(data)
 		return data
 	}
 	
@@ -15,11 +21,15 @@ export const getCard = async() => {
 	}
 }
 
-export const saveCard = async(front:string, back:string) => {
+export const saveCard = async({front, back}: ICardUser) => {
 	try {
 		await Axios.post<ICard[]>('http://localhost:3001/card', {
-			front: front,
-			back: back
+			front,
+			back
+		}, {
+			headers: {
+				'x-access-token': document.cookie.split('=')[1]
+			}
 		})
 
 		toast.success('Card created!')
@@ -30,10 +40,11 @@ export const saveCard = async(front:string, back:string) => {
 	}
 }
 
-export const signupUser = async({name, email, password}: User) => {
+
+export const signUpUser = async({name, email, password}: IUser) => {
 	try {
 		await Axios.post('http://localhost:3001/user/signup', {
-			name, 
+			name,
 			email,
 			password
 		})
@@ -44,8 +55,35 @@ export const signupUser = async({name, email, password}: User) => {
 	}
 }
 
-export interface User {
-	name: string
-	email: string
-	password: string
+export const loginUser = async({email, password}: IUserLogin) => {
+	try {
+		const req = await Axios.post('http://localhost:3001/user/login', {
+			email,
+			password
+		})
+	
+		const token = req.data.data
+		document.cookie = 'x-access-token' + '=' + token + ';' + 'Path' + '=' + '/' + ';' + 'Domain' + '=' + 'localhost' + ';' + 'Expires' + '=' + '1m'
+		toast.success('Logged!')
+	}
+	catch (err) {
+		console.log(err.message)
+	}
+}
+
+export const reviewCard = async(userGrade: number) => {
+	try {
+		await Axios.put('http://localhost:3001/card/review', {
+			userGrade
+		}, {
+			headers: {
+				'x-access-token': document.cookie.split('=')[1]
+			}	
+		})
+
+		toast.success('Reviewed!')
+	}
+	catch (err) {
+		console.log(err.response)
+	}
 }

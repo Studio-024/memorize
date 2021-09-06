@@ -30,6 +30,11 @@ const Revision = ({dataCards}: Props) => {
         }
     }
 
+    const review = (userGrade = 0) => {
+        reviewCard(userGrade) // missing 'review_cod'
+        nextCard()
+    }
+
     const nextCard = () => {
         if (index+1 < card.length) { 
             setIndex(index + 1)
@@ -60,11 +65,11 @@ const Revision = ({dataCards}: Props) => {
 
         <div className='card_missAndHit'>
             <Link to='/dashboard/front'>
-                <button id='card_missed' onClick={nextCard}>Errei</button>
+                <button id='card_missed' onClick={() => {review(0)}}>Errei</button>
             </Link>
 
             <Link to='/dashboard/front'>
-                <button id='card_hit' onClick={nextCard}>Acertei</button>
+                <button id='card_hit' onClick={() => {review(4)}}>Acertei</button>
             </Link>
             
         </div>
@@ -72,3 +77,7 @@ const Revision = ({dataCards}: Props) => {
     )
 }
 export default Revision
+
+function reviewCard(userGrade: number) {
+    throw new Error('Function not implemented.')
+}
