@@ -31,8 +31,10 @@ const Revision = ({dataCards}: Props) => {
         }
     }
 
-    const review = (userGrade = 0) => {
-        reviewCard(userGrade, card[index].cod) // missing 'review_cod'
+    const review = (userGrade: string) => {
+        if (card[index].cod !== -1)
+            reviewCard(userGrade, card[index].cod)
+        
         nextCard()
     }
 
@@ -40,12 +42,13 @@ const Revision = ({dataCards}: Props) => {
         if (index+1 < card.length) { 
             setIndex(index + 1)
         } else {
+            card[index].cod = -1
             card[index].front = 'Não há mais cards'
             card[index].back = 'Não há mais cards'
             switchRoute()
         }
     }
-
+    
     return (
         <>
         <div className='card'>
@@ -66,15 +69,16 @@ const Revision = ({dataCards}: Props) => {
 
         <div className='card_missAndHit'>
             <Link to='/dashboard/front'>
-                <button id='card_missed' onClick={() => {review(0)}}>Errei</button>
+                <button id='card_missed' onClick={() => {review('0')}}>Errei</button>
             </Link>
 
             <Link to='/dashboard/front'>
-                <button id='card_hit' onClick={() => {review(4)}}>Acertei</button>
+                <button id='card_hit' onClick={() => {review('4')}}>Acertei</button>
             </Link>
             
         </div>
         </>
     )
 }
+
 export default Revision

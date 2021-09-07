@@ -1,5 +1,5 @@
 import '../css/AddCard.css';
-import { loginUser, saveCard } from '../service/api';
+import { saveCard } from '../service/api';
 import { ErrorHandler } from '../utils/ErrorHandler';
 import backSVG from  '../assets/back.svg';
 
@@ -8,7 +8,6 @@ const Add = () => {
         document.getElementById('AddCard')!.style.display = 'none';
     }
     function create() {
-        loginUser({email:'teste2@teste.com', password:'1234'})
         const front = document.getElementById('front')!.innerHTML;
         const back = document.getElementById('back')!.innerHTML;
 
