@@ -1,7 +1,7 @@
 import { ICard } from '../entities/Card'
 
 export interface ICardOrdered {
-    cod: number,
+    cod: number
     front: string
     back: string
 }

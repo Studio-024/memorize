@@ -2,7 +2,7 @@ import '../css/Revision.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ICardOrdered } from '../domain/useCase/orderCard'
-import { reviewCard } from '../service/api'
+import { loginUser, reviewCard } from '../service/api'
 
 export interface Props {
     dataCards: ICardOrdered[]
@@ -32,6 +32,7 @@ const Revision = ({dataCards}: Props) => {
     }
 
     const review = (userGrade: string) => {
+        // loginUser({email: 'teste2@teste.com', password:'1234'})
         if (card[index].cod !== -1)
             reviewCard(userGrade, card[index].cod)
         
@@ -52,7 +53,7 @@ const Revision = ({dataCards}: Props) => {
     return (
         <>
         <div className='card'>
-            <div id="card_background"/>
+            <div id='card_background' />
             <h1 className='card_title'>Title</h1>
             
             <p className='card_quest'>{

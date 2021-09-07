@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import Registry from './pages/Registry';
 
 const App = () => {
-	return(
+	return (
 		<>
 		<Switch>
 			<Route path="/Dashboard">

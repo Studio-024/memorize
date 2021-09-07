@@ -73,7 +73,7 @@ export const loginUser = async({email, password}: IUserLogin) => {
 export const reviewCard = async(userGrade: string, review_cod: number) => {
 	try {
 		await Axios.put('http://localhost:3001/card/review', {
-			'userGrade': userGrade
+			userGrade
 		}, {
 			headers: {
 				'x-access-token': document.cookie.split('=')[1]
