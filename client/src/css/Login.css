@@ -62,7 +62,7 @@
     border-bottom: 2px solid #266A8D;
     background: rgba(40, 112, 148, 0.21);
     color: #71B6D9;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     box-shadow: inset 0px 4px 4px rgba(5, 27, 36, 0.25);
     font-family: 'roboto'; }
     .registry_main_input::placeholder, .login_main_form_input::placeholder {
@@ -72,8 +72,7 @@
   .registry_main_submit, .login_main_form_submit {
     background-color: #266A8D;
     width: 18rem;
-    font-family: 'Poly';
-    font-size: 1.5rem; }
+    font-family: 'Poly'; }
 
 @media screen and (max-width: 43rem) {
   .registry_header, .login_header {
@@ -95,7 +94,7 @@
         margin-bottom: calc(3rem + 5vh); }
     .registry_main_submit, .login_main_form_submit {
       width: 16rem;
-      font-size: 1.7rem; } }
+      font-size: 1.8rem; } }
 
 .login #login_background {
   background-image: url("../assets/backgroundSecundary.png");
@@ -116,7 +115,7 @@
   margin: 2rem auto 2rem auto;
   width: 18rem;
   height: 4rem;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #71B6D9;
   font-family: 'roboto';
   cursor: pointer; }
@@ -140,4 +139,4 @@
       .login_main_form_submit {
         margin-top: calc(3rem + 5vh);
         width: 16rem;
-        font-size: 1.7rem; } }
+        font-size: 1.8rem; } }

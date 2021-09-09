@@ -44,7 +44,7 @@
       border-bottom: 2px solid $background-primary;
       background: $input-background;
       color: $input-color;
-      font-size: 1.1rem;
+      font-size: $font-size-default;
       box-shadow: inset 0px 4px 4px rgba(5, 27, 36, 0.25);
       font-family: 'roboto';
       &::placeholder{
@@ -58,7 +58,6 @@
       background-color: $background-primary;
       width: 18rem;
       font-family: 'Poly';
-      font-size: 1.5rem;
     }
   }
 }
@@ -80,14 +79,14 @@
         width: 14rem;
         border-radius: 12px 12px 1px 1px;
         color: $input-color;
-        font-size: 1.2rem;
+        font-size: $font-size-default;
         &:nth-of-type(3){
           margin-bottom: calc(3rem + 5vh);
         }
       }
       &_submit{
         width: 16rem;
-        font-size: 1.7rem;
+        font-size: $font-size-big;
       }
     }
   }

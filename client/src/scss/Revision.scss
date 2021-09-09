@@ -38,7 +38,7 @@
   margin: 0 1rem 0 1rem;
   text-align: center;
   justify-content: center;
-  font-size: $font-size-min;
+  font-size: $font-size-default;
   word-wrap: break-word;
 }
 .card_footer{
@@ -55,7 +55,7 @@
     justify-content: center;
     align-items: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-    font-size: $font-size-default;
+    font-size: $font-size-great;
     cursor:pointer;
     
   }
@@ -103,9 +103,9 @@
   }
 }
 @media screen and (max-width: 450px) {
-  $font-size-min: 0.9rem;
-  $font-size-default: 1.1rem;
-  $font-size-great: 1.6rem;
+  // $font-size-min: 0.9rem;
+  // $font-size-default: 1.1rem;
+  // $font-size-great: 1.6rem;
   .card{
     min-height: 28rem  !important;
     width: 80% !important;
@@ -130,7 +130,7 @@
     font-size: $font-size-great;
   }
   .card_quest{
-    font-size: $font-size-min;
+    font-size: $font-size-small;
   }
   .card_footer{
     & > a{
@@ -139,5 +139,8 @@
     & > span{
       display: none;
     }
+  }
+  #card_missed, #card_hit{
+    font-size: $font-size-default;
   }
 }
