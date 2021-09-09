@@ -23,9 +23,9 @@
     margin-inline: auto;
     padding: 1rem;
     border-radius: 10px;
-    background-color: $background-secondary;
+    background-color: $color-primary;
     text-align: center;
-    color: $background-primary;
+    color: $color-secundary;
     z-index: 1;
     &_header{
       #AddCard_arrowBack{
@@ -47,7 +47,7 @@
         padding: 1rem 1rem .3rem 1rem;
         min-height: 2rem;
         margin: 1rem auto 1rem auto;
-        border-bottom: 2px solid $background-primary;
+        border-bottom: 2px solid $color-secundary;
         background: $input-background;
         border-radius: 10px 10px 0px 0px;
         font-size: $font-size-default;
@@ -63,7 +63,7 @@
         }
       }
       &_submit{
-        background-color: $background-primary;
+        background-color: $color-secundary;
         font-size: $font-size-great;
       }
     }

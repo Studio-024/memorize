@@ -19,9 +19,9 @@
     margin-inline: auto;
     padding: 1rem;
     border-radius: 10px;
-    background-color: #051B24;
+    background-color: #20053D;
     text-align: center;
-    color: #266A8D;
+    color: #F8C304;
     z-index: 1; }
     #AddCard .AddCard_main_header #AddCard_arrowBack {
       position: absolute;
@@ -39,20 +39,20 @@
         padding: 1rem 1rem .3rem 1rem;
         min-height: 2rem;
         margin: 1rem auto 1rem auto;
-        border-bottom: 2px solid #266A8D;
-        background: rgba(40, 112, 148, 0.21);
+        border-bottom: 2px solid #F8C304;
+        background: #6C117B;
         border-radius: 10px 10px 0px 0px;
         font-size: 1.2rem;
-        color: #71B6D9;
+        color: #F8C304;
         word-wrap: break-word;
         cursor: text; }
         #AddCard .AddCard_main_form_input[placeholder]:empty:before {
           content: attr(placeholder);
-          color: rgba(40, 112, 148, 0.5); }
+          color: #f8c3047a; }
         #AddCard .AddCard_main_form_input[placeholder]:empty:focus::before {
           content: ""; }
       #AddCard .AddCard_main_form_submit {
-        background-color: #266A8D;
+        background-color: #F8C304;
         font-size: 1.4rem; }
 
 @media screen and (max-width: 450px) {

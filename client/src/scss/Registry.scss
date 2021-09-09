@@ -41,7 +41,7 @@
       width: 16rem;
       padding-inline: 1rem;
       border-radius: 10px 10px 1px 1px;
-      border-bottom: 2px solid $background-primary;
+      border-bottom: 2px solid $color-secundary;
       background: $input-background;
       color: $input-color;
       font-size: $font-size-default;
@@ -55,7 +55,7 @@
       }
     }
     &_submit{
-      background-color: $background-primary;
+      background-color: $color-secundary;
       width: 18rem;
       font-family: 'Poly';
     }

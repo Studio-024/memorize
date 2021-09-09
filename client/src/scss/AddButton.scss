@@ -7,8 +7,8 @@
   height: 5rem;
   border-radius: 100%;
   font-size: 2.5rem;
-  color: $background-primary;
-  background-color: $background-secondary;
+  color: $color-secundary;
+  background-color: $color-primary;
 }
 @media screen and (max-width: 750px) {
   .crud_button{
