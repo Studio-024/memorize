@@ -1,11 +1,17 @@
-$background-primary: #266A8D;
-$background-secondary: #051B24;
-$background-Card: hsla(209, 100%, 96%, 1);
+//backgrounds
+$color-primary: #20053D;
+$color-secundary: #F8C304;
+$color-tertiary: #04558A;
+$background-Card: #FFF7DC;
+
+//inputs
+$input-background: #6C117B;
+$input-placeholder: #f8c3047a;
+$input-color: #F8C304;
+
+//fonts
 $font-size-min: 0.8rem;
 $font-size-small: 1rem;
 $font-size-default: 1.2rem;
 $font-size-great: 1.4rem;
 $font-size-big: 1.8rem;
-$input-background: rgba(40, 112, 148, 0.21);
-$input-placeholder: rgba(40, 112, 148, 0.5);
-$input-color: #71B6D9;
