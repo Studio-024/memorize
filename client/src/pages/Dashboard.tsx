@@ -2,12 +2,13 @@ import { getCard } from '../service/api';
 import { useEffect, useState } from 'react';
 import Revision from '../components/Revision';
 import { ToastContainer } from 'react-toastify';
-import { Link, Route, Switch, useHistory } from 'react-router-dom';
+import {Route, Switch, useHistory } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ICardOrdered } from '../domain/useCase/orderCard';
 import { OrderCardService } from '../service/OrderCardService';
 import '../css/AddButton.css';
 import Add from '../components/Add';
+import { errorHelper } from '../utils/errorHelper';
 
 const Dashboard = () => { 
     let history = useHistory();
@@ -18,9 +19,9 @@ const Dashboard = () => {
     }
     async function downloadCards() {
         const orderObj = new OrderCardService();
-        const data = await orderObj.order(getCard());
-
-        setOrderCards(data);
+        orderObj.order(getCard()) 
+            .then(data => setOrderCards(data))
+            .catch(err => errorHelper.apiError(err.response.statusCode))
     }
 
     useEffect(() => {
