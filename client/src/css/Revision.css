@@ -14,7 +14,7 @@
   inset: 0 0 0 0;
   width: 100%;
   height: 100%;
-  background-color: #04558A;
+  background-color: #541899;
   z-index: -1; }
 
 .card_title {
@@ -70,13 +70,13 @@
   justify-content: center; }
 
 #card_missed {
-  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  color: #e9f4ff;
+  background-color: #20053D;
+  color: #F8C304;
   margin: auto 1rem auto auto; }
 
 #card_hit {
-  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  color: #e9f4ff;
+  background: #F8C304;
+  color: #20053D;
   margin: auto auto auto 1rem; }
 
 @media screen and (max-width: 600px) {
