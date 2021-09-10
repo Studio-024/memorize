@@ -1,5 +1,5 @@
 export type ICard = {
-    cod?: number,
+    cod: number,
     front: string,
     back: string,
     streak?: number,

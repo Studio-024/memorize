@@ -1,39 +1,38 @@
-import '../css/AddCard.css';
-import { loginUser, saveCard } from '../service/api';
-import { ErrorHandler } from '../utils/ErrorHandler';
-import backSVG from  '../assets/back.svg';
+import '../css/AddCard.css'
+import { saveCard } from '../service/api'
+import { ErrorHandler } from '../utils/ErrorHandler'
+import backSVG from  '../assets/back.svg'
 
 const Add = () => {
     function handleGoBack(){
-        document.getElementById('AddCard')!.style.display = 'none';
+        document.getElementById('AddCard')!.style.display = 'none'
     }
     function create() {
-        loginUser({email: 'teste2@teste.com', password: '1234'}) //4debug
-        const front = document.getElementById('front')!.innerHTML;
-        const back = document.getElementById('back')!.innerHTML;
+        const front = document.getElementById('front')!.innerHTML
+        const back = document.getElementById('back')!.innerHTML
 
         if (front && back) {
             saveCard({front, back})
-            document.getElementById('front')!.innerHTML = '';
-            document.getElementById('back')!.innerHTML = '';
+            document.getElementById('front')!.innerHTML = ''
+            document.getElementById('back')!.innerHTML = ''
         } else {
-            new ErrorHandler(422).Post();
+            new ErrorHandler(422).Post()
         }
     }
 
-    return(
+    return (
         <>
-        <div id="AddCard">
-            <div id="AddCard_background" onClick={handleGoBack}/>
-            <main className="AddCard_main">
-                <div className="AddCard_main_header" >
-                    <img id="AddCard_arrowBack" src={backSVG} alt="Voltar" onClick={handleGoBack} />
-                    <h1 className="AddCard_main_header_title">Novo Card</h1>
+        <div id='AddCard'>
+            <div id='AddCard_background' onClick={handleGoBack} />
+            <main className='AddCard_main'>
+                <div className='AddCard_main_header'>
+                    <img id='AddCard_arrowBack' src={backSVG} alt='Voltar' onClick={handleGoBack} />
+                    <h1 className='AddCard_main_header_title'>Novo Card</h1>
                 </div>
-                <form className="AddCard_main_form">
-                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='title' placeholder={"Titulo"}/>
-                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='front' placeholder={"Pergunta"}/>
-                    <span contentEditable={true} spellCheck={true} className="AddCard_main_form_input" id='back' placeholder={"Resposta"}/>                    
+                <form className='AddCard_main_form'>
+                    <span contentEditable={true} spellCheck={true} className='AddCard_main_form_input' placeholder={'Titulo'} />
+                    <span contentEditable={true} id='front' spellCheck={true} className='AddCard_main_form_input' placeholder={'Pergunta'} />
+                    <span contentEditable={true} id='back' spellCheck={true} className='AddCard_main_form_input' placeholder={'Resposta'} />                    
                     <button className='AddCard_main_form_submit' onClick={create}>Criar Card</button>
                 </form>
             </main>
@@ -41,4 +40,5 @@ const Add = () => {
         </>
     )
 }
-export default Add;
+
+export default Add
