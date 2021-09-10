@@ -1,17 +1,16 @@
 import Axios from 'axios'
-import { toast } from 'react-toastify'
 import { ICard } from '../domain/entities/Card'
 import { ErrorHandler } from '../utils/ErrorHandler'
 
 export const getCard = async() => {
 	try {
 		const {data} = await Axios.get<ICard[]>('http://localhost:3001/card')
-
+		
 		return data
 	}
 	
-	catch (err) {
-		throw new ErrorHandler(err.request.status).Get()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -21,26 +20,22 @@ export const saveCard = async(front:string, back:string) => {
 			front: front,
 			back: back
 		})
-
-		toast.success('Card created!')
 	}
-	
-	catch (err) {
-		throw new ErrorHandler(err.request.message).Post()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
 export const signupUser = async({name, email, password}: User) => {
 	try {
-		await Axios.post('http://localhost:3001/user/signup', {
+		await Axios.post<User>('http://localhost:3001/user/signup', {
 			name, 
 			email,
 			password
 		})
-		toast.success('user created')
 	}
-	catch (err) {
-		throw new ErrorHandler(err.request.message).Post()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
