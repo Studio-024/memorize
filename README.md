@@ -6,6 +6,12 @@
   <img src="https://img.shields.io/static/v1?labelColor=6C117B&label=Status&message=Concluido&color=57B536&style=for-the-badge"/>
 </div>
 
+<h2>Features</h2>
+
+- [x] Criar cards
+- [x] Verificar cards
+- [x] Cadastro de usuário
+- [x] Login de usuário
 
 
 ## API Requests 
