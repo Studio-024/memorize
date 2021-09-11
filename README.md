@@ -21,6 +21,13 @@ Tabela de conteúdos
 <!--te-->
 
 
+## Funcionalidades
+
+- [x] Criar cards
+- [x] Verificar cards
+- [x] Cadastro de usuário
+- [x] Login de usuário
+
 
 ## API Requests 
 Resquest | Method | Route URI | Query parameters | Body | Response 
