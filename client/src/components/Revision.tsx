@@ -2,6 +2,7 @@ import '../css/Revision.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ICardOrdered } from '../domain/useCase/orderCard'
+import Progress from './Progress'
 
 export interface Props {
     dataCards: ICardOrdered[]
@@ -58,7 +59,7 @@ const Revision = ({dataCards}: Props) => {
             }</p>
 
             <div className='card_footer'>
-                <span>Total:&nbsp;<a>{index+1}/{card.length}</a></span> 
+                <Progress Value={index+0.5} Max={card.length} Color={"rgb(62 255 53)"} />
                 <Link to={route} onClick={switchRoute}><div>Virar Card</div></Link>
             </div>
         </div>
