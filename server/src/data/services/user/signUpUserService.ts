@@ -13,18 +13,17 @@ export class signUpUserService implements ISignUpUser {
         private readonly haser: Hasher
     ){}
     async signUp(user: IUserViewModel) {
-        try {
             const emailExists = await this.checkAccountByEmail.checkByEmail(user.email)
 
             if (emailExists) {
-                throw new ErrorREST(badRequest('email alredy exists', 'email existis'))
+                throw new ErrorREST(badRequest('email alredy exists'))
             }
 
-            const passwordHashed = await this.haser.hash(user.password)
-            await this.addUser.addUser({...user, password: passwordHashed})
-            
-        } catch (error) {
-            throw new ErrorREST(error.stack)
-        }
+            try {
+                const passwordHashed = await this.haser.hash(user.password)
+                await this.addUser.addUser({...user, password: passwordHashed})
+            } catch (error: any) {
+                throw new ErrorREST(error.stack)
+            }
     }
 }
