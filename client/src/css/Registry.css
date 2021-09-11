@@ -26,7 +26,7 @@
   margin-inline: auto;
   align-items: center;
   width: 28rem;
-  height: 14rem;
+  height: calc(8rem + 5vw);
   font-family: 'Risque';
   font-size: 3.5rem;
   color: #F8C304;
@@ -60,7 +60,19 @@
   .registry_main_submit {
     background-color: #F8C304;
     width: 18rem;
-    font-family: 'Poly'; }
+    font-family: 'Poly'; } }
+  .registry_main_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 1.5rem auto 1.5rem auto;
+    width: 18rem;
+    height: 4rem;
+    font-size: 1.7rem;
+    color: #71B6D9;
+    font-family: 'roboto';
+    cursor: pointer; }
 
 @media screen and (max-width: 43rem) {
   .registry_header {
@@ -72,7 +84,7 @@
     .registry_main_container_input {
       display: flex; }
     .registry_main_input {
-      margin: calc(2rem + 5vh) 0 0 0;
+      margin: calc(1rem + 5vh) 0 0 0;
       height: 3rem;
       width: 14rem;
       border-radius: 12px 12px 1px 1px;
@@ -83,3 +95,15 @@
     .registry_main_submit {
       width: 16rem;
       font-size: 1.8rem; } }
+    .registry_main_login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 1.5rem auto 1.5rem auto;
+      width: 18rem;
+      height: 4rem;
+      font-size: 1.7rem;
+      color: #71B6D9;
+      font-family: 'roboto';
+      cursor: pointer; } }

@@ -11,13 +11,11 @@ export const getCard = async() => {
 				'x-access-token': document.cookie.split('=')[1]
 			}
 		})
-
-		console.log(data)
 		return data
 	}
 	
-	catch (err) {
-		throw new ErrorHandler(err.request.status).Get()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -31,12 +29,9 @@ export const saveCard = async({front, back}: ICardUser) => {
 				'x-access-token': document.cookie.split('=')[1]
 			}
 		})
-
-		toast.success('Card created!')
 	}
-	
-	catch (err) {
-		throw new ErrorHandler(err.request.message).Post()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -48,10 +43,9 @@ export const signUpUser = async({name, email, password}: IUser) => {
 			email,
 			password
 		})
-		toast.success('user created')
 	}
-	catch (err) {
-		throw new ErrorHandler(err.request.message).Post()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -71,19 +65,22 @@ export const loginUser = async({email, password}: IUserLogin) => {
 	}
 }
 
-export const reviewCard = async(userGrade: number) => {
+export const reviewCard = async(userGrade: string, review_cod: number) => {
 	try {
 		await Axios.put('http://localhost:3001/card/review', {
 			userGrade
 		}, {
 			headers: {
 				'x-access-token': document.cookie.split('=')[1]
-			}	
+			}, params: {
+				'cod': review_cod
+			}
 		})
 
 		toast.success('Reviewed!')
 	}
 	catch (err) {
+		// revisar tratamento de erro
 		console.log(err.response)
 	}
 }

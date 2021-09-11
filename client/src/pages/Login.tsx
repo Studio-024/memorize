@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom';
 import '../css/Login.css'
 
 const Login = () => {
-
   return(
     <div className="login">
       <div id="login_background"/>
@@ -10,13 +10,12 @@ const Login = () => {
        <form className="login_main_form">
           <input type="email" placeholder="Email" className="login_main_form_input"/>
           <input type="password" placeholder="Senha" className="login_main_form_input"/>
-          <button className="login_main_form_submit">Entrar</button>
+          <Link to="/dashboard"><button className="login_main_form_submit">Entrar</button></Link>
         </form>
-       <span id="login_main_createAccont">Criar Conta</span>
+       <Link to='/sign' id="login_main_createAccont"> Criar Conta </Link>
       </main>
     </div>
-
-)
+		)
 }
 
-export default Login;
+export default Login

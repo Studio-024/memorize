@@ -26,3 +26,7 @@ textarea, input {
   resize: none;
   outline: none;
   background: 0; }
+
+a {
+  text-decoration: none;
+  color: #266A8D; }
