@@ -1,6 +1,6 @@
 import { ICreateCard } from '@/domain/usecases/createCard'
 import { IController } from '../contracts/controller'
-import { HttpRequest, HttpResponse, noContent, errorHandler } from '../contracts/http'
+import { HttpRequest, HttpResponse, errorHandler, created } from '../contracts/http'
 import { requiredParams } from '../helper/requireParams'
 
 export class addCardController implements IController {
@@ -16,8 +16,8 @@ export class addCardController implements IController {
         
         try {
             await this.createCard.save(request.body)
-            return noContent()
-        } catch (error) {
+            return created()
+        } catch (error: any) {
             return errorHandler(error.response)
         }
     }
