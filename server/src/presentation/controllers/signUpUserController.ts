@@ -22,7 +22,7 @@ export class signUpUserController implements IController {
             await this.signUpUserService.signUp(user)
 
             return noContent()
-        } catch (error) {
+        } catch (error: any) {
             return errorHandler(error.response)
         }
     }
