@@ -1,4 +1,7 @@
-# Memorize
+<img alt="Memorize. O memorize é um site para você criar e revisar os seus Flashcards quando e onde quiser!" src="./client/src/assets/readme/banner.png" />
+
+
+
 
 
 ## API Requests 
