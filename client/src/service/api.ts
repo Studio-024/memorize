@@ -60,8 +60,8 @@ export const loginUser = async({email, password}: IUserLogin) => {
 		document.cookie = 'x-access-token' + '=' + token + ';' + 'Path' + '=' + '/' + ';' + 'Domain' + '=' + 'localhost' + ';' + 'Expires' + '=' + '1m'
 		toast.success('Logged!')
 	}
-	catch (err) {
-		console.log(err.message)
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -79,8 +79,7 @@ export const reviewCard = async(userGrade: string, review_cod: number) => {
 
 		toast.success('Reviewed!')
 	}
-	catch (err) {
-		// revisar tratamento de erro
-		console.log(err.response)
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }

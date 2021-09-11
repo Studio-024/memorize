@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {toast, ToastContainer } from 'react-toastify';
 import '../css/Registry.css';
-import { signupUser } from '../service/api';
+import { signUpUser } from '../service/api';
 import { errorHelper } from '../utils/errorHelper';
 
 const Registry = () => {
@@ -24,7 +24,7 @@ const Registry = () => {
         password
 	}
 
-	signupUser(userSbmit) 
+	signUpUser(userSbmit) 
 		.then(()=> toast.success('registrado'))
     .catch(err => errorHelper.apiError(err.response.statusCode))
 
@@ -48,11 +48,9 @@ return (
 				<input type='password' className='registry_main_input' placeholder='Senha'
 					onChange={event => setPassWord(event.target.value)}
 				/>
-        <Link to="/login">
 				  <button className='registry_main_submit'>
 					  Criar Conta
 				  </button>
-        </Link>
 			</form>
           <Link to="/login" className="registry_main_login">Já tenho uma conta!</Link>
 		</main>
