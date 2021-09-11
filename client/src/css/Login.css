@@ -38,7 +38,7 @@
   margin-inline: auto;
   align-items: center;
   width: 28rem;
-  height: 14rem;
+  height: calc(8rem + 5vw);
   font-family: 'Risque';
   font-size: 3.5rem;
   color: #71B6D9;
@@ -74,6 +74,18 @@
     width: 18rem;
     font-family: 'Poly';
     font-size: 1.5rem; }
+  .registry_main_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 1.5rem auto 1.5rem auto;
+    width: 18rem;
+    height: 4rem;
+    font-size: 1.7rem;
+    color: #71B6D9;
+    font-family: 'roboto';
+    cursor: pointer; }
 
 @media screen and (max-width: 43rem) {
   .registry_header, .login_header {
@@ -85,7 +97,7 @@
     .registry_main_container_input {
       display: flex; }
     .registry_main_input, .login_main_form_input {
-      margin: calc(2rem + 5vh) 0 0 0;
+      margin: calc(1rem + 5vh) 0 0 0;
       height: 3rem;
       width: 14rem;
       border-radius: 12px 12px 1px 1px;
@@ -95,7 +107,19 @@
         margin-bottom: calc(3rem + 5vh); }
     .registry_main_submit, .login_main_form_submit {
       width: 16rem;
-      font-size: 1.7rem; } }
+      font-size: 1.7rem; }
+    .registry_main_login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 1.5rem auto 1.5rem auto;
+      width: 18rem;
+      height: 4rem;
+      font-size: 1.7rem;
+      color: #71B6D9;
+      font-family: 'roboto';
+      cursor: pointer; } }
 
 .login #login_background {
   background-image: url("../assets/backgroundSecundary.png");
@@ -105,15 +129,20 @@
   width: 100%;
   z-index: -1; }
 
-.login_main_form_submit {
+.login_main_form_input {
   margin-top: calc(3rem + 5vh); }
+  .login_main_form_input:nth-child(2) {
+    margin-bottom: calc(3rem + 5vh); }
+
+.login_main_form_submit {
+  margin-top: none !important; }
 
 .login_main #login_main_createAccont {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin: 2rem auto 2rem auto;
+  margin: 1.5rem auto 1.5rem auto;
   width: 18rem;
   height: 4rem;
   font-size: 1.7rem;
@@ -137,7 +166,8 @@
         border-radius: 12px 12px 1px 1px;
         color: #71B6D9;
         font-size: 1.2rem; }
+        .login_main_form_input:nth-child(2) {
+          margin-bottom: calc(3rem + 5vh); }
       .login_main_form_submit {
-        margin-top: calc(3rem + 5vh);
         width: 16rem;
         font-size: 1.7rem; } }
