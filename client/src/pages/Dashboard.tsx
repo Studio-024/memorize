@@ -10,25 +10,28 @@ import '../css/AddButton.css';
 import Add from '../components/Add';
 import { errorHelper } from '../utils/errorHelper';
 
+
+
 const Dashboard = () => { 
-    let history = useHistory();
-    const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([]);
+    let history = useHistory()
+    const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
 
     function handleClickAdd(){
-        document.getElementById('AddContainer')!.style.display = 'initial';
+        document.getElementById('AddCard')!.style.display = 'initial'
     }
     async function downloadCards() {
         const orderObj = new OrderCardService();
         orderObj.order(getCard()) 
             .then(data => setOrderCards(data))
             .catch(err => errorHelper.apiError(err.response.statusCode))
+
     }
 
     useEffect(() => {
-        downloadCards();
+        downloadCards()
     }, [])
 
-	return(
+	return (
         <div className='container' id='containerCard'>
             <main>
                 <ToastContainer />
@@ -40,17 +43,17 @@ const Dashboard = () => {
                     </Route>
                     <Route exact path={`/dashboard/front`}>
                         {/* Front */}
-                        <Revision dataCards={orderCards}/>
+                        <Revision dataCards={orderCards} />
                     </Route>
                     <Route exact path={`/dashboard/back`}>
                         {/* Back */}
-                        <Revision dataCards={orderCards}/>
+                        <Revision dataCards={orderCards} />
                     </Route>
                 </Switch>
-                <button className="crud_button" onClick={handleClickAdd}>+</button>
+                <button className='crud_button' onClick={handleClickAdd}>+</button>
             </main>
         </div>
 	)
 }
 
-export default Dashboard;
+export default Dashboard

@@ -5,9 +5,10 @@ import { signupUser } from '../service/api';
 import { errorHelper } from '../utils/errorHelper';
 
 const Registry = () => {
-  const [name, setName] = useState('')
-  const [password, setPassWord] = useState('')
-  const [email, setEmail] = useState('')
+	const [name, setName] = useState('')
+	const [password, setPassWord] = useState('')
+	const [email, setEmail] = useState('')
+
 
   const  HandleSubmit = async (event: any) => {
   event.preventDefault();
@@ -27,32 +28,33 @@ const Registry = () => {
     .catch(err => errorHelper.apiError(err.response.statusCode))
 
 }
-  
-  return(
-    <>
-    <ToastContainer />
-    <div className="registry">
-      <div id='registry_background'/>
-      <header className="registry_header">MEMORIZE</header>
-      <main className="registry_main">
-        <form className='registry_main_container_input' onSubmit={HandleSubmit}>
-          <input type="name" className="registry_main_input" placeholder="Nome" 
-            onChange={event => setName(event.target.value)} 
-          />
-          <input type="email" className="registry_main_input" placeholder="Email"
-            onChange={event => setEmail(event.target.value)}
-          />
-          <input type="password" className="registry_main_input" placeholder="Senha"
-            onChange={event => setPassWord(event.target.value)}
-          />
-          <button className="registry_main_submit" >
-            Criar Conta
-          </button>
-        </form>
-      </main>
-    </div>
-    </>
-  )
+ 
+return (
+	<>
+  <ToastContainer />
+	<div className='registry'>
+		<div id='registry_background' />
+		<header className='registry_header'>MEMORIZE</header>
+
+		<main className='registry_main'>
+			<form className='registry_main_form' onSubmit={HandleSubmit}>
+				<input type='name' className='registry_main_input' placeholder='Nome' 
+					onChange={event => setName(event.target.value)} 
+				/>
+				<input type='email' className='registry_main_input' placeholder='Email'
+					onChange={event => setEmail(event.target.value)}
+				/>	
+				<input type='password' className='registry_main_input' placeholder='Senha'
+					onChange={event => setPassWord(event.target.value)}
+				/>
+				<button className='registry_main_submit'>
+					Criar Conta
+				</button>
+			</form>
+		</main>
+	</div>
+	</>
+)
 }
 
-export default Registry;
+export default Registry
