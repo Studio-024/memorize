@@ -1,6 +1,6 @@
+import { errorHelper } from '../utils/errorHelper'
 import '../css/AddCard.css'
 import { saveCard } from '../service/api'
-import { ErrorHandler } from '../utils/ErrorHandler'
 import backSVG from  '../assets/back.svg'
 
 const Add = () => {
@@ -16,7 +16,8 @@ const Add = () => {
             document.getElementById('front')!.innerHTML = ''
             document.getElementById('back')!.innerHTML = ''
         } else {
-            new ErrorHandler(422).Post()
+            errorHelper.missingParameter('faltando campo')
+
         }
     }
 

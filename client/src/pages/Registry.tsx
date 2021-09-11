@@ -1,28 +1,43 @@
-import { useState } from 'react'
-import '../css/Registry.css'
+import { useState } from 'react';
+import {toast, ToastContainer } from 'react-toastify';
+import '../css/Registry.css';
+import { signupUser } from '../service/api';
+import { errorHelper } from '../utils/errorHelper';
 
 const Registry = () => {
 	const [name, setName] = useState('')
 	const [password, setPassWord] = useState('')
 	const [email, setEmail] = useState('')
 
-const  HandleSubmit = () => {
-	// hadle to-do
-	const userSubmit = {
-		name,
-		email,
-		password
-	}
-}
 
+  const  HandleSubmit = async (event: any) => {
+  event.preventDefault();
+
+	if(!name) return errorHelper.missingParameter('nome')
+	if(!email) return errorHelper.missingParameter('email')
+	if(!password) return errorHelper.missingParameter('senha')
+
+	const userSbmit = {
+        name,
+        email,
+        password
+	}
+
+	signupUser(userSbmit) 
+		.then(()=> toast.success('registrado'))
+    .catch(err => errorHelper.apiError(err.response.statusCode))
+
+}
+ 
 return (
 	<>
+  <ToastContainer />
 	<div className='registry'>
 		<div id='registry_background' />
 		<header className='registry_header'>MEMORIZE</header>
 
 		<main className='registry_main'>
-			<form className='registry_main_form'>
+			<form className='registry_main_form' onSubmit={HandleSubmit}>
 				<input type='name' className='registry_main_input' placeholder='Nome' 
 					onChange={event => setName(event.target.value)} 
 				/>
@@ -32,7 +47,7 @@ return (
 				<input type='password' className='registry_main_input' placeholder='Senha'
 					onChange={event => setPassWord(event.target.value)}
 				/>
-				<button className='registry_main_submit' onClick={HandleSubmit}>
+				<button className='registry_main_submit'>
 					Criar Conta
 				</button>
 			</form>

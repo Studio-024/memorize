@@ -11,12 +11,11 @@ export const getCard = async() => {
 				'x-access-token': document.cookie.split('=')[1]
 			}
 		})
-
 		return data
 	}
 	
-	catch (err) {
-		throw new ErrorHandler(err.request.status).Get()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -30,12 +29,9 @@ export const saveCard = async({front, back}: ICardUser) => {
 				'x-access-token': document.cookie.split('=')[1]
 			}
 		})
-
-		toast.success('Card created!')
 	}
-	
-	catch (err) {
-		throw new ErrorHandler(err.request.message).Post()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
@@ -47,10 +43,9 @@ export const signUpUser = async({name, email, password}: IUser) => {
 			email,
 			password
 		})
-		toast.success('user created')
 	}
-	catch (err) {
-		throw new ErrorHandler(err.request.message).Post()
+	catch (err: any) {
+		throw new ErrorHandler(err.response)
 	}
 }
 
