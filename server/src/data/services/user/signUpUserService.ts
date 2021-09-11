@@ -1,5 +1,5 @@
 import { ErrorREST } from '@/domain/err/errorRest'
-import { badRequest } from '@/domain/err/helper'
+import { conflict } from '@/domain/err/helper'
 import { ISignUpUser } from '@/domain/usecases/signUpUser'
 import { IAddUserRepository } from '../../contracts/user/addUserRepository'
 import { CheckAccountByEmailRepository } from '../../contracts/user/chekAccountByEmail'
@@ -16,7 +16,7 @@ export class signUpUserService implements ISignUpUser {
             const emailExists = await this.checkAccountByEmail.checkByEmail(user.email)
 
             if (emailExists) {
-                throw new ErrorREST(badRequest('email alredy exists'))
+                throw new ErrorREST(conflict('email alredy exists'))
             }
 
             try {
