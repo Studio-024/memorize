@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import '../css/Login.css'
 
 const Login = () => {
-
   return(
     <div className="login">
       <div id="login_background"/>
@@ -16,8 +15,7 @@ const Login = () => {
        <Link to='/sign' id="login_main_createAccont"> Criar Conta </Link>
       </main>
     </div>
-
-)
+		)
 }
 
-export default Login;
+export default Login
