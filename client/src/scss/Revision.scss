@@ -44,10 +44,11 @@
 }
 .card_footer{
   display: flex;
+  position: relative;
   justify-self: end;
   margin-top: 1rem;
   height: 3rem;
-  position: relative;
+  margin-inline: 1rem;
   & > a{
     display: flex;
     text-decoration: none;
@@ -60,12 +61,11 @@
     cursor:pointer;
     
   }
-  & > span{
+  & > div{
     position: absolute;
-    left: 1rem;
-    font-size: $font-size-min;    
-    cursor:pointer;
-    align-self: center;
+    bottom: 0;
+    height: .2rem !important;
+    width: 100% !important;
   }
 }
 .card_missAndHit{
@@ -144,4 +144,5 @@
   #card_missed, #card_hit{
     font-size: $font-size-default;
   }
+
 }

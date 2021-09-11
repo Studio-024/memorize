@@ -42,10 +42,11 @@
 
 .card_footer {
   display: flex;
+  position: relative;
   justify-self: end;
   margin-top: 1rem;
   height: 3rem;
-  position: relative; }
+  margin-inline: 1rem; }
   .card_footer > a {
     display: flex;
     text-decoration: none;
@@ -56,12 +57,11 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
     font-size: 1.4rem;
     cursor: pointer; }
-  .card_footer > span {
+  .card_footer > div {
     position: absolute;
-    left: 1rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-    align-self: center; }
+    bottom: 0;
+    height: .2rem !important;
+    width: 100% !important; }
 
 .card_missAndHit {
   display: flex;
