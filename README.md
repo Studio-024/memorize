@@ -17,6 +17,7 @@ Tabela de conteúdos
       * [Pré-requisitos](#pre-requisitos)
       * [Como usar](#como-usar)
    * [Tecnologias utilizadas](#tecnologias)
+   * [Contribuidor](#contribuidor)
    * [Autores](#autores)
 <!--te-->
 
@@ -27,6 +28,9 @@ Tabela de conteúdos
 - [x] Verificar cards
 - [x] Cadastro de usuário
 - [x] Login de usuário
+
+## Autores
+
 
 
 ## API Requests 
