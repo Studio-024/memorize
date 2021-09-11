@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {toast, ToastContainer } from 'react-toastify';
 import '../css/Registry.css';
-import { signupUser } from '../service/api';
+import { signUpUser } from '../service/api';
 import { errorHelper } from '../utils/errorHelper';
 
 const Registry = () => {
@@ -24,7 +24,7 @@ const Registry = () => {
         password
 	}
 
-	signupUser(userSbmit) 
+	signUpUser(userSbmit) 
 		.then(()=> toast.success('registrado'))
     .catch(err => errorHelper.apiError(err.response.statusCode))
 

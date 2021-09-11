@@ -78,11 +78,11 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: 1.5rem auto 1.5rem auto;
+    margin: 1.5rem auto 0 auto;
     width: 18rem;
     height: 4rem;
-    font-size: 1.7rem;
-    color: #71B6D9;
+    font-size: 1.4rem;
+    color: #F8C304;
     font-family: 'roboto';
     cursor: pointer; }
 
@@ -106,7 +106,7 @@
         margin-bottom: calc(3rem + 5vh); }
     .registry_main_submit, .login_main_form_submit {
       width: 16rem;
-      font-size: 1.8rem; } }
+      font-size: 1.8rem; }
     .registry_main_login {
       display: flex;
       flex-direction: column;
@@ -115,8 +115,8 @@
       margin: 1.5rem auto 1.5rem auto;
       width: 18rem;
       height: 4rem;
-      font-size: 1.7rem;
-      color: #71B6D9;
+      font-size: 1.4rem;
+      color: #F8C304;
       font-family: 'roboto';
       cursor: pointer; } }
 
@@ -165,8 +165,6 @@
         border-radius: 12px 12px 1px 1px;
         color: #F8C304;
         font-size: 1.2rem; }
-        .login_main_form_input:nth-child(2) {
-          margin-bottom: calc(3rem + 5vh); }
       .login_main_form_submit {
         width: 16rem;
         font-size: 1.8rem; } }

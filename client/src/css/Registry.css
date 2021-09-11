@@ -60,17 +60,17 @@
   .registry_main_submit {
     background-color: #F8C304;
     width: 18rem;
-    font-family: 'Poly'; } }
+    font-family: 'Poly'; }
   .registry_main_login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: 1.5rem auto 1.5rem auto;
+    margin: 1.5rem auto 0 auto;
     width: 18rem;
     height: 4rem;
-    font-size: 1.7rem;
-    color: #71B6D9;
+    font-size: 1.4rem;
+    color: #F8C304;
     font-family: 'roboto';
     cursor: pointer; }
 
@@ -94,7 +94,7 @@
         margin-bottom: calc(3rem + 5vh); }
     .registry_main_submit {
       width: 16rem;
-      font-size: 1.8rem; } }
+      font-size: 1.8rem; }
     .registry_main_login {
       display: flex;
       flex-direction: column;
@@ -103,7 +103,7 @@
       margin: 1.5rem auto 1.5rem auto;
       width: 18rem;
       height: 4rem;
-      font-size: 1.7rem;
-      color: #71B6D9;
+      font-size: 1.4rem;
+      color: #F8C304;
       font-family: 'roboto';
       cursor: pointer; } }
