@@ -7,8 +7,8 @@
   <img src="https://img.shields.io/static/v1?labelColor=6C117B&label=Status&message=Concluido&color=57B536&style=for-the-badge"/>
 </div>
 
-Tabela de conteúdos
-=================
+## Tabela de conteúdos
+
 <!--ts-->
    * [Sobre](#sobre)
    * [Funcionalidades](#funcionalidades)
@@ -28,6 +28,7 @@ Tabela de conteúdos
 - [x] Verificar cards
 - [x] Cadastro de usuário
 - [x] Login de usuário
+
 
 ## Demonstração do Sistema
 
@@ -50,6 +51,17 @@ Tabela de conteúdos
   <br/>
   
 </div>
+
+
+## Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [SASS](https://sass-lang.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
 
 ## Autores
 
