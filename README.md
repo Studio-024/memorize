@@ -20,7 +20,7 @@
       * [Pré-requisitos](#pre-requisitos)
       * [Como usar](#como-usar)
    * [Tecnologias utilizadas](#tecnologias)
-   * [Contribuidor](#contribuidor)
+   * [Contribuidores](#contribuidores)
    * [Autores](#autores)
 <!--te-->
 
@@ -64,6 +64,21 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React](https://pt-br.reactjs.org/)
 - [SASS](https://sass-lang.com/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+---
+## Contribuidores
+
+<table>
+<tr >
+  <td width="200px" align="center">
+    
+  <img  alt="Foto de Nicolas Fernando Matsdorf Kisner" src="./client/src/assets/readme/NicolasProfile.jpeg"/> 
+    
+  #### Nicolas Fernando Matsdorf Kisner
+  [![Instagram Badge](https://img.shields.io/badge/-nicolas__matsdorf-white?style=flat-square&logo=instagram&logoColor=Pink&link=https://www.instagram.com/nicolas_matsdorf/?utm_medium=copy_link)](https://www.instagram.com/nicolas_matsdorf/?utm_medium=copy_link)
+  </td>
+</tr>
+</table>
 
 ---
 ## Autores
