@@ -67,41 +67,36 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 ## Autores
-<div id="test">
-  <div class="profile">
-    <img alt="Memorize. O memorize é um site para você criar e revisar os seus Flashcards quando e onde quiser!" src="./client/src/assets/readme/AlexandreProfile.jpeg" class="profile_photo"/> 
-    <h3 class="profile_name">Alexandre Costa Belettini</h3>
-    <div class="profile_describle">
-      <img src="https://img.shields.io/static/v1?&label=Linkedin&message=Alexandre Costa Belettini&color=d2cbc3&labelColor=blue&style=flat&url=https://www.linkedin.com/in/alexandrexyz/" /> <br>
-      <img src="https://img.shields.io/static/v1?&label=GitHub&message=AlexandreXYZ&color=d2cbc3&labelColor=2f2e2c&style=flat&url=https://github.com/k1vz" /> 
-    </div>
-  </div>
-  <div class="profile">
-    <img alt="Memorize. O memorize é um site para você criar e revisar os seus Flashcards quando e onde quiser!" src="./client/src/assets/readme/PedroProfile.jpeg" class="profile_photo"/> 
-    <h3 class="profile_name">Pedro Otávio Furtado Duarte</h3>
-    <div class="profile_describle">
-      <img src="https://img.shields.io/static/v1?&label=Linkedin&message=Pedro Duarte&color=d2cbc3&labelColor=blue&style=flat&url=https://www.linkedin.com/in/pedro-duarte-5b5356214/"/> <br>
-      <img src="https://img.shields.io/static/v1?&label=GitHub&message=k1vz&color=d2cbc3&labelColor=2f2e2c&style=flat&url=https://github.com/k1vz" /> 
-    </div>
-  </div>
-  <div class="profile">
-    <img alt="Memorize. O memorize é um site para você criar e revisar os seus Flashcards quando e onde quiser!" src="./client/src/assets/readme/ViniciusProfile.jpeg" class="profile_photo"/> 
-    <h3 class="profile_name">Vinicius Gregorine Menegon</h3>
-    <div class="profile_describle">
-      <img src="https://img.shields.io/static/v1?&label=Linkedin&message=Vinicius Gregorine Menegon&color=d2cbc3&labelColor=blue&style=flat&url=https://www.linkedin.com/in/vinicius-gregorine-menegon-92428b210/"/> <br>
-      <img src="https://img.shields.io/static/v1?&label=GitHub&message=ViniciusGregorine&color=d2cbc3&labelColor=2f2e2c&style=flat&url=https://github.com/ViniciusGregorine"/> 
-    </div>
-  </div>
-</div>
-<table>
-<tr>
-  <td width="200px" align="center">
-    <img alt="Memorize. O memorize é um site para você criar e revisar os seus Flashcards quando e onde quiser!" src="./client/src/assets/readme/AlexandreProfile.jpeg"/> 
-    <h4>Alexandre Costa Belettini</h4> 
 
+<table>
+<tr >
+  <td width="200px" align="center">
+    
+  <img  alt="Foto de Alexandre Costa Belettini" src="./client/src/assets/readme/AlexandreProfile.jpeg"/> 
+    
+  #### Alexandre Costa Belettini
   [![Linkedin Badge](https://img.shields.io/badge/-Alexandre%20Costa%20Belettini-white?style=flat-square&logo=linkedin&logoColor=blue&link=https://www.linkedin.com/in/alexandrexyz/)](https://www.linkedin.com/in/alexandrexyz/)
-  [![Linkedin Badge](https://img.shields.io/badge/-AlexandreXYZ-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/AlexandreXYZ)](https://github.com/AlexandreXYZ)
+  [![GitHub Badge](https://img.shields.io/badge/-AlexandreXYZ-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/AlexandreXYZ)](https://github.com/AlexandreXYZ)
   </td>
+
+  <td width="200px" align="center">
+  
+  <img alt="Foto de Pedro Otávio Furtado Duarte" src="./client/src/assets/readme/PedroProfile.jpeg"/> 
+
+  #### Pedro Otávio Furtado Duarte 
+  [![Linkedin Badge](https://img.shields.io/badge/-Pedro%20Duarte-white?style=flat-square&logo=linkedin&logoColor=blue&link=https://www.linkedin.com/in/pedro-duarte-5b5356214/)](https://www.linkedin.com/in/pedro-duarte-5b5356214/)
+  [![GitHub Badge](https://img.shields.io/badge/-k1vz-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/k1vz)](https://github.com/k1vz)
+  </td>
+
+  <td  width="200px"align="center">
+    
+  <img alt="Foto do GitHub de Vinicius Gregorine Menegon" src="./client/src/assets/readme/ViniciusProfile.jpeg"/> 
+
+  #### Vinicius Gregorine Menegon
+  [![Linkedin Badge](https://img.shields.io/badge/-Vinicius%20Gregorine%20Menegon-white?style=flat-square&logo=linkedin&logoColor=blue&link=https://www.linkedin.com/in/vinicius-gregorine-menegon-92428b210/)](https://www.linkedin.com/in/vinicius-gregorine-menegon-92428b210/)
+  [![GitHub Badge](https://img.shields.io/badge/-ViniciusGregorine-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/ViniciusGregorine)](https://github.com/ViniciusGregorine)
+  </td>
+
 </tr>
 </table>
 
