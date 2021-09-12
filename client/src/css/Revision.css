@@ -7,14 +7,14 @@
   margin-inline: auto;
   margin-top: 5vmin;
   border-radius: 10px;
-  background-color: #ebf5ff; }
+  background-color: #FFF7DC; }
 
 #card_background {
   position: fixed;
   inset: 0 0 0 0;
   width: 100%;
   height: 100%;
-  background-color: #266A8D;
+  background-color: #541899;
   z-index: -1; }
 
 .card_title {
@@ -25,7 +25,8 @@
   margin: 1rem;
   min-height: 4rem;
   height: 100%;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
+  color: #20053D;
   word-wrap: break-word; }
 
 .card_quest {
@@ -36,31 +37,31 @@
   margin: 0 1rem 0 1rem;
   text-align: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   word-wrap: break-word; }
 
 .card_footer {
   display: flex;
+  position: relative;
   justify-self: end;
   margin-top: 1rem;
   height: 3rem;
-  position: relative; }
+  margin-inline: 1rem; }
   .card_footer > a {
     display: flex;
     text-decoration: none;
-    color: initial;
+    color: #20053D;
     width: 100%;
     justify-content: center;
     align-items: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.301);
-    font-size: 1.2rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.4rem;
     cursor: pointer; }
-  .card_footer > span {
+  .card_footer > div {
     position: absolute;
-    left: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    align-self: center; }
+    bottom: 0;
+    height: .2rem !important;
+    width: 100% !important; }
 
 .card_missAndHit {
   display: flex;
@@ -69,13 +70,13 @@
   justify-content: center; }
 
 #card_missed {
-  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  color: #e9f4ff;
+  background-color: #20053D;
+  color: #F8C304;
   margin: auto 1rem auto auto; }
 
 #card_hit {
-  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  color: #e9f4ff;
+  background: #F8C304;
+  color: #20053D;
   margin: auto auto auto 1rem; }
 
 @media screen and (max-width: 600px) {
@@ -107,10 +108,12 @@
     height: 2.6rem !important;
     margin: 0; }
   .card_title {
-    font-size: 1.6rem; }
+    font-size: 1.4rem; }
   .card_quest {
-    font-size: 0.9rem; }
+    font-size: 1rem; }
   .card_footer > a {
-    font-size: 1.1rem; }
+    font-size: 1.2rem; }
   .card_footer > span {
-    display: none; } }
+    display: none; }
+  #card_missed, #card_hit {
+    font-size: 1.2rem; } }

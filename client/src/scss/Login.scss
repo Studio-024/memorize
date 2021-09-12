@@ -62,14 +62,11 @@
           width: 14rem;
           border-radius: 12px 12px 1px 1px;
           color: $input-color;
-          font-size: 1.2rem;
-          &:nth-child(2){
-            margin-bottom: calc(3rem + 5vh);
-          }
+          font-size: $font-size-default;
         }
         &_submit{
           width: 16rem;
-          font-size: 1.7rem;
+          font-size: $font-size-big;
         }
       }  
     }

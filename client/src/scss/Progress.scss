@@ -1,0 +1,10 @@
+#progress{
+  position: absolute;
+  width: 10rem;
+  height: 1rem;
+  &_track{
+    position: absolute;
+    left:0;
+    height: 100%;
+  }
+}

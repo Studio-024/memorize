@@ -16,7 +16,7 @@
   inset: 0 0 0 0;
   width: 100%;
   height: 100%;
-  background-color: $background-primary;
+  background-color: $color-tertiary;
   z-index: -1;
 }
 .card_title{
@@ -28,6 +28,7 @@
   min-height: 4rem;
   height: 100%;
   font-size: $font-size-great;
+  color: $color-primary;
   word-wrap: break-word;
 }
 .card_quest{
@@ -38,33 +39,33 @@
   margin: 0 1rem 0 1rem;
   text-align: center;
   justify-content: center;
-  font-size: $font-size-min;
+  font-size: $font-size-default;
   word-wrap: break-word;
 }
 .card_footer{
   display: flex;
+  position: relative;
   justify-self: end;
   margin-top: 1rem;
   height: 3rem;
-  position: relative;
+  margin-inline: 1rem;
   & > a{
     display: flex;
     text-decoration: none;
-    color: initial;
+    color: $color-primary;
     width: 100%;
     justify-content: center;
     align-items: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.301);
-    font-size: $font-size-default;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: $font-size-great;
     cursor:pointer;
     
   }
-  & > span{
+  & > div{
     position: absolute;
-    left: 1rem;
-    font-size: $font-size-min;    
-    cursor:pointer;
-    align-self: center;
+    bottom: 0;
+    height: .2rem !important;
+    width: 100% !important;
   }
 }
 .card_missAndHit{
@@ -74,13 +75,13 @@
   justify-content: center;
 }
 #card_missed{
-  background: linear-gradient(180deg, rgba(206, 83, 83, 0.9) 0%, #CE5353 100%);
-  color: rgba(233, 244, 255, 1);
+  background-color: $color-primary;
+  color: $color-secundary;
   margin: auto 1rem auto auto;
 }
 #card_hit{
-  background: linear-gradient(180deg, rgba(99, 197, 75, 0.9) 0%, #63C54B 100%);
-  color: rgba(233, 244, 255, 1);
+  background: $color-secundary;
+  color: $color-primary;
   margin: auto auto auto 1rem;
   
 }
@@ -103,9 +104,9 @@
   }
 }
 @media screen and (max-width: 450px) {
-  $font-size-min: 0.9rem;
-  $font-size-default: 1.1rem;
-  $font-size-great: 1.6rem;
+  // $font-size-min: 0.9rem;
+  // $font-size-default: 1.1rem;
+  // $font-size-great: 1.6rem;
   .card{
     min-height: 28rem  !important;
     width: 80% !important;
@@ -130,7 +131,7 @@
     font-size: $font-size-great;
   }
   .card_quest{
-    font-size: $font-size-min;
+    font-size: $font-size-small;
   }
   .card_footer{
     & > a{
@@ -140,4 +141,8 @@
       display: none;
     }
   }
+  #card_missed, #card_hit{
+    font-size: $font-size-default;
+  }
+
 }
