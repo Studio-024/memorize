@@ -9,10 +9,6 @@ export class Authentication implements IAuthenticationUseCase {
     ){}
 
     async auth(token: string): Promise<boolean> {
-        // temporary coments
-        // const certo = await this.crypter.encrypt({id: 2, name: 'vini'})
-        // console.log('compara: ', certo)
-
         try {
             const compareToken = await this.crypter.decrypt(token)
 

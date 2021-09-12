@@ -13,9 +13,9 @@ export const adaptMiddleware = (middleware: Middleware) => {
 	      	Object.assign(req, httpResponse.data)
       		next()
     	} else {
-      		res.status(httpResponse.statusCode).json({
-		        error: httpResponse.data
-      		})
+      		res.status(httpResponse.statusCode).json(
+		        httpResponse.data
+      		)
     	}
   	}
 }

@@ -19,6 +19,11 @@ export const noContent = (): HttpResponse => ({
 	data: null
 })
 
+export const created = (): HttpResponse => ({
+	statusCode: 201,
+	data: null
+})
+
 export const unauthorized  = (data: string): HttpResponse => ({
 	statusCode: 401,
 	data: {

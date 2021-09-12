@@ -25,7 +25,7 @@ export class MysqlAccontRepository implements
     async addUser(user: IUserMysqlViewModel) {
         try {
             await pool.query(`INSERT INTO users SET ?`, user)
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(error.stack)
         }
     }
@@ -34,7 +34,7 @@ export class MysqlAccontRepository implements
             const userQuery = await pool.query<RowDataPacket[]>(`SELECT * FROM users WHERE email= '${user.email}' `)
 
             return userQuery[0][0].password
-        } catch(error) {
+        } catch(error: any) {
             throw new Error(error)
         }
     }

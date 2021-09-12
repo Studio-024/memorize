@@ -1,7 +1,7 @@
 import { signUpUserService } from '@/data/services/user/signUpUserService'
 import { IUser } from '@/domain/entities/user/user'
 import { IController } from '../contracts/controller'
-import { errorHandler, HttpRequest, HttpResponse, noContent } from '../contracts/http'
+import { created, errorHandler, HttpRequest, HttpResponse} from '../contracts/http'
 import { requiredParams } from '../helper/requireParams'
 
 export class signUpUserController implements IController {
@@ -21,8 +21,8 @@ export class signUpUserController implements IController {
             }
             await this.signUpUserService.signUp(user)
 
-            return noContent()
-        } catch (error) {
+            return created()
+        } catch (error: any) {
             return errorHandler(error.response)
         }
     }

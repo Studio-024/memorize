@@ -5,6 +5,13 @@ export const badRequest = (messageError: string, nameError?: string) => ({
 	stack: 'undefined'
 })
 
+export const conflict = (messageError: string) => ({
+	status: 409,
+	message: messageError,
+	name: 'unauthorized',
+	stack: 'undefined'
+})
+
 export const serverError = ( stack: string) => ({
 	status: 500,
 	message: 'oops...',
@@ -13,7 +20,7 @@ export const serverError = ( stack: string) => ({
 })
 
 export const missingParamError = ( param: string) => ({
-	status: 400,
+	status: 422,
 	message: `missing Parameter: ${param}`,
 	stack: 'undefined'
 })
