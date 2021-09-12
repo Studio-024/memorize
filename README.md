@@ -76,6 +76,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
     
   #### Alexandre Costa Belettini
   [![Linkedin Badge](https://img.shields.io/badge/-Alexandre%20Costa%20Belettini-white?style=flat-square&logo=linkedin&logoColor=blue&link=https://www.linkedin.com/in/alexandrexyz/)](https://www.linkedin.com/in/alexandrexyz/)
+    <br>
   [![GitHub Badge](https://img.shields.io/badge/-AlexandreXYZ-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/AlexandreXYZ)](https://github.com/AlexandreXYZ)
   </td>
 
@@ -85,7 +86,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
   #### Pedro Otávio Furtado Duarte 
   [![Linkedin Badge](https://img.shields.io/badge/-Pedro%20Duarte-white?style=flat-square&logo=linkedin&logoColor=blue&link=https://www.linkedin.com/in/pedro-duarte-5b5356214/)](https://www.linkedin.com/in/pedro-duarte-5b5356214/)
+    <br>
   [![GitHub Badge](https://img.shields.io/badge/-k1vz-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/k1vz)](https://github.com/k1vz)
+    
   </td>
 
   <td  width="200px"align="center">
@@ -94,6 +97,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
   #### Vinicius Gregorine Menegon
   [![Linkedin Badge](https://img.shields.io/badge/-Vinicius%20Gregorine%20Menegon-white?style=flat-square&logo=linkedin&logoColor=blue&link=https://www.linkedin.com/in/vinicius-gregorine-menegon-92428b210/)](https://www.linkedin.com/in/vinicius-gregorine-menegon-92428b210/)
+    <br>
   [![GitHub Badge](https://img.shields.io/badge/-ViniciusGregorine-white?style=flat-square&logo=GitHub&logoColor=black&link=https://github.com/ViniciusGregorine)](https://github.com/ViniciusGregorine)
   </td>
 
