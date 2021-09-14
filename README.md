@@ -26,6 +26,12 @@
 
 ---
 
+## Sobre
+
+> Memorize é um projeto completo de um site sobre *Flashcards*, ele foi produzido com o intuito de juntar um time e construir um projeto completo, tanto no login, registro, Interface de Usuário (UI) e Experiência do Usuário (UX) quanto na analise de mercado. Então foi criado esse site com o intuito de ser facil de usar, rápido de revisar, prático e eficiênte, para isso além de toda a interface simples também foi criado um algoritmo de revisão que vai ordenar os cards pela ordem de prioridade de revisão.
+
+---
+
 ## Funcionalidades
 
 ![GIT Badge](https://img.shields.io/badge/Criação%20Cards-darkgreen?style=for-the-badge&logoColor=white)
