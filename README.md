@@ -15,7 +15,7 @@
 <!--ts-->
    * [Sobre](#sobre)
    * [Funcionalidades](#funcionalidades)
-   * [Demonstração](#demonstracao)
+   * [Demonstração](#demonstração)
    * [Instalação](#instalacao)
       * [Pré-requisitos](#pre-requisitos)
       * [Como usar](#como-usar)
