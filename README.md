@@ -25,15 +25,18 @@
 <!--te-->
 
 ---
+
 ## Funcionalidades
 
-- [x] Criar cards
-- [x] Verificar cards
-- [x] Cadastro de usuário
-- [x] Login de usuário
+![GIT Badge](https://img.shields.io/badge/Criação%20Cards-darkgreen?style=for-the-badge&logoColor=white)
+![GIT Badge](https://img.shields.io/badge/Verificação%20Cards-Green?style=for-the-badge&logoColor=white)
+![GIT Badge](https://img.shields.io/badge/Algoritmo%20de%20Revisão-purple?style=for-the-badge&logoColor=white)
+![GIT Badge](https://img.shields.io/badge/Cadastro%20de%20Usuários-blue?style=for-the-badge&logoColor=white)
+![GIT Badge](https://img.shields.io/badge/Login%20de%20Usuários-darkblue?style=for-the-badge&logoColor=white)
 
 ---
-## Demonstração do Sistema
+
+## Demonstração
 
 <div align="center">
   
@@ -58,13 +61,19 @@
 ---
 ## Tecnologias
 
-As seguintes ferramentas foram usadas na construção do projeto:
-
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [SASS](https://sass-lang.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-
+  ### Ferramentas Gerais
+  ![Yarn Badge](https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white) 
+  ![GIT Badge](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+  ![VsCode Badge](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white) 
+  
+  ### Frameworks
+  ![React Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
+  ![Sass Badge](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) 
+  ![TypeScript Badge](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=TypeScript&logoColor=white)     
+  ![NodeJS Badge](https://img.shields.io/badge/NodeJS-339933?style=for-the-badge&logo=Node.JS&logoColor=white) 
+  ![ExpressJS Badge](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) 
+  ![MySQL Badge](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white) 
+  
 ---
 ## Contribuidores
 
