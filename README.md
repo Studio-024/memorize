@@ -29,17 +29,18 @@
 ## Sobre
 
 > Memorize é um projeto completo de um site sobre *Flashcards*, ele foi produzido com o intuito de juntar um time e construir um projeto completo, tanto no login, registro, Interface de Usuário (UI) e Experiência do Usuário (UX) quanto na analise de mercado. 
-> No planejamento do site foi planeja que ele seja facil de usar, rápido de revisar, prático e eficiênte, para isso além de toda a interface simples também foi criado um [algoritmo de revisão](https://github.com/Studio-024/revison-algorithm) que vai ordenar os cards pela ordem de prioridade de revisão.
+> No planejamento do projeto foi posto como objetivo que ele seja facil de usar, rápido de revisar, prático e eficiênte, para isso além de toda a interface simples também foi criado um [algoritmo de revisão](https://github.com/Studio-024/revison-algorithm) que vai ordenar os cards pela ordem de prioridade de revisão.
 
 ---
 
 ## Funcionalidades
 
-![GIT Badge](https://img.shields.io/badge/Criação%20Cards-darkgreen?style=for-the-badge&logoColor=white)
-![GIT Badge](https://img.shields.io/badge/Verificação%20Cards-Green?style=for-the-badge&logoColor=white)
-![GIT Badge](https://img.shields.io/badge/Algoritmo%20de%20Revisão-purple?style=for-the-badge&logoColor=white)
-![GIT Badge](https://img.shields.io/badge/Cadastro%20de%20Usuários-blue?style=for-the-badge&logoColor=white)
-![GIT Badge](https://img.shields.io/badge/Login%20de%20Usuários-darkblue?style=for-the-badge&logoColor=white)
+[![GIT Badge](https://img.shields.io/badge/Criação%20Cards-darkgreen?style=for-the-badge&logoColor=white)](#novoCard)
+[![GIT Badge](https://img.shields.io/badge/Verificação%20Cards-Green?style=for-the-badge&logoColor=white)](#revision)
+[![GIT Badge](https://img.shields.io/badge/Algoritmo%20de%20Revisão-purple?style=for-the-badge&logoColor=white)]()
+[![GIT Badge](https://img.shields.io/badge/Revisão%20dos%20Cards-b874b6?style=for-the-badge&logoColor=white)](#revision)
+[![GIT Badge](https://img.shields.io/badge/Cadastro%20de%20Usuários-blue?style=for-the-badge&logoColor=white)](#cadastro)
+[![GIT Badge](https://img.shields.io/badge/Login%20de%20Usuários-darkblue?style=for-the-badge&logoColor=white)](#login)
 
 ---
 
