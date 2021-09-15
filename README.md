@@ -35,11 +35,11 @@
 
 ## Funcionalidades
 
-[![GIT Badge](https://img.shields.io/badge/Criação%20Cards-darkgreen?style=for-the-badge&logoColor=white)](#novoCard)
-[![GIT Badge](https://img.shields.io/badge/Verificação%20Cards-Green?style=for-the-badge&logoColor=white)](#revision)
-[![GIT Badge](https://img.shields.io/badge/Algoritmo%20de%20Revisão-purple?style=for-the-badge&logoColor=white)]()
-[![GIT Badge](https://img.shields.io/badge/Revisão%20dos%20Cards-b874b6?style=for-the-badge&logoColor=white)](#revision)
-[![GIT Badge](https://img.shields.io/badge/Cadastro%20de%20Usuários-blue?style=for-the-badge&logoColor=white)](#cadastro)
+[![GIT Badge](https://img.shields.io/badge/Criação%20Cards-darkgreen?style=for-the-badge&logoColor=white)](#criação-de-cards)
+[![GIT Badge](https://img.shields.io/badge/Verificação%20Cards-Green?style=for-the-badge&logoColor=white)](#revisão-dos-cards)
+[![GIT Badge](https://img.shields.io/badge/Algoritmo%20de%20Revisão-purple?style=for-the-badge&logoColor=white)](https://github.com/Studio-024/revison-algorithm)
+[![GIT Badge](https://img.shields.io/badge/Revisão%20dos%20Cards-b874b6?style=for-the-badge&logoColor=white)](#revisão-dos-cards)
+[![GIT Badge](https://img.shields.io/badge/Cadastro%20de%20Usuários-blue?style=for-the-badge&logoColor=white)](#cadastro-de-usuário)
 [![GIT Badge](https://img.shields.io/badge/Login%20de%20Usuários-darkblue?style=for-the-badge&logoColor=white)](#login-de-usuário)
 
 ---
