@@ -16,8 +16,8 @@
    * [Sobre](#sobre)
    * [Funcionalidades](#funcionalidades)
    * [Demonstração](#demonstração)
-   * [Instalação](#instalacao)
-      * [Pré-requisitos](#pre-requisitos)
+   * [Instalação](#instalação)
+      * [Pré-requisitos](#pré-requisitos)
       * [Como usar](#como-usar)
    * [Tecnologias utilizadas](#tecnologias)
    * [Contribuidores](#contribuidores)
@@ -65,6 +65,68 @@
   <br/>
   
 </div>
+
+---
+
+## Instalação
+Nesse capitulo vamos te mostrar como rodar essa aplicação na sua máquina!
+
+### Pré-requisitos
+
+- Você precisa ter o Yarn ou o npm instalados na sua maquina para iniciar a aplicação em geral;
+- Você precisa ter o NodeJS instalado na sua maquina para a aplicação em geral;
+- Você precisa ter o Git instalado na sua maquina para conseguir instalar o repositorio;
+- Você precisa ter o Xampp instalado em sua maquina para iniciar o Banco de Dados.
+
+
+### Como usar
+
+Após já ter completado os pré-requisitos você deverá abrir o terminal/cmd da sua maquina e digitar:
+```
+git clone https://github.com/Studio-024/memorize.git
+```
+Agora você já tem todos os arquivos em sua maquina! Agora entre na pasta do projeto:
+```
+cd memorize;
+```
+Instale as dependencias da raiz do projeto:
+```
+yarn install
+```
+Vamos ligar o servidor primeiro, vamos para a pasta server:
+```
+cd server;
+```
+Instale as dependencias do server:
+```
+yarn install
+```
+Inicie o banco de dados:
+```
+yarn db:start
+```
+Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API:
+```
+yarn dev
+```
+A  API e o banco de dados estão ativado! Agora vamos voltar para a pasta raiz do projeto:
+```
+cd ..
+```
+Entre na pasta *Client*:
+```
+cd client
+```
+Instale as dependencias:
+```
+yarn install
+```
+Vamos ativar o client agora:
+```
+yarn start
+```
+Espere um pouco até abrir uma nova aba do seu navegador com a URL `http://localhost:3000` ou coloque essa URL direto em seu navegador, espere um pouco e o projeto estará funcionando!
+
 
 ---
 ## Tecnologias
