@@ -73,10 +73,10 @@ Nesse capitulo vamos te mostrar como rodar essa aplicação na sua máquina!
 
 ### Pré-requisitos
 
-- Você precisa ter o ![NodeJS 14.17.3](https://nodejs.org/en/download/) ou superior instalado na sua maquina para a aplicação em geral;
-- Você precisa ter o ![Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) ou o ![npm](https://nodejs.org/en/download/) instalados na sua maquina para iniciar a aplicação em geral;
-- Você precisa ter o ![Git](https://git-scm.com/downloads) instalado na sua maquina para conseguir instalar o repositorio;
-- Você precisa ter o ![Xampp](https://www.apachefriends.org/pt_br/download.html) instalado em sua maquina para iniciar o Banco de Dados.
+- Você precisa ter o [NodeJS 14.17.3](https://nodejs.org/en/download/) ou superior instalado na sua maquina para a aplicação em geral;
+- Você precisa ter o [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) ou o [npm](https://nodejs.org/en/download/) instalados na sua maquina para iniciar a aplicação em geral;
+- Você precisa ter o [Git](https://git-scm.com/downloads) instalado na sua maquina para conseguir instalar o repositorio;
+- Você precisa ter o [Xampp](https://www.apachefriends.org/pt_br/download.html) instalado em sua maquina para iniciar o Banco de Dados.
 
 
 ### Como usar
