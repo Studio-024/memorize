@@ -143,5 +143,5 @@ Resquest | Method | Route URI | Headers | Query parameters | Body | Response
 Review Card | PUT | /card/review | x-access-token=string | cod=num | ` { "userGrade" : num } `| null 
 Get Cards | GET | /card | x-access-token=string | null | null | ` [{ "cod": num, "front": string, "back": string, "interval_time": num, "review_cod": num }] `
 Add Card | POST | /card | x-access-token=string | null | ` { "front": string, "back": string } ` | null
-SignUp User | POST | /user/signup | null | null | ` { "name": string, "email": string, "password": string } ` | null
+SignUp User | POST | /user/signUp | null | null | ` { "name": string, "email": string, "password": string } ` | null
 Login User | POST | /user/login | null | null | ` { "email": string, "password": string } ` | ` { "statusCode": num, "data": string } `
