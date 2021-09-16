@@ -15,7 +15,7 @@ export const errorHelper = {
                 toast.error('Wrong URL/route!')
                 break
             case 422:
-                toast.error('Missing parameter!')
+                toast.warn('Missing parameter!')
                 break
             case 500:
                 toast.error('DataBase off!')
