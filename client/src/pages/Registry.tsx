@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {toast, ToastContainer } from 'react-toastify';
+import { Link, useHistory } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import '../css/Registry.css';
 import { signUpUser } from '../service/api';
 import { errorHelper } from '../utils/errorHelper';
@@ -10,6 +10,7 @@ const Registry = () => {
 	const [password, setPassWord] = useState('')
 	const [email, setEmail] = useState('')
 
+	const history = useHistory()
 
   const  HandleSubmit = async (event: any) => {
   event.preventDefault();
@@ -25,7 +26,10 @@ const Registry = () => {
 	}
 
 	signUpUser(userSbmit) 
-		.then(()=> toast.success('registrado'))
+		.then( ()=> {
+			history.push('/login')
+		})
+
     .catch(err => errorHelper.apiError(err.response.statusCode))
 
 }

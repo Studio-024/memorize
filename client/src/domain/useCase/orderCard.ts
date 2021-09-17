@@ -4,6 +4,7 @@ export interface ICardOrdered {
     cod: number
     front: string
     back: string
+    review_cod: number
 }
 
 export interface OrderCardUseCase {
