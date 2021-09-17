@@ -2,7 +2,7 @@ import { getCard } from '../service/api';
 import { useEffect, useState } from 'react';
 import Revision from '../components/Revision';
 import { ToastContainer } from 'react-toastify';
-import {Route, Switch, useHistory } from 'react-router-dom';
+import {Route, Switch, Redirect } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ICardOrdered } from '../domain/useCase/orderCard';
 import { OrderCardService } from '../service/OrderCardService';
@@ -13,7 +13,6 @@ import { errorHelper } from '../utils/errorHelper';
 
 
 const Dashboard = () => { 
-    let history = useHistory()
     const [orderCards, setOrderCards ] = useState<ICardOrdered[]>([])
 
     function handleClickAdd(){
@@ -36,20 +35,18 @@ const Dashboard = () => {
             <main>
                 <ToastContainer />
                 <Add/>
-                <Switch>
+              <Switch>
                     <Route exact path={`/dashboard`}>
-                        <>{history.push('/')}</>
-                        <>{history.push('dashboard/front')}</>
-                    </Route>
-                    <Route exact path={`/dashboard/front`}>
-                        {/* Front */}
-                        <Revision dataCards={orderCards} />
+                        <Redirect to={'/dashboard/front'} />
+                    </Route> 
+                    <Route exact path={`/dashboard/front`}> 
+                       <Revision dataCards={orderCards} />
                     </Route>
                     <Route exact path={`/dashboard/back`}>
-                        {/* Back */}
-                        <Revision dataCards={orderCards} />
+                     <Revision dataCards={orderCards} />
                     </Route>
                 </Switch>
+
                 <button className='crud_button' onClick={handleClickAdd}>+</button>
             </main>
         </div>
