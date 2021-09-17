@@ -15,16 +15,16 @@ export class reviewCardController implements IController {
             return errorHandler(error.response)
         }
         
-        const ReviewCard: IReviewPresentationViewModel = {
+        const reviewCard: IReviewPresentationViewModel = {
             cod: request.query!.cod,
             userGrade: request.body!.userGrade
         }
 
         try {
-            await this.reviewCardUseCase.reviewCard(ReviewCard)
+            await this.reviewCardUseCase.reviewCard(reviewCard)
             return noContent()
 
-        } catch (error) {
+        } catch (error: any) {
             return errorHandler(error.response)
         }
     }

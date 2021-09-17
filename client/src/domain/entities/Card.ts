@@ -5,6 +5,8 @@ export type ICard = {
     streak?: number,
     interval_time?: number,
     revision_date?: Date
+    review_cod: number
+
 }
 
 export interface ICardUser {

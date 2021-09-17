@@ -7,16 +7,22 @@ const Add = () => {
     function handleGoBack(){
         document.getElementById('AddCard')!.style.display = 'none'
     }
-    function create() {
+    function create(event: any) {
+        event.preventDefault();
+
         const front = document.getElementById('front')!.innerHTML
         const back = document.getElementById('back')!.innerHTML
 
         if (front && back) {
             saveCard({front, back})
-            document.getElementById('front')!.innerHTML = ''
-            document.getElementById('back')!.innerHTML = ''
+                .then(()=> errorHelper.sucess('criado'))
+                .then(() => {
+                    document.getElementById('front')!.innerHTML = ''
+                    document.getElementById('back')!.innerHTML = ''
+                })
+                .catch(err => errorHelper.apiError(err.response.statusCode))           
         } else {
-            errorHelper.missingParameter('faltando campo')
+            errorHelper.missingParameter('campos')
 
         }
     }
@@ -30,11 +36,10 @@ const Add = () => {
                     <img id='AddCard_arrowBack' src={backSVG} alt='Voltar' onClick={handleGoBack} />
                     <h1 className='AddCard_main_header_title'>Novo Card</h1>
                 </div>
-                <form className='AddCard_main_form'>
-                    <span contentEditable={true} spellCheck={true} className='AddCard_main_form_input' placeholder={'Titulo'} />
+                <form className='AddCard_main_form' onSubmit={create}>
                     <span contentEditable={true} id='front' spellCheck={true} className='AddCard_main_form_input' placeholder={'Pergunta'} />
                     <span contentEditable={true} id='back' spellCheck={true} className='AddCard_main_form_input' placeholder={'Resposta'} />                    
-                    <button className='AddCard_main_form_submit' onClick={create}>Criar Card</button>
+                    <button className='AddCard_main_form_submit' >Criar Card</button>
                 </form>
             </main>
         </div>

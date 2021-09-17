@@ -9,7 +9,9 @@ export class OrderCardService implements OrderCardUseCase {
         let cardOrdered = cards.map(element => ({
             cod: element.cod,
             front: element.front,
-            back: element.back
+            back: element.back,
+            review_cod: element.review_cod
+            
         }))
 
         return cardOrdered

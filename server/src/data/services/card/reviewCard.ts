@@ -41,7 +41,7 @@ export class ReviewCardService implements IReviewCardUseCase {
 
         try {
             await this.updateCardRepository.updateCardReview(cardReview)
-        } catch (error) {
+        } catch (error: any) {
             throw new ErrorREST(serverError(error.stack))
         }
     }   
