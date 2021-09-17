@@ -1,19 +1,27 @@
 import Axios from 'axios'
-import { toast } from 'react-toastify'
 import { ICard, ICardUser } from '../domain/entities/Card'
 import { IUser, IUserLogin } from '../domain/entities/User'
 import { ErrorHandler } from '../utils/ErrorHandler'
+import { getToken, setToken, logout} from './auth'
+
+Axios.interceptors.response.use(response => {
+	return response;
+ }, error => {
+   if (error.response.status === 401) {
+	logout()
+   }
+   return error;
+ });
 
 export const getCard = async() => {
 	try {
 		const {data} = await Axios.get<ICard[]>('http://localhost:3001/card', {
 			headers: {
-				'x-access-token': document.cookie.split('=')[1]
+				'x-access-token': getToken(),
 			}
 		})
 		return data
 	}
-	
 	catch (err: any) {
 		throw new ErrorHandler(err.response)
 	}
@@ -26,7 +34,7 @@ export const saveCard = async({front, back}: ICardUser) => {
 			back
 		}, {
 			headers: {
-				'x-access-token': document.cookie.split('=')[1]
+				'x-access-token': getToken()
 			}
 		})
 	}
@@ -57,27 +65,25 @@ export const loginUser = async({email, password}: IUserLogin) => {
 		})
 	
 		const token = req.data.data
-		document.cookie = 'x-access-token' + '=' + token + ';' + 'Path' + '=' + '/' + ';' + 'Domain' + '=' + 'localhost' + ';' + 'Expires' + '=' + '1m'
-		toast.success('Logged!')
+		setToken(token)
 	}
 	catch (err: any) {
 		throw new ErrorHandler(err.response)
 	}
 }
 
-export const reviewCard = async(userGrade: string, review_cod: number) => {
+export const reviewCard = async(userGrade: number, review_cod: number) => {
 	try {
 		await Axios.put('http://localhost:3001/card/review', {
-			userGrade
+			
+			userGrade: userGrade
 		}, {
 			headers: {
-				'x-access-token': document.cookie.split('=')[1]
+				'x-access-token': getToken()
 			}, params: {
 				'cod': review_cod
 			}
 		})
-
-		toast.success('Reviewed!')
 	}
 	catch (err: any) {
 		throw new ErrorHandler(err.response)
