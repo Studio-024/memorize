@@ -36,13 +36,14 @@ export class MysqlcardRepository implements
         try {
             await pool.query(` INSERT INTO reviews SET streak= 0 ` )
             const lastColumnCreated: any = await pool.query('SELECT @@IDENTITY')
-
-            await pool.query(` INSERT INTO flashcards SET ? `, { 
-                front: card.front, 
-                back: card.back, 
-                review_cod: lastColumnCreated[0][0]['@@IDENTITY'], 
-                user_cod: this.userId 
-            })
+            if(lastColumnCreated) {
+                await pool.query(` INSERT INTO flashcards SET ? `, { 
+                    front: card.front, 
+                    back: card.back, 
+                    review_cod: lastColumnCreated[0][0]['@@IDENTITY'], 
+                    user_cod: this.userId 
+                })
+            }
 
         } catch (error: any) {
             throw new Error(error.stack)
