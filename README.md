@@ -28,8 +28,8 @@
 
 ## Sobre
 
-> Memorize é um projeto completo de um site sobre *Flashcards*, ele foi produzido com o intuito de juntar um time e construir um projeto completo, tanto no login, registro, Interface de Usuário (UI) e Experiência do Usuário (UX) quanto na analise de mercado. 
-> No planejamento do projeto foi posto como objetivo que ele seja facil de usar, rápido de revisar, prático e eficiênte, para isso além de toda a interface simples também foi criado um [algoritmo de revisão](https://github.com/Studio-024/revison-algorithm) que vai ordenar os cards pela ordem de prioridade de revisão.
+> Memorize é um projeto sobre um site de *Flashcards*, o qual foi produzido com o intuito de juntar um time e construir um projeto completo, tanto no login, registro, Interface de Usuário (UI) e Experiência do Usuário (UX) quanto na análise de mercado. 
+> Durante o planejamento sua proposta foi que fosse fácil de usar, rápido de revisar, prático e eficiênte, para isso além de toda a interface simples também foi criado um [algoritmo de revisão](https://github.com/Studio-024/revison-algorithm) que vai ordenar os cards pela ordem de prioridade de revisão.
 
 ---
 
@@ -73,31 +73,31 @@ Nesse capitulo vamos te mostrar como rodar essa aplicação na sua máquina!
 
 ### Pré-requisitos
 
-- :heavy_check_mark: Você precisa ter o [NodeJS 14.17.3](https://nodejs.org/en/download/) ou superior instalado na sua maquina para a aplicação em geral;
-- :heavy_check_mark: Você precisa ter o [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) instalado na sua maquina para iniciar a aplicação em geral;
-- :heavy_check_mark: Você precisa ter o [Git](https://git-scm.com/downloads) instalado na sua maquina para conseguir instalar o repositorio;
-- :heavy_check_mark: Você precisa ter o [Xampp](https://www.apachefriends.org/pt_br/download.html) instalado em sua maquina para iniciar o Banco de Dados.
+- :heavy_check_mark: Você precisa ter o [NodeJS 14.17.3](https://nodejs.org/en/download/) ou superior instalado na sua máquina para a aplicação em geral;
+- :heavy_check_mark: Você precisa ter o [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) instalado na sua máquina para iniciar a aplicação em geral;
+- :heavy_check_mark: Você precisa ter o [Git](https://git-scm.com/downloads) instalado na sua máquina para conseguir baixar o repositório;
+- :heavy_check_mark: Você precisa ter o [Xampp](https://www.apachefriends.org/pt_br/download.html) instalado em sua máquina para iniciar o Banco de Dados.
 
 
 ### Como usar
 
-Após já ter completado os pré-requisitos você deverá abrir o terminal/cmd da sua maquina e digitar:
+Após já ter completado os pré-requisitos você deverá abrir o terminal/cmd da sua máquina e digitar:
 ```
 git clone https://github.com/Studio-024/memorize.git
 ```
-Agora você já tem todos os arquivos em sua maquina! Agora entre na pasta do projeto:
+Você tem todos os arquivos que precisa em sua máquina! Agora entre na pasta do projeto:
 ```
 cd memorize;
 ```
-Instale as dependencias da raiz do projeto:
+Instale as dependências da raiz do projeto:
 ```
 yarn install
 ```
-Vamos ligar o servidor primeiro, vamos para a pasta server:
+Vamos ligar o servidor primeiro, entre na pasta server:
 ```
 cd server;
 ```
-Instale as dependencias do server:
+Instale as dependências do server:
 ```
 yarn install
 ```
@@ -109,7 +109,7 @@ Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API:
 ```
 yarn dev
 ```
-A  API e o banco de dados estão ativado! Agora vamos voltar para a pasta raiz do projeto:
+A API e o banco de dados estão ativados! Agora vamos voltar para a pasta raiz do projeto:
 ```
 cd ..
 ```
@@ -117,7 +117,7 @@ Entre na pasta *Client*:
 ```
 cd client
 ```
-Instale as dependencias:
+Instale as dependências:
 ```
 yarn install
 ```
@@ -145,10 +145,11 @@ Espere um pouco até abrir uma nova aba do seu navegador com a URL `http://local
   ![MySQL Badge](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white) 
   
 ---
+
 ## Contribuidores
 
 <table>
-<tr >
+<tr>
   <td width="200px" align="center">
     
   <img  alt="Foto de Nicolas Fernando Matsdorf Kisner" src="./client/src/assets/readme/NicolasProfile.jpeg"/> 
@@ -160,6 +161,7 @@ Espere um pouco até abrir uma nova aba do seu navegador com a URL `http://local
 </table>
 
 ---
+
 ## Autores
 
 <table>
