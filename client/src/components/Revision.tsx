@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ICardOrdered } from '../domain/useCase/orderCard'
 import Progress from './Progress'
-import { loginUser, reviewCard } from '../service/api'
+import {  reviewCard } from '../service/api'
+import { errorHelper } from '../utils/errorHelper'
 
 export interface Props {
     dataCards: ICardOrdered[]
@@ -11,7 +12,7 @@ export interface Props {
 
 const Revision = ({dataCards}: Props) => {
     const [index, setIndex] = useState(0)
-    const [card, setCard] = useState<ICardOrdered[]>([{cod: 0, front: 'null', back: 'null'}])
+    const [card, setCard] = useState<ICardOrdered[]>([{cod: 0, front: 'null', back: 'null', review_cod: 0}])
     const [route, setRoute] = useState('/dashboard/front')
     
     useEffect(() => { 
@@ -32,12 +33,11 @@ const Revision = ({dataCards}: Props) => {
         }
     }
 
-    const review = (userGrade: string) => {
-        // loginUser({email: 'teste2@teste.com', password:'1234'})
+    const review = (userGrade: number) => {
         if (card[index].cod !== -1)
-            reviewCard(userGrade, card[index].cod)
-        
-        nextCard()
+        reviewCard(userGrade, card[index].review_cod)
+            .then(()=>{nextCard()})
+            .catch(err => errorHelper.apiError(err.response.statusCode))
     }
 
     const nextCard = () => {
@@ -71,11 +71,11 @@ const Revision = ({dataCards}: Props) => {
 
         <div className='card_missAndHit'>
             <Link to='/dashboard/front'>
-                <button id='card_missed' onClick={() => {review('0')}}>Errei</button>
+                <button id='card_missed' onClick={() => {review(2)}}>Errei</button>
             </Link>
 
             <Link to='/dashboard/front'>
-                <button id='card_hit' onClick={() => {review('4')}}>Acertei</button>
+                <button id='card_hit' onClick={() => {review(4)}}>Acertei</button>
             </Link>
             
         </div>
