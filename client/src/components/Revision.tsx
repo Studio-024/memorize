@@ -55,7 +55,7 @@ const Revision = ({dataCards}: Props) => {
         <>
         <div className='card'>
             <div id='card_background' />
-            <h1 className='card_title'>Title</h1>
+            <h1 className='card_title'>Card</h1>
             
             <p className='card_quest'>{
                 route === '/dashboard/front'

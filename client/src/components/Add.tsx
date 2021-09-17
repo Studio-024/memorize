@@ -37,7 +37,6 @@ const Add = () => {
                     <h1 className='AddCard_main_header_title'>Novo Card</h1>
                 </div>
                 <form className='AddCard_main_form' onSubmit={create}>
-                    <span contentEditable={true} spellCheck={true} className='AddCard_main_form_input' placeholder={'Titulo'} />
                     <span contentEditable={true} id='front' spellCheck={true} className='AddCard_main_form_input' placeholder={'Pergunta'} />
                     <span contentEditable={true} id='back' spellCheck={true} className='AddCard_main_form_input' placeholder={'Resposta'} />                    
                     <button className='AddCard_main_form_submit' >Criar Card</button>
