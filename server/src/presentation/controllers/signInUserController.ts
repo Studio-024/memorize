@@ -25,7 +25,7 @@ export class SignInUserController implements IController {
             }
             
             return ok(response)
-        } catch (error) {
+        } catch (error: any) {
             return errorHandler(error.response)
         }
     }

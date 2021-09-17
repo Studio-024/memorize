@@ -10,7 +10,7 @@ export class ListCardController implements IController {
         try {
             const cards = await this.listCard.listAll()
             return ok(cards)
-        } catch (error) {
+        } catch (error: any) {
             return errorHandler(error)
         }
     }

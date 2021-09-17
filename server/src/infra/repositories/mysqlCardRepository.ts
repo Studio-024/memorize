@@ -27,7 +27,7 @@ export class MysqlcardRepository implements
         try {
             const [rows] =  await pool.query<ICardMysqlViewModel[]>(` SELECT flashcards.cod, front, back, interval_time, review_cod from flashcards INNER JOIN reviews ON flashcards.review_cod = reviews.cod WHERE flashcards.user_cod = ${this.userId} ORDER BY reviews.interval_time asc `, []) 
             return rows
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(error)
        }
     }
@@ -44,17 +44,16 @@ export class MysqlcardRepository implements
                 user_cod: this.userId 
             })
 
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(error.stack)
         }
     }
 
     async updateCardReview(cardReview: IReviewMysqlViewModel ): Promise<void> {
         try {
-            await pool.query(` UPDATE reviews SET streak=${cardReview.streak}, interval_time=${cardReview.interval_time} WHERE cod=${cardReview.cod} `)
+            await pool.query(` UPDATE reviews SET streak=${cardReview.streak}, interval_time=${cardReview.interval_time} WHERE cod=${cardReview.cod}`)
             
-        } catch(error) {
-            console.error(error.stack)
+        } catch(error: any) {
             throw new Error(error.stack)
         }
     }
@@ -63,7 +62,7 @@ export class MysqlcardRepository implements
         try {
             const [rows] =  await pool.query<IReviewMysqlViewModel[]>(` SELECT * FROM reviews WHERE cod=${options} `, []) 
             return rows[0]
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(error)
        }
     }
