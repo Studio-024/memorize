@@ -102,10 +102,27 @@ Instale as dependências do server:
 yarn install
 ```
 Inicie o banco de dados:
+
+**Linux**
 ```
 yarn db:start
 ```
-Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API:
+**Windows**
+1. Abra o XAMPP Control Panel;
+2. De start nos serviços: `apache` e `MySQL`.
+
+
+Antes de inciar a API, precisamos ter o banco de dados criado.
+1. Abra o phpMyAdmin;
+2. Cole o código que está nesta pasta [server/scripts/db/all_db_script.sql](https://github.com/Studio-024/memorize/blob/refactor/db-scripts/server/scripts/db/all_db_script.sql).
+
+Vamos criar o arquivo `.env` na raiz da pasta server.
+- Na própria raiz da pasta há um `.env.example` com todas as informações necessárias para conectar com o banco de dados;
+- Crie o arquivo chamado `.env` e copie e cole as informações do `.env.example` substituindo as chaves de acordo com seu banco de dados.
+- Para encontrar as informações necessárias no phpMyAdmin: Seleciona o banco de dados criado e na parte superior da tela selecione o campo "privilégios"
+  > Em caso de dúvidas com relação a esta etapa, esse [post](https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/) pode ajudar
+
+Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API: 
 ```
 yarn dev
 ```
