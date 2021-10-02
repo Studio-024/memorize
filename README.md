@@ -85,19 +85,11 @@ Após já ter completado os pré-requisitos você deverá abrir o terminal/cmd d
 ```
 git clone https://github.com/Studio-024/memorize.git
 ```
-Você tem todos os arquivos que precisa em sua máquina! Agora entre na pasta do projeto:
-```
-cd memorize;
-```
-Instale as dependências da raiz do projeto:
+Você tem todos os arquivos que precisa em sua máquina! Agora entre na pasta do projeto e instale as dependências da raiz do projeto:
 ```
 yarn install
 ```
-Vamos ligar o servidor primeiro, entre na pasta server:
-```
-cd server;
-```
-Instale as dependências do server:
+Vamos ligar o servidor primeiro, entre na pasta server e instale as dependências do server:
 ```
 yarn install
 ```
@@ -126,15 +118,7 @@ Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API:
 ```
 yarn dev
 ```
-A API e o banco de dados estão ativados! Agora vamos voltar para a pasta raiz do projeto:
-```
-cd ..
-```
-Entre na pasta *Client*:
-```
-cd client
-```
-Instale as dependências:
+A API e o banco de dados estão ativados! Agora vamos voltar para a pasta raiz do projeto e entrar na pasta *Client* e instalar as dependências:
 ```
 yarn install
 ```
