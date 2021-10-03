@@ -73,10 +73,13 @@ Nesse capitulo vamos te mostrar como rodar essa aplicação na sua máquina!
 
 ### Pré-requisitos
 
-- :heavy_check_mark: Você precisa ter o [NodeJS 14.17.3](https://nodejs.org/en/download/) ou superior instalado na sua máquina para a aplicação em geral;
-- :heavy_check_mark: Você precisa ter o [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) instalado na sua máquina para iniciar a aplicação em geral;
-- :heavy_check_mark: Você precisa ter o [Git](https://git-scm.com/downloads) instalado na sua máquina para conseguir baixar o repositório;
-- :heavy_check_mark: Você precisa ter o [Xampp](https://www.apachefriends.org/pt_br/download.html) instalado em sua máquina para iniciar o Banco de Dados.
+:heavy_check_mark: Você precisa ter o [NodeJS 14.17.3](https://nodejs.org/en/download/) ou superior instalado na sua máquina para a aplicação em geral;
+<br>
+:heavy_check_mark: Você precisa ter o [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) instalado na sua máquina para iniciar a aplicação em geral;
+<br>
+:heavy_check_mark: Você precisa ter o [Git](https://git-scm.com/downloads) instalado na sua máquina para conseguir baixar o repositório;
+<br>
+:heavy_check_mark: Você precisa ter o [Xampp](https://www.apachefriends.org/pt_br/download.html) instalado em sua máquina para iniciar o Banco de Dados.
 
 
 ### Como usar
@@ -85,39 +88,40 @@ Após já ter completado os pré-requisitos você deverá abrir o terminal/cmd d
 ```
 git clone https://github.com/Studio-024/memorize.git
 ```
-Você tem todos os arquivos que precisa em sua máquina! Agora entre na pasta do projeto:
-```
-cd memorize;
-```
-Instale as dependências da raiz do projeto:
+Você tem todos os arquivos que precisa em sua máquina! Agora entre na pasta do projeto e instale as dependências da raiz do projeto:
 ```
 yarn install
 ```
-Vamos ligar o servidor primeiro, entre na pasta server:
-```
-cd server;
-```
-Instale as dependências do server:
+Vamos ligar o servidor primeiro, entre na pasta server e instale as dependências do server:
 ```
 yarn install
 ```
 Inicie o banco de dados:
+
+**Linux**
 ```
 yarn db:start
 ```
-Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API:
+**Windows**
+1. Abra o XAMPP Control Panel;
+2. De start nos serviços: `apache` e `MySQL`.
+
+
+Antes de inciar a API, precisamos ter o banco de dados criado.
+1. Abra o phpMyAdmin;
+2. Cole o código que está nesta pasta [server/scripts/db/all_db_script.sql](https://github.com/Studio-024/memorize/blob/refactor/db-scripts/server/scripts/db/all_db_script.sql).
+
+Vamos criar o arquivo `.env` na raiz da pasta server.
+- Na própria raiz da pasta há um `.env.example` com todas as informações necessárias para conectar com o banco de dados;
+- Crie o arquivo chamado `.env` e copie e cole as informações do `.env.example` substituindo as chaves de acordo com seu banco de dados.
+- Para encontrar as informações necessárias no phpMyAdmin: Seleciona o banco de dados criado e na parte superior da tela selecione o campo "privilégios"
+  > Em caso de dúvidas com relação a esta etapa, esse [post](https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/) pode ajudar
+
+Agora você tem que abrir um novo terminal ou cmd pra deixar ele rodando a API: 
 ```
 yarn dev
 ```
-A API e o banco de dados estão ativados! Agora vamos voltar para a pasta raiz do projeto:
-```
-cd ..
-```
-Entre na pasta *Client*:
-```
-cd client
-```
-Instale as dependências:
+A API e o banco de dados estão ativados! Agora vamos voltar para a pasta raiz do projeto e entrar na pasta *Client* e instalar as dependências:
 ```
 yarn install
 ```
