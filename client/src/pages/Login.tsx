@@ -10,20 +10,20 @@ import { errorHelper } from '../utils/errorHelper';
 
 const Login = () => {
   const [password, setPassWord] = useState('')
-	const [email, setEmail] = useState('')
+  const [email, setEmail] = useState('')
   const history = useHistory()
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
-	  if(!email) return errorHelper.missingParameter('email')
-  	if(!password) return errorHelper.missingParameter('senha')
+    if(!email) return errorHelper.missingParameter('email')
+    if(!password) return errorHelper.missingParameter('senha')
 
     const userSbmit: IUserLogin = {
           email,
           password
     }
-
+	  
     loginUser(userSbmit)
       .then(() => history.push('/dashboard'))
       .catch(err => errorHelper.apiError(err.response.statusCode))
